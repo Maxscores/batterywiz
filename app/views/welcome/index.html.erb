@@ -1,0 +1,29 @@
+<h1>Welcome to Solar Calc</h1>
+
+<%= form_tag estimate_path do %>
+  <%= label_tag "capacity" %>
+  <%= number_field_tag "capacity", "5"  %> (kW)
+
+  <%= label_tag "module_type" %>
+  <%= select_tag "module_type", "<option>0</option>".html_safe %>
+
+  <%= label_tag "losses" %>
+  <%= number_field_tag "losses", "14", in: -5..99 %>
+
+  <%= label_tag "array_type" %>
+  <%= select_tag "array_type", "<option>0</option>".html_safe %>
+
+  <%= label_tag "tilt" %>
+  <%= number_field_tag "tilt", "30", in: 0..90 %>
+
+  <%= label_tag "azimuth" %>
+  <%= number_field_tag "azimuth", "180", in: 0..360 %>
+
+  <%= label_tag "latitude" %>
+  <%= text_field_tag "lat" %>
+
+  <%= label_tag "longitude" %>
+  <%= text_field_tag "lon" %>
+
+  <%= submit_tag %>
+<% end %>
