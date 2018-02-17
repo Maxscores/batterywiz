@@ -1,4 +1,5 @@
-$eco-green: #24AA6A;
+$lite-eco-green: #28D537;
+$eco-green: #25BF72;
 $body-font-family: 'Open Sans Condensed', sans-serif;
 $body-font-family2: 'Merriweather', serif;
 $header-font-family: 'Open Sans', sans-serif;
@@ -6,4 +7,19 @@ $header-font-family2: 'Montserrat', sans-serif;
 
 body {
   font-family: $body-font-family2;
+}
+.window {
+  max-width: 1000px;
+}
+.main-content {
+  min-height: 500px;
+}
+
+.hero {
+  vertical-align: bottom;
+  overflow: hidden;
+  img {
+    height: auto;
+    max-width: 100%;
+  }
 }
