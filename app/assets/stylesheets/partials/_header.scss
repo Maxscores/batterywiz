@@ -3,20 +3,25 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 10px 0 10px;
-  height: 40px;
+  padding: 0px 10px 0 10px;
+  height: 25px;
   box-shadow: 0 3px 2px -2px $eco-green;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  padding-bottom: 3px;
   .title {
     overflow: hidden;
     display: inline-block;
+    a, a:visited {
+      text-decoration: none;
+      color: black;
+    }
     .h1 {
       font-family: $header-font-family2;
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: 800;
     }
     img {
-      height: 40px;
+      height: 30px;
     }
   }
   .links {
@@ -24,7 +29,7 @@ header {
 
     a, a:visited {
       padding: 0 20px 0 20px;
-      font-size: 1.2rem;
+      font-size: 0.8rem;
       text-decoration: none;
       color: black;
     }
