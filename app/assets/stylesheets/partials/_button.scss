@@ -1,0 +1,16 @@
+.green-btn {
+  background-color: darken($lite-eco-green, 15%);
+  font-family: $header-font-family2;
+  font-weight: 800;
+  font-size: 1rem;
+  color: black;
+  padding: 10px 15px 10px 15px;
+  border-radius: 7px;
+  width: 100px;
+}
+
+.green-btn:hover, .green-btn:focus {
+  border: 0.1px solid black;
+  box-shadow: 2px 2px 5px 2px darken($eco-green, 25%);
+  cursor: pointer;
+}
