@@ -1,0 +1,34 @@
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px 0 10px;
+  height: 40px;
+  box-shadow: 0 3px 2px -2px $eco-green;
+  margin-bottom: 20px;
+  .title {
+    overflow: hidden;
+    display: inline-block;
+    .h1 {
+      font-family: $header-font-family2;
+      font-size: 2.5rem;
+    }
+    img {
+      height: 40px;
+    }
+  }
+  .links {
+    font-family: $header-font-family2;
+
+    a, a:visited {
+      padding: 0 20px 0 20px;
+      font-size: 1.2rem;
+      text-decoration: none;
+      color: black;
+    }
+    a:hover, a:focus {
+      color: $eco-green;
+    }
+  }
+}
