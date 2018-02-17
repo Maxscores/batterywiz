@@ -9,9 +9,15 @@
   </head>
 
   <body>
+    <div class="window block mx-auto">
     <%= render "layouts/header" %>
-    <%= yield %>
+      <div class="clearfix">
+        <div class="row main-content">
+          <%= yield %>
+        </div>
+      </div>
     <%= render "layouts/footer" %>
+    </div>
     <%= javascript_include_tag 'application' %>
 
   </body>
