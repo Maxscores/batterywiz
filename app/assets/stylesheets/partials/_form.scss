@@ -1,0 +1,11 @@
+form {
+  display: flex;
+  flex-direction: column;
+  label {
+    font-size: 0.6rem;
+  }
+  input, select {
+    margin-bottom: 10px;
+    width: 60px;
+  }
+}
