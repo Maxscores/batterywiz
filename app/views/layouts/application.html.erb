@@ -3,12 +3,16 @@
   <head>
     <title>SolarCalc</title>
     <%= csrf_meta_tags %>
-
+    <%= favicon_link_tag "32_ecology-lightbulb.png" %>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Open+Sans|Open+Sans+Condensed:300" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
+    <%= render "layouts/header" %>
     <%= yield %>
+    <%= render "layouts/footer" %>
+    <%= javascript_include_tag 'application' %>
+
   </body>
 </html>
