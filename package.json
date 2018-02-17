@@ -1,5 +1,7 @@
 {
   "name": "solar_calc",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
 }

@@ -1,6 +1,8 @@
 .documentation {
-
   .section {
+    
+  }
+  .button {
     background: linear-gradient(to bottom left,white, rgba($eco-blue, 0.5));
     width: 100%;
     margin-bottom: 15px;
@@ -10,7 +12,10 @@
     text-align: left;
     border: none;
   }
-  .section:hover {
+  .disabled {
+    display: none;
+  }
+  .button:hover {
     cursor: pointer;
   }
   i {
