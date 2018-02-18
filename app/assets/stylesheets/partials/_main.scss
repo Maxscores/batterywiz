@@ -1,4 +1,4 @@
-$lite-eco-green: #28D537;
+$eco-lite-green: #28D537;
 $eco-green: #25BF72;
 $eco-tan: #EAF0CE;
 $eco-brown: #BABF95;
@@ -25,4 +25,12 @@ body {
     height: auto;
     max-width: 100%;
   }
+}
+
+.serif {
+  font-family: $body-font-family2;
+}
+
+.sans-serif {
+  font-family: $header-font-family2;
 }
