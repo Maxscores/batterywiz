@@ -1,6 +1,7 @@
 .documentation {
-  .section {
-
+  .section-text {
+    margin-top: 0;
+    font-family: $header-font-family2;
   }
   .button {
     background: linear-gradient(-71deg, white 5%, rgba($eco-blue, 0.3), rgba($eco-blue, 0.5));
@@ -8,7 +9,7 @@
     margin-bottom: 15px;
     box-shadow: 0 3px 2px -2px $eco-blue;
     padding: 1px 10px 1px 3px;
-    font-family: $header-font-family2;
+    font-family: $body-font-family2;
     text-align: left;
     border: none;
   }
