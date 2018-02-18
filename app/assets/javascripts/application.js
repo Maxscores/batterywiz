@@ -14,7 +14,7 @@
 //= require_tree .
 
 $(document).ready(function() {
-  $('.section').on('click', 'button', function() {
-    $(this).closest('.section-text').slideToggle();
+  $('.section').on('click', function() {
+    $(this).find('.section-text').slideToggle();
   });
 });
