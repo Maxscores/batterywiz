@@ -1,7 +1,6 @@
 form {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(60deg, rgba($eco-blue, 0.5) 10%, white);
   padding: 15px;
   border-radius: 10px;
   label {
@@ -11,4 +10,9 @@ form {
     margin-bottom: 10px;
     width: 60px;
   }
+}
+.blue-gradient {
+  background: linear-gradient(90deg, rgba($eco-blue, 0.5) -100%, white);
+  padding: 5px 10px;
+  border-radius: 10px;
 }
