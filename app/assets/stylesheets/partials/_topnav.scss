@@ -1,0 +1,28 @@
+.top-nav {
+  text-decoration: none;
+  font-size: 0.8rem;
+  ul {
+    min-width: 696px;
+    list-style: none;
+    margin-bottom: 25px;
+  }
+  li {
+    list-style-type: none;
+    display: inline;
+    background: linear-gradient(to top, rgba($eco-lite-green, 0.5), white 80%);
+    padding: 5px 15px;
+    margin: 0px 5px;
+  }
+  li.active {
+    background: linear-gradient(to top, $eco-lite-green, white);
+    border-bottom: 4px solid $eco-brown;
+  }
+  img {
+    height: 50px;
+  }
+}
+
+.table {
+  display: table;   /* Allow the centering to work */
+	margin: 0 auto;
+}

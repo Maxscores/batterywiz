@@ -10,5 +10,11 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require rails-ujs
+//= require jquery
 //= require_tree .
+
+$(document).ready(function() {
+  $('.section').on('click', function() {
+    $(this).find('.section-text').slideToggle();
+  });
+});

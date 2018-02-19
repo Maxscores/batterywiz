@@ -1,0 +1,40 @@
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 0px 0 10px;
+  height: 25px;
+  box-shadow: 0 3px 2px -2px $eco-green;
+  margin-bottom: 10px;
+  padding-bottom: 3px;
+  .title {
+    overflow: hidden;
+    display: inline-block;
+    a, a:visited {
+      text-decoration: none;
+      color: black;
+    }
+    .h1 {
+      font-family: $header-font-family2;
+      font-size: 2rem;
+      font-weight: 800;
+    }
+    img {
+      height: 30px;
+    }
+  }
+  .links {
+    font-family: $header-font-family2;
+
+    a, a:visited {
+      padding: 0 20px 0 20px;
+      font-size: 0.8rem;
+      text-decoration: none;
+      color: black;
+    }
+    a:hover, a:focus {
+      color: $eco-green;
+    }
+  }
+}

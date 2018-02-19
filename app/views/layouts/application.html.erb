@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SolarCalc</title>
+    <title>Solbat</title>
     <%= csrf_meta_tags %>
-
+    <%= favicon_link_tag "64_solar-panel.png" %>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat|Open+Sans|Open+Sans+Condensed:300" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="window block mx-auto">
+    <%= render "layouts/header" %>
+      <div class="clearfix">
+        <div class="row main-content">
+          <%= yield %>
+        </div>
+      </div>
+    <%= render "layouts/footer" %>
+    </div>
+    <%= javascript_include_tag 'application' %>
+
   </body>
 </html>

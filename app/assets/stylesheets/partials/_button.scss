@@ -1,0 +1,16 @@
+.brown-btn {
+  background-color: rgba(darken($eco-tan, 15%), 0.6);
+  font-family: $header-font-family2;
+  font-weight: 800;
+  font-size: 1rem;
+  color: black;
+  padding: 2px 4px;
+  border-radius: 7px;
+  width: 100px;
+}
+
+.brown-btn:hover, .green-btn:focus {
+  border: 0.1px solid black;
+  box-shadow: 2px 2px 5px 2px darken($eco-brown, 25%);
+  cursor: pointer;
+}

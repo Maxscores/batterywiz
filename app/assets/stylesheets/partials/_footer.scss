@@ -1,0 +1,21 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  font-family: $header-font-family2;
+  margin-top: 20px;
+  box-shadow: 0 -3px 2px -2px $eco-green;
+  .h4 {
+    font-size: 1rem;
+    font-weight: 800;
+  }
+  .h6 {
+    font-size: 0.6rem;
+  }
+  img {
+    height: 40px;
+    margin: 10px;
+  }
+  .social {
+    text-align: center;
+  }
+}

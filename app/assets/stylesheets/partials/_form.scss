@@ -1,0 +1,21 @@
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  border-radius: 10px;
+  label {
+    font-size: 0.6rem;
+  }
+  input {
+    margin-bottom: 10px;
+    width: 60px;
+  }
+  select {
+    margin-bottom: 10px;
+  }
+}
+.blue-gradient {
+  background: linear-gradient(90deg, rgba($eco-blue, 0.5) -100%, white);
+  padding: 5px 10px;
+  border-radius: 10px;
+}
