@@ -3,7 +3,6 @@
     <li class="active">Location <%= image_tag "256_location.png" %></li>
     <li>Consumption <%= image_tag "256_ecology-lightbulb.png" %></li>
     <li>Solar System <%= image_tag "256_solar-panel.png" %></li>
-    <li>Utility Rates <%= image_tag "256_money-cloud.png" %></li>
     <li>System Summary <%= image_tag "256_piggy-bank.png" %></li>
   </ul>
 </div>
@@ -13,10 +12,12 @@
     <p></p>
   </div>
   <div class="col col-2 blue-gradient">
-    <p class="h5 sans-serif">We need to collect the weather data for your location:</p>
     <%= form_tag "location_path", class: "mx-auto sans-serif" do %>
       <%= label_tag "zipcode" %>
       <%= text_field_tag "zipcode" %>
+
+      <%= label_tag "Battery for" %>
+      <%= select_tag "type", "<option>New Installation</option><option>Existing Installation</option>".html_safe %>
 
       <%= submit_tag "Begin", class: "brown-btn" %>
     <% end %>

@@ -6,9 +6,12 @@ form {
   label {
     font-size: 0.6rem;
   }
-  input, select {
+  input {
     margin-bottom: 10px;
     width: 60px;
+  }
+  select {
+    margin-bottom: 10px;
   }
 }
 .blue-gradient {
