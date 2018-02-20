@@ -1,6 +1,10 @@
 .top-nav {
   text-decoration: none;
   font-size: 0.8rem;
+  a, a:visited {
+    text-decoration: none;
+    color: black;
+  }
   ul {
     min-width: 696px;
     list-style: none;
