@@ -4,7 +4,11 @@ class SolarController < ApplicationController
     @utility_rates = OpenEiService.new().get_utility_rates(params)
   end
 
-  def form
-    render "solar/form"
+  def consumption
+    render "solar/consumption"
+  end
+
+  def system
+    render "solar/system"
   end
 end
