@@ -11,12 +11,16 @@ namespace :add_resources do
     Appliance.create(name: "Popcorn Maker", avg_monthly_kwh: 4, category: kitchen)
     Appliance.create(name: "Toaster Oven", avg_monthly_kwh: 9, category: kitchen)
 
+    puts "Built Kitchen Appliances"
+
     well_pump = Category.create(title: "well pumps")
     Appliance.create(name: "Well Pump 1/2 HP", avg_monthly_kwh: 90, category: well_pump)
     Appliance.create(name: "Well Pump 3/4 HP", avg_monthly_kwh: 135, category: well_pump)
     Appliance.create(name: "Well Pump 1 HP", avg_monthly_kwh: 180, category: well_pump)
     Appliance.create(name: "Well Pump 1.5 HP", avg_monthly_kwh: 270, category: well_pump)
     Appliance.create(name: "Well Pump 5 HP", avg_monthly_kwh: 900, category: well_pump)
+
+    puts "Built Well Pumps"
 
     entertainment = Category.create(title: "entertainment")
     Appliance.create(name: "TV 35 inch", avg_monthly_kwh: 10, category: entertainment)
@@ -37,10 +41,14 @@ namespace :add_resources do
     Appliance.create(name: "Satellite Dish", avg_monthly_kwh: 2, category: entertainment)
     Appliance.create(name: "Video Game System", avg_monthly_kwh: 15, category: entertainment)
 
+    puts "Built Entertainment Appliances"
+
     cleaning = Category.create(title: "Cleaning")
     Appliance.create(name: "Washing Machine", avg_monthly_kwh: 6, category: cleaning)
     Appliance.create(name: "Clothes Dryer", avg_monthly_kwh: 57, category: cleaning)
     Appliance.create(name: "Vacuum Cleaner", avg_monthly_kwh: 3, category: cleaning)
+
+    puts "Built Cleaning Appliances"
 
     hvac = Category.create(title: "HVAC")
     Appliance.create(name: "Air Purifier", avg_monthly_kwh: 49, category: hvac)
@@ -63,6 +71,8 @@ namespace :add_resources do
     Appliance.create(name: "Heat Pump (1100-2000 Sq Ft)", avg_monthly_kwh: 1460, category: hvac)
     Appliance.create(name: "Heat Pump (2000-3000 Sq Ft)", avg_monthly_kwh: 1824, category: hvac)
 
+    puts "Built HVAC Appliances"
+
     misc = Category.create(title: "miscellaneous")
     Appliance.create(name: "Lighting (per Room)", avg_monthly_kwh: 10, category: misc)
     Appliance.create(name: "Nightlight", avg_monthly_kwh: 1, category: misc)
@@ -70,8 +80,12 @@ namespace :add_resources do
     Appliance.create(name: "Hot Tub", avg_monthly_kwh: 600, category: misc)
     Appliance.create(name: "Water Bed Heater", avg_monthly_kwh: 175, category: misc)
 
+    puts "Built Misc Appliances"
+
     vehicles = Category.create(title: "vehicles")
     Appliance.create(name: "Electric Car (per 100 miles)", avg_monthly_kwh: 30, category: vehicles)
     Appliance.create(name: "Electric Bicycle (per 50 miles)", avg_monthly_kwh: 1, category: vehicles)
+
+    puts "Built Vehicles"
   end
 end
