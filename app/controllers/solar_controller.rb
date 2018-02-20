@@ -5,6 +5,7 @@ class SolarController < ApplicationController
   end
 
   def consumption
+    @categories = Category.all
     render "solar/consumption"
   end
 
