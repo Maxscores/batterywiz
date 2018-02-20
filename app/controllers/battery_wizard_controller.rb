@@ -5,16 +5,16 @@ class BatteryWizardController < ApplicationController
   end
 
   def new
-    render "solar/installation"
+    render "battery_wizard/installation"
   end
 
   def consumption
     @categories = Category.all
-    render "solar/consumption"
+    render "battery_wizard/consumption"
   end
 
   def system
-    render "solar/system"
+    render "battery_wizard/system"
   end
 
 end
