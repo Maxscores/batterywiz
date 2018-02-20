@@ -50,28 +50,36 @@ namespace :add_resources do
 
     puts "Built Cleaning Appliances"
 
-    hvac = Category.create(title: "HVAC")
-    Appliance.create(name: "Air Purifier", avg_monthly_kwh: 49, category: hvac)
-    Appliance.create(name: "Dehumidifier", avg_monthly_kwh: 21, category: hvac)
-    Appliance.create(name: "Humidifier", avg_monthly_kwh: 5, category: hvac)
-    Appliance.create(name: "Portable Fan", avg_monthly_kwh: 6, category: hvac)
-    Appliance.create(name: "Window Air Conditioner", avg_monthly_kwh: 134, category: hvac)
-    Appliance.create(name: "Ceiling Fan", avg_monthly_kwh: 85, category: hvac)
-    Appliance.create(name: "Electric Blanket", avg_monthly_kwh: 2, category: hvac)
-    Appliance.create(name: "Water Heater", avg_monthly_kwh: 405, category: hvac)
-    Appliance.create(name: "Furnace Fan", avg_monthly_kwh: 90, category: hvac)
-    Appliance.create(name: "Furn 15kW (~1100 Sq Ft)", avg_monthly_kwh: 1824, category: hvac)
-    Appliance.create(name: "Furn 20kW (~2000 Sq Ft)", avg_monthly_kwh: 2434, category: hvac)
-    Appliance.create(name: "Furn 25kW (~3000 Sq Ft)", avg_monthly_kwh: 3040, category: hvac)
-    Appliance.create(name: "Baseboard Heater (per linear feet)", avg_monthly_kwh: 45.6, category: hvac)
-    Appliance.create(name: "Wall Heaters (2000 W)", avg_monthly_kwh: 365, category: hvac)
-    Appliance.create(name: "Space Heater (1500 W)", avg_monthly_kwh: 274, category: hvac)
-    Appliance.create(name: "Heat Pump Fan", avg_monthly_kwh: 90, category: hvac)
-    Appliance.create(name: "Heat Pump (800-1100 Sq Ft)", avg_monthly_kwh: 1094, category: hvac)
-    Appliance.create(name: "Heat Pump (1100-2000 Sq Ft)", avg_monthly_kwh: 1460, category: hvac)
-    Appliance.create(name: "Heat Pump (2000-3000 Sq Ft)", avg_monthly_kwh: 1824, category: hvac)
+    heating = Category.create(title: "Heating")
+    Appliance.create(name: "Electric Blanket", avg_monthly_kwh: 2, category: heating)
+    Appliance.create(name: "Water Heater", avg_monthly_kwh: 405, category: heating)
+    Appliance.create(name: "Furnace Fan", avg_monthly_kwh: 90, category: heating)
+    Appliance.create(name: "Furn 15kW (~1100 Sq Ft)", avg_monthly_kwh: 1824, category: heating)
+    Appliance.create(name: "Furn 20kW (~2000 Sq Ft)", avg_monthly_kwh: 2434, category: heating)
+    Appliance.create(name: "Furn 25kW (~3000 Sq Ft)", avg_monthly_kwh: 3040, category: heating)
+    Appliance.create(name: "Baseboard Heater (per linear feet)", avg_monthly_kwh: 45.6, category: heating)
+    Appliance.create(name: "Wall Heaters (2000 W)", avg_monthly_kwh: 365, category: heating)
+    Appliance.create(name: "Space Heater (1500 W)", avg_monthly_kwh: 274, category: heating)
+    Appliance.create(name: "Heat Pump Fan", avg_monthly_kwh: 90, category: heating)
+    Appliance.create(name: "Heat Pump (800-1100 Sq Ft)", avg_monthly_kwh: 1094, category: heating)
+    Appliance.create(name: "Heat Pump (1100-2000 Sq Ft)", avg_monthly_kwh: 1460, category: heating)
+    Appliance.create(name: "Heat Pump (2000-3000 Sq Ft)", avg_monthly_kwh: 1824, category: heating)
 
-    puts "Built HVAC Appliances"
+    puts "Built Heating Appliances"
+
+    cooling = Category.create(title: "Cooling")
+    Appliance.create(name: "Portable Fan", avg_monthly_kwh: 6, category: cooling)
+    Appliance.create(name: "Window Air Conditioner", avg_monthly_kwh: 134, category: cooling)
+    Appliance.create(name: "Ceiling Fan", avg_monthly_kwh: 85, category: cooling)
+
+    puts "Built Cooling Appliances"
+
+    ventilation = Category.create(title: "Ventilation")
+    Appliance.create(name: "Air Purifier", avg_monthly_kwh: 49, category: ventilation)
+    Appliance.create(name: "Dehumidifier", avg_monthly_kwh: 21, category: ventilation)
+    Appliance.create(name: "Humidifier", avg_monthly_kwh: 5, category: ventilation)
+
+    puts "Build Ventilation Appliances"
 
     misc = Category.create(title: "miscellaneous")
     Appliance.create(name: "Lighting (per Room)", avg_monthly_kwh: 10, category: misc)
