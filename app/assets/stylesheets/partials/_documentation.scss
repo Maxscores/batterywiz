@@ -2,6 +2,7 @@
   .section-text {
     margin-top: 0;
     font-family: $header-font-family2;
+    display: none;
   }
   .button {
     background: linear-gradient(-71deg, white 5%, rgba($eco-blue, 0.3), rgba($eco-blue, 0.5));
@@ -12,9 +13,17 @@
     font-family: $body-font-family2;
     text-align: left;
     border: none;
-  }
-  .disabled {
-    display: none;
+    align-items: flex-start;
+    cursor: default;
+    box-sizing: border-box;
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    margin: 10px 0;
   }
   .button:hover {
     cursor: pointer;
