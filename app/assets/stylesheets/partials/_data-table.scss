@@ -1,0 +1,28 @@
+.data-table {
+  margin-bottom: 10px;
+  font-size: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  th {
+    font-family: $body-font-family2;
+    border-bottom: 1px solid $eco-brown;
+    padding: 0 5px 0 5px;
+  }
+  tr {
+  }
+
+  td {
+    padding: 5px;
+    border-bottom: 1px solid $eco-brown;
+    input {
+      width: 40px;
+    }
+  }
+}
+
+.method {
+  .method-section {
+    display: none;
+  }
+}

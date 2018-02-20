@@ -14,7 +14,15 @@
 //= require_tree .
 
 $(document).ready(function() {
-  $('.section').on('click', function() {
-    $(this).find('.section-text').slideToggle();
+  $('.section').on('click', '.button', function() {
+    $(this).parent().find('.section-text').slideToggle();
+  });
+  $('.section').on('keydown', '.button', function(event) {
+    if (event.keyCode === 13) {
+      $(this).parent().find('.section-text').slideToggle();
+    };
+  });
+  $('.method').on('click', 'button', function() {
+    $(this).parent().find('.method-section').slideToggle();
   });
 });
