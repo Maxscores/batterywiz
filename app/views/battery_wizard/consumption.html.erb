@@ -1,9 +1,9 @@
 <div class="top-nav table">
   <ul>
-    <li>Location <%= image_tag "256_location.png" %></li>
-    <li class="active">Consumption <%= image_tag "256_ecology-lightbulb.png" %></li>
-    <li>Solar System <%= image_tag "256_solar-panel.png" %></li>
-    <li>System Summary <%= image_tag "256_piggy-bank.png" %></li>
+    <li><a href="/installation/new">Location <%= image_tag "256_location.png" %></a> </li>
+    <li class="active"><a href="/consumption">Consumption <%= image_tag "256_ecology-lightbulb.png" %></a></li>
+    <li><a href="/system">Solar System <%= image_tag "256_solar-panel.png" %></a></li>
+    <li><a href="/summary">System Summary <%= image_tag "256_piggy-bank.png" %></a></li>
   </ul>
 </div>
 
@@ -15,7 +15,7 @@
     <div class="method">
       <button class="button h4">Add Consumption by Utility Bill<span class="h6"> (easiest) </span><i class="arrow down relative right"></i></button>
       <div class="method-section">
-        <%= render "solar/consumption_by_utility" %>
+        <%= render "battery_wizard/consumption_by_utility" %>
       </div>
     </div>
 
@@ -24,7 +24,7 @@
     <div class="method">
       <button class="button h4">Add Consumption by Appliance <i class="arrow down relative right"></i></button>
       <div class="method-section">
-        <%= render "solar/consumption_by_appliance" %>
+        <%= render "battery_wizard/consumption_by_appliance" %>
       </div>
     </div>
 
