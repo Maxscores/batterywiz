@@ -12,4 +12,5 @@ class SolarController < ApplicationController
   def system
     render "solar/system"
   end
+
 end
