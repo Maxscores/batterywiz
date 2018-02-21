@@ -16,17 +16,6 @@ describe "As a user that clicks on battery calculator from the home page" do
       expect(page).to have_content("by Appliance")
     end
 
-    it "they can click on dropdown sections for step 1 and see content" do
-      visit new_battery_path
-
-      all(".section").each do |section|
-        section.click
-        page.evaluate_script('jQuery.active').zero?
-        expect(page).to have_css(".section-text")
-        section.find("span").click
-      end
-    end
-
     it "they can fill in step one and months of step 2" do
       visit '/'
 
@@ -58,9 +47,61 @@ describe "As a user that clicks on battery calculator from the home page" do
       expect(find_field('system[capacity]').value).to eq '7.67'
     end
 
+    it "they can fill in complete form and are redirected to summary page" do
+      visit '/'
+
+      click_on "Battery Calculator"
+
+      expect(current_path).to eq("/battery/new")
+
+      fill_in "installation[zipcode]", with: 80525
+      find("#next-step").click
+
+      all(".method")[0].click
+
+      fill_in "month[1]", with: 100
+      fill_in "month[2]", with: 100
+      fill_in "month[3]", with: 100
+      fill_in "month[4]", with: 100
+      fill_in "month[5]", with: 100
+      fill_in "month[6]", with: 100
+      fill_in "month[7]", with: 100
+      fill_in "month[8]", with: 100
+      fill_in "month[9]", with: 100
+      fill_in "month[10]", with: 100
+      fill_in "month[11]", with: 1000
+      fill_in "month[12]", with: 100
+
+      find("#next-step").click
+      page.evaluate_script('jQuery.active').zero?
+
+      expect(find_field('system[capacity]').value).to eq '7.67'
+      select "0", from: "system[module_type]"
+      expect(find_field('system[losses]').value).to eq(14)
+      select "0", from: "system[array_type]"
+      expect(find_field('system[tilt]').value).to eq(30)
+      expect(find_field('system[azimuth]').value).to eq(180)
+
+      click_on "Calculate"
+
+      installation = Installation.last
+      expect(current_path).to eq("installations/#{installation.id}")
+    end
+
+    it "they can click on dropdown sections for step 1 and see content" do
+      visit new_battery_path
+
+      all(".section").each do |section|
+        section.click
+        page.evaluate_script('jQuery.active').zero?
+        expect(page).to have_css(".section-text")
+        section.find("span").click
+      end
+    end
+
     it "click on both options of consumption to see their details" do
       create_list(:category, 5)
-      
+
       visit "/battery/new"
       find("#nav-consumption").click
 
