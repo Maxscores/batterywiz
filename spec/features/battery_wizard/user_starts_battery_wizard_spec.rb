@@ -7,7 +7,7 @@ describe "As a user that clicks on battery calculator from the home page" do
 
       expect(current_path).to eq("/battery/new")
 
-      fill_in "zipcode", with: 80525
+      fill_in "installation[zipcode]", with: 80525
       find("#next-step").click
 
       expect(current_path).to eq("/battery/new")
@@ -19,20 +19,77 @@ describe "As a user that clicks on battery calculator from the home page" do
     it "they can click on dropdown sections for step 1 and see content" do
       visit new_battery_path
 
-      expect(page).to_not have_content("Duck Curve")
-      all(".section")[0].click
-      expect(page).to have_content("Duck Curve")
-      all(".section")[0].find("span").click
+      all(".section").each do |section|
+        section.click
+        page.evaluate_script('jQuery.active').zero?
+        expect(page).to have_css(".section-text")
+        section.find("span").click
+      end
+    end
 
-      expect(page).to_not have_content("Science has not yet")
-      all(".section")[1].click
-      expect(page).to have_content("Science has not yet")
-      all(".section")[1].find("span").click
+    it "they can fill in step one and months of step 2" do
+      create_list(:category, 5)
+      visit '/'
 
-      expect(page).to_not have_content("Science has not yet")
-      all(".section")[2].click
-      expect(page).to have_content("Science has not yet")
-      all(".section")[2].find("span").click
+      click_on "Battery Calculator"
+
+      expect(current_path).to eq("/battery/new")
+
+      fill_in "installation[zipcode]", with: 80525
+      find("#next-step").click
+
+      all(".method")[0].click
+
+      fill_in "month[1]", with: 100
+      fill_in "month[2]", with: 100
+      fill_in "month[3]", with: 100
+      fill_in "month[4]", with: 100
+      fill_in "month[5]", with: 100
+      fill_in "month[6]", with: 100
+      fill_in "month[7]", with: 100
+      fill_in "month[8]", with: 100
+      fill_in "month[9]", with: 100
+      fill_in "month[10]", with: 100
+      fill_in "month[11]", with: 1000
+      fill_in "month[12]", with: 100
+
+      find("#next-step").click
+      page.evaluate_script('jQuery.active').zero?
+
+      expect(find_field('system[capacity]').value).to eq '7.67'
+    end
+
+    it "click on both options of consumption to see their details" do
+      visit "/battery/new"
+      find("#nav-consumption").click
+
+      all(".method")[0].click
+      expect(page).to have_content("Month")
+      expect(page).to have_content("Electricity Used")
+      expect(page).to have_content("Next Step")
+      all(".method")[0].all("span")[0].click
+
+      all(".method")[1].click
+      expect(page).to have_content("Next Step")
+
+      all(".section").each do |section|
+        section.click
+        page.evaluate_script('jQuery.active').zero?
+        expect(page).to have_css(".section-text")
+        section.find("span").click
+      end
+      all(".method")[1].all("span")[0].click
+    end
+
+    it "click on solar system dropdowns" do
+      visit "/battery/new"
+      find("#nav-system").click
+      all(".section").each do |section|
+        section.click
+        page.evaluate_script('jQuery.active').zero?
+        expect(page).to have_css(".section-text")
+        section.find("span").click
+      end
     end
   end
 end
