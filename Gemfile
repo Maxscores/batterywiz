@@ -33,6 +33,8 @@ group :development, :test do
   gem 'coveralls', require: false
   gem 'travis'
   gem 'database_cleaner'
+  gem 'selenium-webdriver'
+  gem 'chromedriver-helper'
 end
 
 group :test do
