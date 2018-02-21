@@ -1,53 +1,38 @@
 describe "As a user that clicks on battery calculator from the home page" do
-  describe "I am brought to the installation new page" do
-    it "I enter my zipcode and press submit" do
-      create_list(:category, 2)
-
+  describe "they are brought to the battery wizard", js: true do
+    it "and can fill in zipcode and click next step" do
       visit '/'
 
-      click_on 'Battery Calculator'
+      click_on "Battery Calculator"
 
-      expect(page).to have_content "Zipcode"
+      expect(current_path).to eq("/battery/new")
 
-      fill_in "installation[zipcode]", with: "99999"
-      click_on "Begin"
+      fill_in "zipcode", with: 80525
+      find("#next-step").click
 
-      expect(current_path).to eq("/battery_wizard/consumption/new")
-      expect(Installation.last.zipcode).to eq("99999")
+      expect(current_path).to eq("/battery/new")
+      expect(page).to_not have_content("Zipcode")
+      expect(page).to have_content("by Utility Bill")
+      expect(page).to have_content("by Appliance")
     end
-  end
 
-  context "I have filled in my installation location" do
-    describe "and am on the consumption profile page" do
-      it "I enter my consumption by month information", js: true do
-        create_list(:category, 2)
+    it "they can click on dropdown sections for step 1 and see content" do
+      visit new_battery_path
 
-        visit '/'
+      expect(page).to_not have_content("Duck Curve")
+      all(".section")[0].click
+      expect(page).to have_content("Duck Curve")
+      all(".section")[0].find("span").click
 
-        click_on 'Battery Calculator'
+      expect(page).to_not have_content("Science has not yet")
+      all(".section")[1].click
+      expect(page).to have_content("Science has not yet")
+      all(".section")[1].find("span").click
 
-        fill_in "installation[zipcode]", with: "80525"
-        click_on "Begin"
-
-        click_on "Utility Bill"
-        fill_in "consumption[january]", with: 100
-        fill_in "consumption[february]", with: 100
-        fill_in "consumption[march]", with: 100
-        fill_in "consumption[april]", with: 100
-        fill_in "consumption[may]", with: 100
-        fill_in "consumption[june]", with: 100
-        fill_in "consumption[july]", with: 100
-        fill_in "consumption[august]", with: 100
-        fill_in "consumption[september]", with: 100
-        fill_in "consumption[october]", with: 100
-        fill_in "consumption[november]", with: 100
-        fill_in "consumption[december]", with: 100
-
-        click_on "Next"
-
-        expect(current_path).to eq("/battery_wizard/system/new")
-        expect(Consumption.last.jan).to eq(100)
-      end
+      expect(page).to_not have_content("Science has not yet")
+      all(".section")[2].click
+      expect(page).to have_content("Science has not yet")
+      all(".section")[2].find("span").click
     end
   end
 end
