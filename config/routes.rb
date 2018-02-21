@@ -6,4 +6,5 @@ Rails.application.routes.draw do
     resources :consumption, only: [:new]
     resources :system, only: [:new]
   end
+  resources :battery, only: [:new]
 end
