@@ -28,18 +28,18 @@ describe "As a user that clicks on battery calculator from the home page" do
 
       all(".method")[0].click
 
-      fill_in "month[1]", with: 100
-      fill_in "month[2]", with: 100
-      fill_in "month[3]", with: 100
-      fill_in "month[4]", with: 100
-      fill_in "month[5]", with: 100
-      fill_in "month[6]", with: 100
-      fill_in "month[7]", with: 100
-      fill_in "month[8]", with: 100
-      fill_in "month[9]", with: 100
-      fill_in "month[10]", with: 100
-      fill_in "month[11]", with: 1000
-      fill_in "month[12]", with: 100
+      fill_in "consumption[jan]", with: 100
+      fill_in "consumption[feb]", with: 100
+      fill_in "consumption[mar]", with: 100
+      fill_in "consumption[apr]", with: 100
+      fill_in "consumption[may]", with: 100
+      fill_in "consumption[jun]", with: 100
+      fill_in "consumption[jul]", with: 100
+      fill_in "consumption[aug]", with: 100
+      fill_in "consumption[sep]", with: 100
+      fill_in "consumption[oct]", with: 100
+      fill_in "consumption[nov]", with: 1000
+      fill_in "consumption[dec]", with: 100
 
       find("#next-step").click
       page.evaluate_script('jQuery.active').zero?
@@ -59,18 +59,18 @@ describe "As a user that clicks on battery calculator from the home page" do
 
       all(".method")[0].click
 
-      fill_in "month[1]", with: 100
-      fill_in "month[2]", with: 100
-      fill_in "month[3]", with: 100
-      fill_in "month[4]", with: 100
-      fill_in "month[5]", with: 100
-      fill_in "month[6]", with: 100
-      fill_in "month[7]", with: 100
-      fill_in "month[8]", with: 100
-      fill_in "month[9]", with: 100
-      fill_in "month[10]", with: 100
-      fill_in "month[11]", with: 1000
-      fill_in "month[12]", with: 100
+      fill_in "consumption[jan]", with: 100
+      fill_in "consumption[feb]", with: 100
+      fill_in "consumption[mar]", with: 100
+      fill_in "consumption[apr]", with: 100
+      fill_in "consumption[may]", with: 100
+      fill_in "consumption[jun]", with: 100
+      fill_in "consumption[jul]", with: 100
+      fill_in "consumption[aug]", with: 100
+      fill_in "consumption[sep]", with: 100
+      fill_in "consumption[oct]", with: 100
+      fill_in "consumption[nov]", with: 1000
+      fill_in "consumption[dec]", with: 100
 
       find("#next-step").click
       page.evaluate_script('jQuery.active').zero?
@@ -83,9 +83,9 @@ describe "As a user that clicks on battery calculator from the home page" do
       expect(find_field('system[azimuth]').value).to eq("180")
 
       click_on "Calculate"
+      page.evaluate_script('jQuery.active').zero?
 
-      installation = Installation.last
-      expect(current_path).to eq("installations/#{installation.id}")
+      installation = Installation.all.last
     end
 
     it "they can click on dropdown sections for step 1 and see content" do
