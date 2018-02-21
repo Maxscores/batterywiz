@@ -14,6 +14,26 @@
 //= require_tree .
 
 $(document).ready(function() {
+  $('.part-1').on('click', '.to-step-2', function() {
+    $('.part-1').slideToggle();
+    $('.part-2').slideToggle();
+  });
+  $('.part-1').on('keydown', '.to-step-2', function() {
+    if (event.keyCode === 13) {
+      $('.part-1').slideToggle();
+      $('.part-2').slideToggle();
+    };
+  });
+  $('.part-2').on('click', '.to-step-3', function() {
+    $('.part-2').slideToggle();
+    $('.part-3').slideToggle();
+  });
+  $('.part-2').on('keydown', '.to-step-3', function() {
+    if (event.keyCode === 13) {
+      $('.part-2').slideToggle();
+      $('.part-3').slideToggle();
+    };
+  });
   $('.section').on('click', '.button', function() {
     $(this).parent().find('.section-text').slideToggle();
   });
@@ -22,7 +42,12 @@ $(document).ready(function() {
       $(this).parent().find('.section-text').slideToggle();
     };
   });
-  $('.method').on('click', 'button', function() {
+  $('.method').on('click', '.button', function() {
     $(this).parent().find('.method-section').slideToggle();
+  });
+  $('.method').on('keydown', '.button', function() {
+    if (event.keyCode === 13) {
+      $(this).parent().find('.method-section').slideToggle();
+    };
   });
 });
