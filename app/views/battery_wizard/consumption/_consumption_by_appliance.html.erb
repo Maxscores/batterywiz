@@ -1,5 +1,3 @@
-<%= form_tag do %>
-
 <% @categories.each do |category| %>
 <div class="section">
   <span class="button h4" tabindex="0"><%= category.title.capitalize %> <i class="arrow down relative right"></i></span>
@@ -11,7 +9,7 @@
     <% category.appliances.each do |appliance| %>
     <tr>
       <td><%= appliance.name %></td>
-      <td><%= number_field_tag "Appliance-#{appliance.id}", 0, min: 0%></td>
+      <td><%= number_field_tag "Appliance[#{appliance.id}]", 0, min: 0%></td>
       <td><%= appliance.avg_monthly_kwh %></td>
       <td>0 kWh</td>
     </tr>
@@ -19,5 +17,4 @@
   </table>
 </div>
 <% end %>
-<%= submit_tag "Next", class: "brown-btn" %>
-<% end %>
+<span class="h4 brown-btn to-step-3" tabindex="0">Step 3</span>
