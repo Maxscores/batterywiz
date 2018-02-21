@@ -4,4 +4,8 @@ class BatteryController < ApplicationController
     @categories = Category.all
   end
 
+  def create
+    require "pry"; binding.pry
+  end
+
 end
