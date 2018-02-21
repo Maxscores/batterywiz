@@ -13,26 +13,58 @@
 //= require jquery
 //= require_tree .
 
+function showPart1() {
+  $('.part-1').show();
+  $('.part-2').hide();
+  $('.part-3').hide();
+  $('#nav-location').addClass('active')
+  $('#nav-consumption').removeClass('active')
+  $('#nav-system').removeClass('active')
+}
+
+function showPart2() {
+  $('.part-1').hide();
+  $('.part-2').show();
+  $('.part-3').hide();
+  $('#nav-location').removeClass('active')
+  $('#nav-consumption').addClass('active')
+  $('#nav-system').removeClass('active')
+}
+
+function showPart3() {
+  $('.part-1').hide();
+  $('.part-2').hide();
+  $('.part-3').show();
+  $('#nav-location').removeClass('active')
+  $('#nav-consumption').removeClass('active')
+  $('#nav-system').addClass('active')
+}
+
 $(document).ready(function() {
   $('.part-1').on('click', '.to-step-2', function() {
-    $('.part-1').slideToggle();
-    $('.part-2').slideToggle();
+    showPart2()
   });
   $('.part-1').on('keydown', '.to-step-2', function() {
     if (event.keyCode === 13) {
-      $('.part-1').slideToggle();
-      $('.part-2').slideToggle();
+      showPart2()
     };
   });
   $('.part-2').on('click', '.to-step-3', function() {
-    $('.part-2').slideToggle();
-    $('.part-3').slideToggle();
+    showPart3()
   });
   $('.part-2').on('keydown', '.to-step-3', function() {
     if (event.keyCode === 13) {
-      $('.part-2').slideToggle();
-      $('.part-3').slideToggle();
+      showPart3()
     };
+  });
+  $('#nav-location').on('click', function(){
+    showPart1()
+  });
+  $('#nav-consumption').on('click', function(){
+    showPart2()
+  });
+  $('#nav-system').on('click', function(){
+    showPart3()
   });
   $('.section').on('click', '.button', function() {
     $(this).parent().find('.section-text').slideToggle();
