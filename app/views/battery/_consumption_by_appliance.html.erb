@@ -9,7 +9,7 @@
     <% category.appliances.each do |appliance| %>
     <tr>
       <td><%= appliance.name %></td>
-      <td><%= number_field_tag "Appliance[#{appliance.id}]", 0, min: 0%></td>
+      <td><%= number_field_tag "appliance[#{appliance.id}]", 0, min: 0%></td>
       <td><%= appliance.avg_monthly_kwh %></td>
       <td>0 kWh</td>
     </tr>
