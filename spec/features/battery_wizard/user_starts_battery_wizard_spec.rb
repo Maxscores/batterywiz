@@ -77,10 +77,10 @@ describe "As a user that clicks on battery calculator from the home page" do
 
       expect(find_field('system[capacity]').value).to eq '7.67'
       select "0", from: "system[module_type]"
-      expect(find_field('system[losses]').value).to eq(14)
+      expect(find_field('system[losses]').value).to eq("14")
       select "0", from: "system[array_type]"
-      expect(find_field('system[tilt]').value).to eq(30)
-      expect(find_field('system[azimuth]').value).to eq(180)
+      expect(find_field('system[tilt]').value).to eq("30")
+      expect(find_field('system[azimuth]').value).to eq("180")
 
       click_on "Calculate"
 

@@ -5,6 +5,11 @@ class BatteryController < ApplicationController
   end
 
   def create
+    require "pry"; binding.pry
   end
 
+  private
+    def method_name
+
+    end
 end

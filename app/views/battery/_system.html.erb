@@ -6,6 +6,7 @@
   </div>
   <%#= form_tag battery_index_path, class: "col col-2 sans-serif" do %>
   <div class="form col col-2 sans-serif">
+
     <%= label_tag "capacity (kW)" %>
     <%= number_field_tag "system[capacity]", "5", id: "system-capacity", step: 0.1  %>
 
@@ -23,7 +24,7 @@
 
     <%= label_tag "azimuth" %>
     <%= number_field_tag "system[azimuth]", "180", in: 0..360 %>
-
+<%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
     <%= submit_tag "Calculate", class: "brown-btn" %>
   </div>
 
