@@ -40,6 +40,19 @@ function showPart3() {
   $('#nav-system').addClass('active')
 }
 
+function calculateArraySize() {
+  var monthlyConsumption = [];
+  $(".data-table").find("input").each(function() {
+    monthlyConsumption.push($(this).val());
+  });
+  monthlyConsumption.sort(function(a,b) {
+    return a - b;
+  });
+  monthlyConsumption.reverse();
+  var arraySize = monthlyConsumption[0] * 0.007670;
+  return arraySize;
+};
+
 $(document).ready(function() {
   $('.part-1').on('click', '.to-step-2', function() {
     showPart2()
@@ -50,6 +63,7 @@ $(document).ready(function() {
     };
   });
   $('.part-2').on('click', '.to-step-3', function() {
+    $("#system-capacity").val(calculateArraySize())
     showPart3()
   });
   $('.part-2').on('keydown', '.to-step-3', function() {
@@ -66,6 +80,7 @@ $(document).ready(function() {
   $('#nav-system').on('click', function(){
     showPart3()
   });
+
   $('.section').on('click', '.button', function() {
     $(this).parent().find('.section-text').slideToggle();
   });
@@ -74,6 +89,7 @@ $(document).ready(function() {
       $(this).parent().find('.section-text').slideToggle();
     };
   });
+
   $('.method').on('click', '.button', function() {
     $(this).parent().find('.method-section').slideToggle();
   });
