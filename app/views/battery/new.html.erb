@@ -1,160 +1,22 @@
 <div class="top-nav table">
   <ul>
-    <li class="active">Location <%= image_tag "256_location.png" %></li>
-    <li>Consumption <%= image_tag "256_ecology-lightbulb.png" %></li>
-    <li>Solar System <%= image_tag "256_solar-panel.png" %></li>
-    <li>System Summary <%= image_tag "256_piggy-bank.png" %></li>
+    <li class="active" id="nav-location">Location <%= image_tag "256_location.png" %></li>
+    <li id="nav-consumption">Consumption <%= image_tag "256_ecology-lightbulb.png" %></li>
+    <li id="nav-system">Solar System <%= image_tag "256_solar-panel.png" %></li>
+    <li id="nav-summary">System Summary <%= image_tag "256_piggy-bank.png" %></li>
   </ul>
 </div>
 <div class="battery-wizard">
   <div class="part-1">
-    <div class="row">
-      <div class="col col-2">
-        <p></p>
-      </div>
-      <div class="col col-2 blue-gradient">
-        <%= form_tag battery_index_path, class: "mx-auto sans-serif" %>
-        <%= label_tag "zipcode" %>
-        <%= text_field_tag "zipcode", "", maxlength: 5 %>
-        <span class="button h4 brown-btn to-step-2" tabindex="0">Step 2</span>
-      </div>
-      <div class="col col-6 mx2 documentation">
-        <div class="section">
-          <span class="button h4">Why We Do It <i class="arrow down relative right"></i></span>
-          <div class="section-text">
-            <p class="h3">Duck Curve</p>
-            <p class="h6">Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next 10.</p>
-          </div>
-        </div>
-
-        <div class="section">
-          <span class="button h4">What We Calculate <i class="arrow down relative right"></i></span>
-          <p class="section-text h6">Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next 10.</p>
-        </div>
-
-        <div class="section">
-          <span class="button h4">Data Sources <i class="arrow down relative right"></i></span>
-          <p class="section-text h6">Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next 10.</p>
-        </div>
-      </div>
-      <div class="col col-2">
-        <p></p>
-      </div>
-    </div>
+    <%= render "battery/location" %>
   </div>
 
   <div class="part-2">
-    <div class="row">
-      <div class="col col-1">
-        <p></p>
-      </div>
-      <div class="col col-10 documentation">
-        <div class="method">
-          <span class="button h4" tabindex="0">Add Consumption by Utility Bill<span class="h6"> (easiest) </span><i class="arrow down relative right"></i></span>
-          <div class="method-section">
-            <%= render "battery_wizard/consumption/consumption_by_utility" %>
-          </div>
-        </div>
-
-        <p class="center">-- OR --</p>
-
-        <div class="method">
-          <span class="button h4" tabindex="0">Add Consumption by Appliance <i class="arrow down relative right"></i></span>
-          <div class="method-section">
-            <%= render "battery_wizard/consumption/consumption_by_appliance" %>
-          </div>
-        </div>
-
-      </div>
-      <div class="col col-1">
-        <p></p>
-      </div>
-    </div>
+    <%= render "battery/consumption" %>
   </div>
 
   <div class="part-3">
-    <div class="row">
-      <div class="col col-2">
-        <div class="">
-          <p></p>
-        </div>
-      </div>
-      <%#= form_tag battery_index_path, class: "col col-2 sans-serif" do %>
-      <div class="form col col-2 sans-serif">
-        <%= label_tag "capacity (kW)" %>
-        <%= number_field_tag "capacity", "5"  %>
-
-        <%= label_tag "module_type" %>
-        <%= select_tag "module_type", "<option>0</option>".html_safe %>
-
-        <%= label_tag "losses (%)" %>
-        <%= number_field_tag "losses", "14", in: -5..99 %>
-
-        <%= label_tag "array_type" %>
-        <%= select_tag "array_type", "<option>0</option>".html_safe %>
-
-        <%= label_tag "tilt" %>
-        <%= number_field_tag "tilt", "30", in: 0..90 %>
-
-        <%= label_tag "azimuth" %>
-        <%= number_field_tag "azimuth", "180", in: 0..360 %>
-
-        <%= label_tag "latitude" %>
-        <%= text_field_tag "lat" %>
-
-        <%= label_tag "longitude" %>
-        <%= text_field_tag "lon" %>
-
-        <%= submit_tag "Submit", class: "brown-btn" %>
-      </div>
-
-      <div class="col col-6 mx2 documentation">
-        <div class="section">
-          <span class="button h4">Capacity <i class="arrow down relative right"></i></span>
-          <p class="section-text h6">Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next 10.</p>
-        </div>
-
-        <div class="section">
-          <span class="button h4">Types of Solar Modules <i class="arrow down relative right"></i></span>
-          <p class="section-text h6">There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
-        </div>
-
-        <div class="section">
-          <span class="button h4">System Losses <i class="arrow down relative right"></i></span>
-          <p class="section-text h6">We want to explore. We’re curious people. Look back over history, people have put their lives at stake to go out and explore … We believe in what we’re doing. Now it’s time to go.</p>
-        </div>
-
-        <div class="section">
-          <span class="button h4">Types of Solar Arrays <i class="arrow down relative right"></i></span>
-          <p class="section-text h6">Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next 10.</p>
-        </div>
-
-        <div class="section">
-          <span class="button h4">Pannel Tilt <i class="arrow down relative right"></i></span>
-          <p class="section-text h6">Buy why, some say, the moon? Why choose this as our goal? And they may as well ask why climb the highest mountain?</p>
-        </div>
-
-        <div class="section">
-          <span class="button h4">Azimuth Angle <i class="arrow down relative right"></i></span>
-          <p class="section-text h6">There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
-        </div>
-
-        <div class="section">
-          <span class="button h4">Latitude <i class="arrow down relative right"></i></span>
-          <p class="section-text h6">Astronomy compels the soul to look upward, and leads us from this world to another.</p>
-        </div>
-
-        <div class="section">
-          <span class="button h4">Longitude <i class="arrow down relative right"></i></span>
-          <p class="section-text h6">Spaceflights cannot be stopped. This is not the work of any one man or even a group of men. It is a historical process which mankind is carrying out in accordance with the natural laws of human development.</p>
-        </div>
-      </div>
-      <div class="col col-2">
-        <div class="">
-          <p></p>
-        </div>
-      </div>
-    </div>
+    <%= render "battery/system" %>
   </div>
 
 </div>
