@@ -28,7 +28,6 @@ describe "As a user that clicks on battery calculator from the home page" do
     end
 
     it "they can fill in step one and months of step 2" do
-      create_list(:category, 5)
       visit '/'
 
       click_on "Battery Calculator"
@@ -60,6 +59,8 @@ describe "As a user that clicks on battery calculator from the home page" do
     end
 
     it "click on both options of consumption to see their details" do
+      create_list(:category, 5)
+      
       visit "/battery/new"
       find("#nav-consumption").click
 
