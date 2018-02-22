@@ -32,7 +32,7 @@
           Weather Station: <%= @presenter.production.station %> <br>
           Station City: <%= @presenter.production.station_city %> <br>
           Station State: <%= @presenter.production.station_state %> <br>
-          Average Utility Rate: <%= @presenter.utility_rate %>
+          Average Utility Rate: <%= number_to_currency @presenter.utility_rate.residential %>
         </p>
       </div>
     </div>
