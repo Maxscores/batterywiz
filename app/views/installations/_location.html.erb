@@ -2,8 +2,8 @@
   <div class="col col-2">
     <p></p>
   </div>
-  <div class="col col-2 blue-gradient">
-    <%= form_tag installation_index_path, class: "mx-auto sans-serif" %>
+  <div class="wizard-form col col-2 blue-gradient">
+    <%= form_tag installations_path, class: "mx-auto sans-serif" %>
     <%= label_tag "zipcode" %>
     <%= text_field_tag "installation[zipcode]", "", maxlength: 5 %>
     <span class="button h4 brown-btn to-step-2" tabindex="0" id="next-step">Next Step</span>

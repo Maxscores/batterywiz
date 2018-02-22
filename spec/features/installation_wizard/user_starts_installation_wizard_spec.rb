@@ -5,12 +5,12 @@ describe "As a user that clicks on installation calculator from the home page" d
 
       click_on "Solar Installation Calculator"
 
-      expect(current_path).to eq("/installation/new")
+      expect(current_path).to eq("/installations/new")
 
       fill_in "installation[zipcode]", with: 80525
       find("#next-step").click
 
-      expect(current_path).to eq("/installation/new")
+      expect(current_path).to eq("/installations/new")
       expect(page).to_not have_content("Zipcode")
       expect(page).to have_content("by Utility Bill")
       expect(page).to have_content("by Appliance")
@@ -21,7 +21,7 @@ describe "As a user that clicks on installation calculator from the home page" d
 
       click_on "Solar Installation Calculator"
 
-      expect(current_path).to eq("/installation/new")
+      expect(current_path).to eq("/installations/new")
 
       fill_in "installation[zipcode]", with: 80525
       find("#next-step").click
@@ -53,7 +53,7 @@ describe "As a user that clicks on installation calculator from the home page" d
 
       click_on "Solar Installation Calculator"
 
-      expect(current_path).to eq("/installation/new")
+      expect(current_path).to eq("/installations/new")
 
       fill_in "installation[zipcode]", with: 80525
       find("#next-step").click
@@ -77,16 +77,14 @@ describe "As a user that clicks on installation calculator from the home page" d
       page.evaluate_script('jQuery.active').zero?
 
       expect(find_field('system[capacity]').value).to eq '7.7'
-      select "0", from: "system[module_type]"
       expect(find_field('system[losses]').value).to eq("14")
-      select "0", from: "system[array_type]"
       expect(find_field('system[tilt]').value).to eq("30")
       expect(find_field('system[azimuth]').value).to eq("180")
 
       click_on "Calculate"
 
       installation = Installation.last
-      expect(current_path).to eq("/installation/#{installation.id}")
+      expect(current_path).to eq("/installations/#{installation.id}")
     end
 
     it "they can click on dropdown sections for step 1 and see content" do
@@ -103,7 +101,7 @@ describe "As a user that clicks on installation calculator from the home page" d
     it "click on both options of consumption to see their details" do
       create_list(:category, 5)
 
-      visit "/installation/new"
+      visit "/installations/new"
       find("#nav-consumption").click
 
       all(".method")[0].click
@@ -113,6 +111,7 @@ describe "As a user that clicks on installation calculator from the home page" d
       all(".method")[0].all("span")[0].click
 
       all(".method")[1].click
+      wait_for_ajax
       expect(page).to have_content("Next Step")
 
       all(".section").each do |section|
@@ -125,7 +124,7 @@ describe "As a user that clicks on installation calculator from the home page" d
     end
 
     it "click on solar system dropdowns" do
-      visit "/installation/new"
+      visit "/installations/new"
       find("#nav-system").click
       all(".section").each do |section|
         section.click

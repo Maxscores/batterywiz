@@ -11,6 +11,8 @@
   <body>
     <div class="window block mx-auto">
     <%= render "layouts/header" %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
       <div class="clearfix">
         <div class="row main-content">
           <%= yield %>
@@ -19,6 +21,5 @@
     <%= render "layouts/footer" %>
     </div>
     <%= javascript_include_tag 'application' %>
-
   </body>
 </html>
