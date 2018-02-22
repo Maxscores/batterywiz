@@ -28,7 +28,7 @@
       <div class="col col-6">
         <p class="h4">Location Summary</p>
         <p class="h6 sans-serif">
-          Installation Address: <%= @presenter.installation.zipcode %> <br>
+          Installation Zipcode: <%= @presenter.installation.zipcode %> <br>
           Weather Station: <%= @presenter.production.station %> <br>
           Station City: <%= @presenter.production.station_city %> <br>
           Station State: <%= @presenter.production.station_state %> <br>
@@ -52,7 +52,7 @@
           <td>Oct</td>
           <td>Nov</td>
           <td>Dec</td>
-          <tr>
+          <tr id="consumption">
             <th>Consumption (kWh)</th>
             <td><%= @presenter.consumption.jan %></td>
             <td><%= @presenter.consumption.feb %></td>
@@ -67,7 +67,7 @@
             <td><%= @presenter.consumption.nov %></td>
             <td><%= @presenter.consumption.dec %></td>
           </tr>
-          <tr>
+          <tr id="ac-production">
             <th>AC Solar Production (kWh)</th>
             <td><%= @presenter.production.ac_jan %></td>
             <td><%= @presenter.production.ac_feb %></td>
@@ -82,7 +82,7 @@
             <td><%= @presenter.production.ac_nov %></td>
             <td><%= @presenter.production.ac_dec %></td>
           </tr>
-          <tr>
+          <tr id="dc-production">
             <th>DC Solar Production (kWh)</th>
             <td><%= @presenter.production.dc_jan %></td>
             <td><%= @presenter.production.dc_feb %></td>
