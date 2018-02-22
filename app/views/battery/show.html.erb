@@ -36,6 +36,55 @@
       </div>
     </div>
     <div class="row">
+      <div class="col col-12">
+        <table class="data-table">
+          <th>Month</th>
+          <td>Jan</td>
+          <td>Feb</td>
+          <td>March</td>
+          <td>April</td>
+          <td>May</td>
+          <td>June</td>
+          <td>July</td>
+          <td>Aug</td>
+          <td>Sept</td>
+          <td>Oct</td>
+          <td>Nov</td>
+          <td>Dec</td>
+          <tr>
+            <th>Consumption (kWh)</th>
+            <td><%= @installation.consumption.jan %></td>
+            <td><%= @installation.consumption.feb %></td>
+            <td><%= @installation.consumption.mar %></td>
+            <td><%= @installation.consumption.apr %></td>
+            <td><%= @installation.consumption.may %></td>
+            <td><%= @installation.consumption.jun %></td>
+            <td><%= @installation.consumption.jul %></td>
+            <td><%= @installation.consumption.aug %></td>
+            <td><%= @installation.consumption.sep %></td>
+            <td><%= @installation.consumption.oct %></td>
+            <td><%= @installation.consumption.nov %></td>
+            <td><%= @installation.consumption.dec %></td>
+          </tr>
+          <tr>
+            <th>Solar Production (kWh)</th>
+            <td><%= @installation.production.jan %></td>
+            <td><%= @installation.production.feb %></td>
+            <td><%= @installation.production.mar %></td>
+            <td><%= @installation.production.apr %></td>
+            <td><%= @installation.production.may %></td>
+            <td><%= @installation.production.jun %></td>
+            <td><%= @installation.production.jul %></td>
+            <td><%= @installation.production.aug %></td>
+            <td><%= @installation.production.sep %></td>
+            <td><%= @installation.production.oct %></td>
+            <td><%= @installation.production.nov %></td>
+            <td><%= @installation.production.dec %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="row">
       <div class="col col-12" style="background-color: grey; height: 300px;">
         <p class="center h1">GRAPH</p>
       </div>

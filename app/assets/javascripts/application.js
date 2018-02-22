@@ -53,8 +53,6 @@ function calculateArraySize() {
   return arraySize;
 };
 
-
-
 $(document).ready(function() {
   $('.part-1').on('click', '.to-step-2', function() {
     showPart2()
