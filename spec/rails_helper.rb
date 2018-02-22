@@ -1,6 +1,9 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 require 'database_cleaner'
+require 'webmock/rspec'
+
+WebMock.disable_net_connect!(allow_localhost: true)
 
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
@@ -44,6 +47,14 @@ Capybara.register_driver :selenium_chrome_clear_storage do |app|
 end
 
 Capybara.javascript_driver = :selenium_chrome
+
+VCR.configure do |config|
+  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+  config.hook_into :webmock
+  config.filter_sensitive_data("<NREL_API_KEY>") {ENV["NREL_API_KEY"]}
+  config.filter_sensitive_data("<OPEN_EI_KEY>") {ENV["OPEN_EI_KEY"]}
+  config.allow_http_connections_when_no_cassette = true
+end
 
 RSpec.configure do |config|
   config.before(:each) do

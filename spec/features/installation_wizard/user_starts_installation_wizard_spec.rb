@@ -1,16 +1,16 @@
-describe "As a user that clicks on battery calculator from the home page" do
-  describe "they are brought to the battery wizard", js: true do
+describe "As a user that clicks on installation calculator from the home page" do
+  describe "they are brought to the installation wizard", js: true do
     it "and can fill in zipcode and click next step" do
       visit '/'
 
-      click_on "Battery Calculator"
+      click_on "Solar Installation Calculator"
 
-      expect(current_path).to eq("/battery/new")
+      expect(current_path).to eq("/installation/new")
 
       fill_in "installation[zipcode]", with: 80525
       find("#next-step").click
 
-      expect(current_path).to eq("/battery/new")
+      expect(current_path).to eq("/installation/new")
       expect(page).to_not have_content("Zipcode")
       expect(page).to have_content("by Utility Bill")
       expect(page).to have_content("by Appliance")
@@ -19,9 +19,9 @@ describe "As a user that clicks on battery calculator from the home page" do
     it "they can fill in step one and months of step 2" do
       visit '/'
 
-      click_on "Battery Calculator"
+      click_on "Solar Installation Calculator"
 
-      expect(current_path).to eq("/battery/new")
+      expect(current_path).to eq("/installation/new")
 
       fill_in "installation[zipcode]", with: 80525
       find("#next-step").click
@@ -42,17 +42,18 @@ describe "As a user that clicks on battery calculator from the home page" do
       fill_in "consumption[dec]", with: 100
 
       find("#next-step").click
-      page.evaluate_script('jQuery.active').zero?
+      wait_for_ajax
 
-      expect(find_field('system[capacity]').value).to eq '7.67'
+      expect(find_field('system[capacity]').value).to eq '7.7'
     end
 
     it "they can fill in complete form and are redirected to summary page" do
+      stub_pvwatts_request
       visit '/'
 
-      click_on "Battery Calculator"
+      click_on "Solar Installation Calculator"
 
-      expect(current_path).to eq("/battery/new")
+      expect(current_path).to eq("/installation/new")
 
       fill_in "installation[zipcode]", with: 80525
       find("#next-step").click
@@ -75,7 +76,7 @@ describe "As a user that clicks on battery calculator from the home page" do
       find("#next-step").click
       page.evaluate_script('jQuery.active').zero?
 
-      expect(find_field('system[capacity]').value).to eq '7.67'
+      expect(find_field('system[capacity]').value).to eq '7.7'
       select "0", from: "system[module_type]"
       expect(find_field('system[losses]').value).to eq("14")
       select "0", from: "system[array_type]"
@@ -83,17 +84,17 @@ describe "As a user that clicks on battery calculator from the home page" do
       expect(find_field('system[azimuth]').value).to eq("180")
 
       click_on "Calculate"
-      page.evaluate_script('jQuery.active').zero?
 
-      installation = Installation.all.last
+      installation = Installation.last
+      expect(current_path).to eq("/installation/#{installation.id}")
     end
 
     it "they can click on dropdown sections for step 1 and see content" do
-      visit new_battery_path
+      visit new_installation_path
 
       all(".section").each do |section|
         section.click
-        page.evaluate_script('jQuery.active').zero?
+        wait_for_ajax
         expect(page).to have_css(".section-text")
         section.find("span").click
       end
@@ -102,7 +103,7 @@ describe "As a user that clicks on battery calculator from the home page" do
     it "click on both options of consumption to see their details" do
       create_list(:category, 5)
 
-      visit "/battery/new"
+      visit "/installation/new"
       find("#nav-consumption").click
 
       all(".method")[0].click
@@ -116,7 +117,7 @@ describe "As a user that clicks on battery calculator from the home page" do
 
       all(".section").each do |section|
         section.click
-        page.evaluate_script('jQuery.active').zero?
+        wait_for_ajax
         expect(page).to have_css(".section-text")
         section.find("span").click
       end
@@ -124,11 +125,11 @@ describe "As a user that clicks on battery calculator from the home page" do
     end
 
     it "click on solar system dropdowns" do
-      visit "/battery/new"
+      visit "/installation/new"
       find("#nav-system").click
       all(".section").each do |section|
         section.click
-        page.evaluate_script('jQuery.active').zero?
+        wait_for_ajax
         expect(page).to have_css(".section-text")
         section.find("span").click
       end

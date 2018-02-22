@@ -13,6 +13,10 @@
 //= require jquery
 //= require_tree .
 
+function round(value, decimals) {
+  return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
+};
+
 function showPart1() {
   $('.part-1').show();
   $('.part-2').hide();
@@ -50,10 +54,8 @@ function calculateArraySize() {
   });
   monthlyConsumption.reverse();
   var arraySize = monthlyConsumption[0] * 0.007670;
-  return arraySize;
+  return round(arraySize, 1);
 };
-
-
 
 $(document).ready(function() {
   $('.part-1').on('click', '.to-step-2', function() {

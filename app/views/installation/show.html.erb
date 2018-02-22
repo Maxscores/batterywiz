@@ -1,0 +1,109 @@
+<div class="top-nav table">
+  <ul>
+    <li>Location <%= image_tag "256_location.png" %> </li>
+    <li>Consumption <%= image_tag "256_ecology-lightbulb.png" %></li>
+    <li>Solar System <%= image_tag "256_solar-panel.png" %></li>
+    <li class="active">System Summary <%= image_tag "256_piggy-bank.png" %></li>
+  </ul>
+</div>
+
+<div class="row">
+  <div class="col col-2">
+    <p></p>
+  </div>
+  <div class="col col-8">
+    <div class="row">
+      <div class="col col-6">
+        <p class="h4">Solar System Summary</p>
+        <p class="h6 sans-serif">
+          Solar System Capacity: <%= @presenter.solar_system.capacity %><br>
+          Battery Capacity: <%= @presenter.solar_system.capacity %><br>
+          Azimuth Angle: <%= @presenter.solar_system.azimuth %><br>
+          Panel Tilt: <%= @presenter.solar_system.tilt %><br>
+          Array Type: <%= @presenter.solar_system.array_type %><br>
+          Module Type: <%= @presenter.solar_system.module_type %><br>
+          Losses: <%= @presenter.solar_system.losses %>
+        </p>
+      </div>
+      <div class="col col-6">
+        <p class="h4">Location Summary</p>
+        <p class="h6 sans-serif">
+          Installation Zipcode: <%= @presenter.installation.zipcode %> <br>
+          Weather Station: <%= @presenter.production.station %> <br>
+          Station City: <%= @presenter.production.station_city %> <br>
+          Station State: <%= @presenter.production.station_state %> <br>
+          Average Utility Rate: <%= number_to_currency @presenter.utility_rate.residential %>
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-12">
+        <table class="data-table">
+          <th>Month</th>
+          <td>Jan</td>
+          <td>Feb</td>
+          <td>March</td>
+          <td>April</td>
+          <td>May</td>
+          <td>June</td>
+          <td>July</td>
+          <td>Aug</td>
+          <td>Sept</td>
+          <td>Oct</td>
+          <td>Nov</td>
+          <td>Dec</td>
+          <tr id="consumption">
+            <th>Consumption (kWh)</th>
+            <td><%= @presenter.consumption.jan %></td>
+            <td><%= @presenter.consumption.feb %></td>
+            <td><%= @presenter.consumption.mar %></td>
+            <td><%= @presenter.consumption.apr %></td>
+            <td><%= @presenter.consumption.may %></td>
+            <td><%= @presenter.consumption.jun %></td>
+            <td><%= @presenter.consumption.jul %></td>
+            <td><%= @presenter.consumption.aug %></td>
+            <td><%= @presenter.consumption.sep %></td>
+            <td><%= @presenter.consumption.oct %></td>
+            <td><%= @presenter.consumption.nov %></td>
+            <td><%= @presenter.consumption.dec %></td>
+          </tr>
+          <tr id="ac-production">
+            <th>AC Solar Production (kWh)</th>
+            <td><%= @presenter.production.ac_jan %></td>
+            <td><%= @presenter.production.ac_feb %></td>
+            <td><%= @presenter.production.ac_mar %></td>
+            <td><%= @presenter.production.ac_apr %></td>
+            <td><%= @presenter.production.ac_may %></td>
+            <td><%= @presenter.production.ac_jun %></td>
+            <td><%= @presenter.production.ac_jul %></td>
+            <td><%= @presenter.production.ac_aug %></td>
+            <td><%= @presenter.production.ac_sep %></td>
+            <td><%= @presenter.production.ac_oct %></td>
+            <td><%= @presenter.production.ac_nov %></td>
+            <td><%= @presenter.production.ac_dec %></td>
+          </tr>
+          <tr id="dc-production">
+            <th>DC Solar Production (kWh)</th>
+            <td><%= @presenter.production.dc_jan %></td>
+            <td><%= @presenter.production.dc_feb %></td>
+            <td><%= @presenter.production.dc_mar %></td>
+            <td><%= @presenter.production.dc_apr %></td>
+            <td><%= @presenter.production.dc_may %></td>
+            <td><%= @presenter.production.dc_jun %></td>
+            <td><%= @presenter.production.dc_jul %></td>
+            <td><%= @presenter.production.dc_aug %></td>
+            <td><%= @presenter.production.dc_sep %></td>
+            <td><%= @presenter.production.dc_oct %></td>
+            <td><%= @presenter.production.dc_nov %></td>
+            <td><%= @presenter.production.dc_dec %></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-12" style="background-color: grey; height: 300px;">
+        <p class="center h1">GRAPH</p>
+      </div>
+    </div>
+  </div>
+</div>

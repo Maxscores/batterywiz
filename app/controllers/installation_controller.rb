@@ -1,6 +1,6 @@
-class BatteryController < ApplicationController
+class InstallationController < ApplicationController
   def show
-    @installation = Installation.find(params[:id])
+    @presenter = InstallationPresenter.new(params[:id])
   end
 
   def new
@@ -13,10 +13,10 @@ class BatteryController < ApplicationController
     installation.consumption = Consumption.new(consumption_params)
     installation.solar_system = SolarSystem.new(system_params)
     if installation.save!
-      redirect_to battery_path(installation)
+      redirect_to installation_path(installation)
     else
       flash[:message] = "The Build Failed, please make sure require fields are filled and  try again"
-      redirect_to new_battery_path
+      redirect_to new_installation_path
     end
   end
 

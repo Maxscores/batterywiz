@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180221221744) do
+ActiveRecord::Schema.define(version: 20180222155847) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,15 @@ ActiveRecord::Schema.define(version: 20180221221744) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_appliances_on_category_id"
+  end
+
+  create_table "basic_utility_rates", force: :cascade do |t|
+    t.decimal "residential"
+    t.decimal "commercial"
+    t.decimal "industrial"
+    t.string "zipcode"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "categories", force: :cascade do |t|
@@ -54,6 +63,40 @@ ActiveRecord::Schema.define(version: 20180221221744) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "productions", force: :cascade do |t|
+    t.bigint "installation_id"
+    t.string "station"
+    t.string "station_city"
+    t.string "station_state"
+    t.decimal "ac_jan"
+    t.decimal "ac_feb"
+    t.decimal "ac_mar"
+    t.decimal "ac_apr"
+    t.decimal "ac_may"
+    t.decimal "ac_jun"
+    t.decimal "ac_jul"
+    t.decimal "ac_aug"
+    t.decimal "ac_sep"
+    t.decimal "ac_oct"
+    t.decimal "ac_nov"
+    t.decimal "ac_dec"
+    t.decimal "dc_jan"
+    t.decimal "dc_feb"
+    t.decimal "dc_mar"
+    t.decimal "dc_apr"
+    t.decimal "dc_may"
+    t.decimal "dc_jun"
+    t.decimal "dc_jul"
+    t.decimal "dc_aug"
+    t.decimal "dc_sep"
+    t.decimal "dc_oct"
+    t.decimal "dc_nov"
+    t.decimal "dc_dec"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["installation_id"], name: "index_productions_on_installation_id"
+  end
+
   create_table "solar_systems", force: :cascade do |t|
     t.bigint "installation_id"
     t.decimal "capacity"
@@ -69,5 +112,6 @@ ActiveRecord::Schema.define(version: 20180221221744) do
 
   add_foreign_key "appliances", "categories"
   add_foreign_key "consumptions", "installations"
+  add_foreign_key "productions", "installations"
   add_foreign_key "solar_systems", "installations"
 end
