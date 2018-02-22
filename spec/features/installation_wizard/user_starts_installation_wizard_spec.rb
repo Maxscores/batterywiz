@@ -77,9 +77,7 @@ describe "As a user that clicks on installation calculator from the home page" d
       page.evaluate_script('jQuery.active').zero?
 
       expect(find_field('system[capacity]').value).to eq '7.7'
-      select "0", from: "system[module_type]"
       expect(find_field('system[losses]').value).to eq("14")
-      select "0", from: "system[array_type]"
       expect(find_field('system[tilt]').value).to eq("30")
       expect(find_field('system[azimuth]').value).to eq("180")
 

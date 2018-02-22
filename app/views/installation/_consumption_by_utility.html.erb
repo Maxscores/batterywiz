@@ -14,18 +14,18 @@
   <td>Dec</td>
   <tr>
     <th>Electricity Used (kWh)</th>
-    <td><%= number_field_tag "consumption[jan]", 0, min: 0%></td>
-    <td><%= number_field_tag "consumption[feb]", 0, min: 0%></td>
-    <td><%= number_field_tag "consumption[mar]", 0, min: 0%></td>
-    <td><%= number_field_tag "consumption[apr]", 0, min: 0%></td>
-    <td><%= number_field_tag "consumption[may]", 0, min: 0%></td>
-    <td><%= number_field_tag "consumption[jun]", 0, min: 0%></td>
-    <td><%= number_field_tag "consumption[jul]", 0, min: 0%></td>
-    <td><%= number_field_tag "consumption[aug]", 0, min: 0%></td>
-    <td><%= number_field_tag "consumption[sep]", 0, min: 0%></td>
-    <td><%= number_field_tag "consumption[oct]", 0, min: 0%></td>
-    <td><%= number_field_tag "consumption[nov]", 0, min: 0%></td>
-    <td><%= number_field_tag "consumption[dec]", 0, min: 0%></td>
+    <td><%= number_field_tag "consumption[jan]", min: 0, :required => true %></td>
+    <td><%= number_field_tag "consumption[feb]", min: 0, :required => true %></td>
+    <td><%= number_field_tag "consumption[mar]", min: 0, :required => true %></td>
+    <td><%= number_field_tag "consumption[apr]", min: 0, :required => true %></td>
+    <td><%= number_field_tag "consumption[may]", min: 0, :required => true %></td>
+    <td><%= number_field_tag "consumption[jun]", min: 0, :required => true %></td>
+    <td><%= number_field_tag "consumption[jul]", min: 0, :required => true %></td>
+    <td><%= number_field_tag "consumption[aug]", min: 0, :required => true %></td>
+    <td><%= number_field_tag "consumption[sep]", min: 0, :required => true %></td>
+    <td><%= number_field_tag "consumption[oct]", min: 0, :required => true %></td>
+    <td><%= number_field_tag "consumption[nov]", min: 0, :required => true %></td>
+    <td><%= number_field_tag "consumption[dec]", min: 0, :required => true %></td>
   </tr>
 </table>
 

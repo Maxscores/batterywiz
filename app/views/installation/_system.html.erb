@@ -11,13 +11,13 @@
     <%= number_field_tag "system[capacity]", "5", id: "system-capacity", step: 0.1  %>
 
     <%= label_tag "module_type" %>
-    <%= select_tag "system[module_type]", options_for_select(SolarSystem.module_types) %>
+    <%= select_tag "system[module_type]", options_for_select(SolarSystem.module_types.map {|k, _| [k, k]}) %>
 
     <%= label_tag "losses (%)" %>
     <%= number_field_tag "system[losses]", "14", in: -5..99 %>
 
     <%= label_tag "array_type" %>
-    <%= select_tag "system[array_type]", options_for_select(SolarSystem.array_types) %>
+    <%= select_tag "system[array_type]", options_for_select(SolarSystem.array_types.map {|k, _| [k, k]}) %>
 
     <%= label_tag "tilt" %>
     <%= number_field_tag "system[tilt]", "30", in: 0..90 %>
