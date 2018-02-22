@@ -42,6 +42,7 @@ class InstallationPresenter
           production.set_dc_output(projection[:outputs][:dc_monthly])
         end
         production.save!
+        production
       end
     end
 end
