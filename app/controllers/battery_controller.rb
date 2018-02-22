@@ -1,5 +1,6 @@
 class BatteryController < ApplicationController
   def show
+    @installation = Installation.find(params[:id])
   end
 
   def new
