@@ -1,6 +1,16 @@
-class InstallationController < ApplicationController
+class InstallationsController < ApplicationController
+  before_action :authenticate_user!
+
+  def index
+    @installations = current_user.installations
+  end
+
   def show
-    @presenter = InstallationPresenter.new(params[:id])
+    if current_user.installations.exists?(params[:id])
+      @presenter = InstallationPresenter.new(params[:id])
+    else
+      not_found
+    end
   end
 
   def new
@@ -10,6 +20,7 @@ class InstallationController < ApplicationController
 
   def create
     installation = Installation.new(installation_params)
+    installation.user = current_user
     installation.consumption = Consumption.new(consumption_params)
     installation.solar_system = SolarSystem.new(system_params)
     if installation.save!
