@@ -1,9 +1,12 @@
 describe "As a user I can view an installation" do
   it "shows solar system summary" do
     VCR.use_cassette("installation_wizard/user_views_system_summary") do
-      installation = create(:installation)
+      user = create(:user)
+      installation = create(:installation, user: user)
       consumption = create(:consumption, installation: installation)
       solar_system = create(:solar_system, installation: installation)
+
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
       visit installation_path(installation)
 
@@ -19,9 +22,13 @@ describe "As a user I can view an installation" do
 
   it "shows location summary" do
     VCR.use_cassette("installation_wizard/user_views_system_summary") do
-      installation = create(:installation)
+      user = create(:user)
+      installation = create(:installation, user: user)
       consumption = create(:consumption, installation: installation)
       solar_system = create(:solar_system, installation: installation)
+
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
 
       visit installation_path(installation)
 
@@ -37,9 +44,13 @@ describe "As a user I can view an installation" do
 
   it "shows table with consumption and production data" do
     VCR.use_cassette("installation_wizard/user_views_system_summary") do
-      installation = create(:installation)
+      user = create(:user)
+      installation = create(:installation, user: user)
       consumption = create(:consumption, installation: installation)
       solar_system = create(:solar_system, installation: installation)
+
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+      
 
       visit installation_path(installation)
 
