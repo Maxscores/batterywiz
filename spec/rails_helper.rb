@@ -31,8 +31,19 @@ ActiveRecord::Migration.maintain_test_schema!
 
 DatabaseCleaner.strategy = :transaction
 
-Capybara.register_driver :selenium do |app|
-  Capybara::Selenium::Driver.new(app, browser: :chrome)
+CHROME_DRIVER = if ENV['HEADLESS'] then :selenium_chrome_headless else :selenium_chrome end
+
+# if ENV['HEADLESS'] && ENV['TRAVIS']
+#   Selenium::WebDriver::Chrome.path='/usr/bin/google-chrome-beta'
+# end
+
+Capybara.register_driver :selenium_chrome_clear_storage do |app|
+  chrome_options = {
+    browser: :chrome,
+    options: ::Selenium::WebDriver::Chrome::Options.new
+  }
+  chrome_options[:options].args << 'headless' if ENV['HEADLESS']
+  Capybara::Selenium::Driver.new(app, chrome_options.merge(clear_local_storage: true, clear_session_storage: true))
 end
 
 Capybara.javascript_driver = :selenium_chrome
