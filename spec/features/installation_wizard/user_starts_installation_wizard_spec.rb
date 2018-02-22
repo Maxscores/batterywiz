@@ -1,16 +1,16 @@
-describe "As a user that clicks on battery calculator from the home page" do
-  describe "they are brought to the battery wizard", js: true do
+describe "As a user that clicks on installation calculator from the home page" do
+  describe "they are brought to the installation wizard", js: true do
     it "and can fill in zipcode and click next step" do
       visit '/'
 
-      click_on "Battery Calculator"
+      click_on "Solar Installation Calculator"
 
-      expect(current_path).to eq("/battery/new")
+      expect(current_path).to eq("/installation/new")
 
       fill_in "installation[zipcode]", with: 80525
       find("#next-step").click
 
-      expect(current_path).to eq("/battery/new")
+      expect(current_path).to eq("/installation/new")
       expect(page).to_not have_content("Zipcode")
       expect(page).to have_content("by Utility Bill")
       expect(page).to have_content("by Appliance")
@@ -19,9 +19,9 @@ describe "As a user that clicks on battery calculator from the home page" do
     it "they can fill in step one and months of step 2" do
       visit '/'
 
-      click_on "Battery Calculator"
+      click_on "Solar Installation Calculator"
 
-      expect(current_path).to eq("/battery/new")
+      expect(current_path).to eq("/installation/new")
 
       fill_in "installation[zipcode]", with: 80525
       find("#next-step").click
@@ -50,9 +50,9 @@ describe "As a user that clicks on battery calculator from the home page" do
     it "they can fill in complete form and are redirected to summary page" do
       visit '/'
 
-      click_on "Battery Calculator"
+      click_on "Solar Installation Calculator"
 
-      expect(current_path).to eq("/battery/new")
+      expect(current_path).to eq("/installation/new")
 
       fill_in "installation[zipcode]", with: 80525
       find("#next-step").click
@@ -89,7 +89,7 @@ describe "As a user that clicks on battery calculator from the home page" do
     end
 
     it "they can click on dropdown sections for step 1 and see content" do
-      visit new_battery_path
+      visit new_installation_path
 
       all(".section").each do |section|
         section.click
@@ -102,7 +102,7 @@ describe "As a user that clicks on battery calculator from the home page" do
     it "click on both options of consumption to see their details" do
       create_list(:category, 5)
 
-      visit "/battery/new"
+      visit "/installation/new"
       find("#nav-consumption").click
 
       all(".method")[0].click
@@ -124,7 +124,7 @@ describe "As a user that clicks on battery calculator from the home page" do
     end
 
     it "click on solar system dropdowns" do
-      visit "/battery/new"
+      visit "/installation/new"
       find("#nav-system").click
       all(".section").each do |section|
         section.click

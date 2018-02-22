@@ -11,7 +11,7 @@ describe "Unregistered user can visit the root page" do
   it "sees what it is supposed to see in the body" do
     visit '/'
 
-    expect(page).to have_link "Battery Calculator"
+    expect(page).to have_link "Solar Installation Calculator"
     expect(page).to have_css ".hero"
   end
 end

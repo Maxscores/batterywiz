@@ -1,4 +1,4 @@
-class BatteryController < ApplicationController
+class InstallationController < ApplicationController
   def show
     @installation = Installation.find(params[:id])
   end
