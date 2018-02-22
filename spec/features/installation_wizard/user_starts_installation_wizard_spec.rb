@@ -111,6 +111,7 @@ describe "As a user that clicks on installation calculator from the home page" d
       all(".method")[0].all("span")[0].click
 
       all(".method")[1].click
+      wait_for_ajax
       expect(page).to have_content("Next Step")
 
       all(".section").each do |section|
