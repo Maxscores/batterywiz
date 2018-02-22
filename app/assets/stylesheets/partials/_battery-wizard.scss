@@ -1,0 +1,11 @@
+.battery-wizard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .part-2 {
+    display: none;
+  }
+  .part-3 {
+    display: none;
+  }
+}

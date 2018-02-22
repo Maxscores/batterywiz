@@ -1,0 +1,32 @@
+<table class="data-table">
+  <th>Month</th>
+  <td>Jan</td>
+  <td>Feb</td>
+  <td>March</td>
+  <td>April</td>
+  <td>May</td>
+  <td>June</td>
+  <td>July</td>
+  <td>Aug</td>
+  <td>Sept</td>
+  <td>Oct</td>
+  <td>Nov</td>
+  <td>Dec</td>
+  <tr>
+    <th>Electricity Used (kWh)</th>
+    <td><%= number_field_tag "consumption[jan]", 0, min: 0%></td>
+    <td><%= number_field_tag "consumption[feb]", 0, min: 0%></td>
+    <td><%= number_field_tag "consumption[mar]", 0, min: 0%></td>
+    <td><%= number_field_tag "consumption[apr]", 0, min: 0%></td>
+    <td><%= number_field_tag "consumption[may]", 0, min: 0%></td>
+    <td><%= number_field_tag "consumption[jun]", 0, min: 0%></td>
+    <td><%= number_field_tag "consumption[jul]", 0, min: 0%></td>
+    <td><%= number_field_tag "consumption[aug]", 0, min: 0%></td>
+    <td><%= number_field_tag "consumption[sep]", 0, min: 0%></td>
+    <td><%= number_field_tag "consumption[oct]", 0, min: 0%></td>
+    <td><%= number_field_tag "consumption[nov]", 0, min: 0%></td>
+    <td><%= number_field_tag "consumption[dec]", 0, min: 0%></td>
+  </tr>
+</table>
+
+<span class="brown-btn h4 to-step-3" id="next-step" tabindex="0">Next Step</span>

@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col col-2">
+    <p></p>
+  </div>
+  <div class="col col-2 blue-gradient">
+    <%= form_tag battery_index_path, class: "mx-auto sans-serif" %>
+    <%= label_tag "zipcode" %>
+    <%= text_field_tag "installation[zipcode]", "", maxlength: 5 %>
+    <span class="button h4 brown-btn to-step-2" tabindex="0" id="next-step">Next Step</span>
+  </div>
+  <div class="col col-6 mx2 documentation">
+    <div class="section">
+      <span class="button h4" tabindex="0">Why We Do It <i class="arrow down relative right"></i></span>
+      <div class="section-text">
+        <p class="h3">Duck Curve</p>
+        <p class="h6">Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next 10.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <span class="button h4" tabindex="0">What We Calculate <i class="arrow down relative right"></i></span>
+      <p class="section-text h6">Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next 10.</p>
+    </div>
+
+    <div class="section">
+      <span class="button h4" tabindex="0">Data Sources <i class="arrow down relative right"></i></span>
+      <p class="section-text h6">Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next 10.</p>
+    </div>
+  </div>
+  <div class="col col-2">
+    <p></p>
+  </div>
+</div>

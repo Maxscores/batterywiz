@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180220230031) do
+ActiveRecord::Schema.define(version: 20180221221744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,25 @@ ActiveRecord::Schema.define(version: 20180220230031) do
     t.string "title"
   end
 
+  create_table "consumptions", force: :cascade do |t|
+    t.bigint "installation_id"
+    t.string "jan"
+    t.string "feb"
+    t.string "mar"
+    t.string "apr"
+    t.string "may"
+    t.string "jun"
+    t.string "jul"
+    t.string "aug"
+    t.string "sep"
+    t.string "oct"
+    t.string "nov"
+    t.string "dec"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["installation_id"], name: "index_consumptions_on_installation_id"
+  end
+
   create_table "installations", force: :cascade do |t|
     t.text "zipcode"
     t.decimal "utility_rate"
@@ -35,5 +54,20 @@ ActiveRecord::Schema.define(version: 20180220230031) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "solar_systems", force: :cascade do |t|
+    t.bigint "installation_id"
+    t.decimal "capacity"
+    t.integer "module_type"
+    t.integer "losses"
+    t.integer "array_type"
+    t.integer "tilt"
+    t.integer "azimuth"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["installation_id"], name: "index_solar_systems_on_installation_id"
+  end
+
   add_foreign_key "appliances", "categories"
+  add_foreign_key "consumptions", "installations"
+  add_foreign_key "solar_systems", "installations"
 end

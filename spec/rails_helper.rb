@@ -31,6 +31,12 @@ ActiveRecord::Migration.maintain_test_schema!
 
 DatabaseCleaner.strategy = :transaction
 
+Capybara.register_driver :selenium do |app|
+  Capybara::Selenium::Driver.new(app, browser: :chrome)
+end
+
+Capybara.javascript_driver = :selenium_chrome
+
 RSpec.configure do |config|
   config.before(:each) do
     DatabaseCleaner.start
