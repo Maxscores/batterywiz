@@ -2,7 +2,7 @@ class InstallationPresenter
   attr_reader :installation, :solar_system, :consumption
 
   def initialize(installation_id)
-    @installation = Installation.find(installation_id)
+    @installation = Installation.find(installation_id).includes(:solar_system, :consumption, :production)
     @solar_system = @installation.solar_system
     @consumption = @installation.consumption
     @production = nil
