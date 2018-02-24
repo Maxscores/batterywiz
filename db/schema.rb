@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180222185446) do
+ActiveRecord::Schema.define(version: 20180224000755) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,25 @@ ActiveRecord::Schema.define(version: 20180222185446) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.index ["user_id"], name: "index_installations_on_user_id"
+  end
+
+  create_table "monthly_solar_outputs", force: :cascade do |t|
+    t.string "zipcode"
+    t.decimal "jan"
+    t.decimal "feb"
+    t.decimal "mar"
+    t.decimal "apr"
+    t.decimal "may"
+    t.decimal "jun"
+    t.decimal "jul"
+    t.decimal "aug"
+    t.decimal "sep"
+    t.decimal "oct"
+    t.decimal "nov"
+    t.decimal "dec"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["zipcode"], name: "index_monthly_solar_outputs_on_zipcode"
   end
 
   create_table "productions", force: :cascade do |t|
