@@ -1,0 +1,34 @@
+<%= form_for @consumption do |f|%>
+<table class="data-table">
+  <th>Month</th>
+  <td>Jan</td>
+  <td>Feb</td>
+  <td>March</td>
+  <td>April</td>
+  <td>May</td>
+  <td>June</td>
+  <td>July</td>
+  <td>Aug</td>
+  <td>Sept</td>
+  <td>Oct</td>
+  <td>Nov</td>
+  <td>Dec</td>
+  <tr>
+    <th>Electricity Used (kWh)</th>
+    <td><%= f.number_field "jan", min: 0, :required => true %></td>
+    <td><%= f.number_field "feb", min: 0, :required => true %></td>
+    <td><%= f.number_field "mar", min: 0, :required => true %></td>
+    <td><%= f.number_field "apr", min: 0, :required => true %></td>
+    <td><%= f.number_field "may", min: 0, :required => true %></td>
+    <td><%= f.number_field "jun", min: 0, :required => true %></td>
+    <td><%= f.number_field "jul", min: 0, :required => true %></td>
+    <td><%= f.number_field "aug", min: 0, :required => true %></td>
+    <td><%= f.number_field "sep", min: 0, :required => true %></td>
+    <td><%= f.number_field "oct", min: 0, :required => true %></td>
+    <td><%= f.number_field "nov", min: 0, :required => true %></td>
+    <td><%= f.number_field "dec", min: 0, :required => true %></td>
+  </tr>
+</table>
+
+<%= f.submit "Next Step" %>
+<% end %>

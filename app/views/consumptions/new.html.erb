@@ -1,0 +1,28 @@
+<div class="top-nav table">
+  <ul>
+    <li id="nav-location">Location <%= image_tag "256_location.png" %></li>
+    <li class="active" id="nav-consumption">Consumption <%= image_tag "256_ecology-lightbulb.png" %></li>
+    <li id="nav-system">Solar System <%= image_tag "256_solar-panel.png" %></li>
+    <li id="nav-summary">System Summary <%= image_tag "256_piggy-bank.png" %></li>
+  </ul>
+</div>
+<div class="battery-wizard">
+
+  <div class="row">
+    <div class="col col-1">
+      <p></p>
+    </div>
+    <div class="col col-10 documentation">
+      <div class="method">
+        <span class="button h4" tabindex="0">Add Consumption<span class="h6"></span><i class="arrow down relative right"></i></span>
+        <div class="method-section">
+          <%= render "consumptions/consumption_by_utility" %>
+        </div>
+      </div>
+    </div>
+    <div class="col col-1">
+      <p></p>
+    </div>
+  </div>
+
+</div>
