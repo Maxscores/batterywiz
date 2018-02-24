@@ -19,7 +19,7 @@
       <%= form_for @solar_system do |f| %>
 
       <%= f.label "capacity (kW)" %><br>
-      <%= f.number_field "capacity", value: "5", step: 0.1  %><br>
+      <%= f.number_field "capacity", value: @size, step: 0.1  %><br>
 
       <%= f.label "module_type" %><br>
       <%= f.select "module_type", options_for_select(SolarSystem.module_types.map {|k, _| [k, k]}) %><br>

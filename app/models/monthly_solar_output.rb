@@ -19,4 +19,8 @@ class MonthlySolarOutput < ApplicationRecord
         dec: data[:outputs][:avg_dni][:monthly][:dec])
     end
   end
+
+  def avg_daily_production
+    [jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec]
+  end
 end
