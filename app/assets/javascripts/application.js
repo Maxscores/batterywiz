@@ -94,13 +94,13 @@ $(document).ready(function() {
       $(this).parent().find('.section-text').slideToggle();
     };
   });
-
-  $('.method').on('click', '.button', function() {
-    $(this).parent().find('.method-section').slideToggle();
-  });
-  $('.method').on('keydown', '.button', function() {
-    if (event.keyCode === 13) {
-      $(this).parent().find('.method-section').slideToggle();
-    };
-  });
+  //
+  // $('.method').on('click', '.button', function() {
+  //   $(this).parent().find('.method-section').slideToggle();
+  // });
+  // $('.method').on('keydown', '.button', function() {
+  //   if (event.keyCode === 13) {
+  //     $(this).parent().find('.method-section').slideToggle();
+  //   };
+  // });
 });
