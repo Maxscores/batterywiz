@@ -1,0 +1,2 @@
+class MonthlySolarOutput < ApplicationRecord
+end
