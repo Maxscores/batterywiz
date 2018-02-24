@@ -17,7 +17,6 @@ class InstallationsController < ApplicationController
 
   def new
     @installation = Installation.new()
-    @categories = Category.all
   end
 
   def create
@@ -25,11 +24,9 @@ class InstallationsController < ApplicationController
     if current_user
       installation.user = current_user
     end
-    installation.consumption = Consumption.new(consumption_params)
-    installation.solar_system = SolarSystem.new(system_params)
     if installation.save!
       session[:installation_id] = installation.id
-      redirect_to installation_path(installation)
+      redirect_to new_consumption_path
     else
       flash[:message] = "The Build Failed, please make sure require fields are filled and  try again"
       redirect_to new_installation_path
@@ -41,11 +38,5 @@ class InstallationsController < ApplicationController
       params.require(:installation).permit(:zipcode)
     end
 
-    def consumption_params
-      params.require(:consumption).permit(:jan, :feb, :mar, :apr, :may, :jun, :jul, :aug, :sep, :oct, :nov, :dec)
-    end
 
-    def system_params
-      params.require(:system).permit(:capacity, :module_type, :losses, :array_type, :tilt, :azimuth)
-    end
 end
