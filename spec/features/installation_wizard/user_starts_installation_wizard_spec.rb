@@ -1,3 +1,7 @@
+VCR.configure do |config|
+  config.allow_http_connections_when_no_cassette = true
+end
+
 describe "As a user that clicks on installation calculator from the home page" do
   describe "they are brought to the installation wizard" do
     it "and can fill in zipcode and click next step" do
@@ -46,40 +50,41 @@ describe "As a user that clicks on installation calculator from the home page" d
     end
 
     it "they can fill in complete form and are redirected to summary page" do
-      stub_pvwatts_request
-      visit '/'
+      VCR.use_cassette("features/installation_wizard/pvwatts") do
+        visit '/'
 
-      click_on "Solar Installation Calculator"
+        click_on "Solar Installation Calculator"
 
-      expect(current_path).to eq("/installations/new")
+        expect(current_path).to eq("/installations/new")
 
-      fill_in "installation[zipcode]", with: 80525
-      click_on "Next Step"
+        fill_in "installation[zipcode]", with: 80525
+        click_on "Next Step"
 
-      fill_in "consumption[jan]", with: 100
-      fill_in "consumption[feb]", with: 100
-      fill_in "consumption[mar]", with: 100
-      fill_in "consumption[apr]", with: 100
-      fill_in "consumption[may]", with: 100
-      fill_in "consumption[jun]", with: 100
-      fill_in "consumption[jul]", with: 100
-      fill_in "consumption[aug]", with: 100
-      fill_in "consumption[sep]", with: 100
-      fill_in "consumption[oct]", with: 100
-      fill_in "consumption[nov]", with: 1000
-      fill_in "consumption[dec]", with: 100
+        fill_in "consumption[jan]", with: 100
+        fill_in "consumption[feb]", with: 100
+        fill_in "consumption[mar]", with: 100
+        fill_in "consumption[apr]", with: 100
+        fill_in "consumption[may]", with: 100
+        fill_in "consumption[jun]", with: 100
+        fill_in "consumption[jul]", with: 100
+        fill_in "consumption[aug]", with: 100
+        fill_in "consumption[sep]", with: 100
+        fill_in "consumption[oct]", with: 100
+        fill_in "consumption[nov]", with: 1000
+        fill_in "consumption[dec]", with: 100
 
-      click_on "Next Step"
+        click_on "Next Step"
 
-      expect(find_field('solar_system_capacity').value).to eq '8.7'
-      expect(find_field('solar_system_losses').value).to eq("14")
-      expect(find_field('solar_system_tilt').value).to eq("30")
-      expect(find_field('solar_system_azimuth').value).to eq("180")
+        expect(find_field('solar_system_capacity').value).to eq '8.7'
+        expect(find_field('solar_system_losses').value).to eq("14")
+        expect(find_field('solar_system_tilt').value).to eq("30")
+        expect(find_field('solar_system_azimuth').value).to eq("180")
 
-      click_on "Calculate"
+        click_on "Calculate"
 
-      installation = Installation.last
-      expect(current_path).to eq("/installations/#{installation.id}")
+        installation = Installation.last
+        expect(current_path).to eq("/installations/#{installation.id}")
+      end
     end
 
     it "they can click on dropdown sections for step 1 and see content", js: true do
@@ -110,7 +115,7 @@ describe "As a user that clicks on installation calculator from the home page" d
       fill_in "consumption[oct]", with: 100
       fill_in "consumption[nov]", with: 1000
       fill_in "consumption[dec]", with: 100
-      
+
       click_on "Next Step"
       find("#nav-system").click
       all(".section").each do |section|
