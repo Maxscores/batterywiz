@@ -14,6 +14,7 @@ class BasicUtilityRate < ApplicationRecord
     update(residential: data[:outputs][:residential],
            commercial: data[:outputs][:commercial],
            industrial: data[:outputs][:industrial])
+    self
   end
 
   def self.find_or_get_utility_rate_by_zipcode(zipcode)
