@@ -16,38 +16,6 @@
 
 
 $(document).ready(function() {
-  // $('#installation_zipcode').on('keyup', function() {
-  //   zipcode = $('#installation_zipcode').val()
-  // })
-  // $('.part-1').on('click', '.to-step-2', function() {
-  //   window.zipcode = $('input#installation_zipcode').val();
-  //   showPart2()
-  // });
-  // $('.part-1').on('keydown', '.to-step-2', function() {
-  //   if (event.keyCode === 13) {
-  //     window.zipcode = $('input#installation_zipcode').val();
-  //     showPart2()
-  //   };
-  // });
-  // $('.part-2').on('click', '.to-step-3', function() {
-  //   $("#system-capacity").val(calculateArraySize())
-  //   showPart3()
-  // });
-  // $('.part-2').on('keydown', '.to-step-3', function() {
-  //   if (event.keyCode === 13) {
-  //     showPart3()
-  //   };
-  // });
-  // $('#nav-location').on('click', function(){
-  //   showPart1()
-  // });
-  // $('#nav-consumption').on('click', function(){
-  //   showPart2()
-  // });
-  // $('#nav-system').on('click', function(){
-  //   showPart3()
-  // });
-
   $('.section').on('click', '.button', function() {
     $(this).parent().find('.section-text').slideToggle();
   });
@@ -56,13 +24,4 @@ $(document).ready(function() {
       $(this).parent().find('.section-text').slideToggle();
     };
   });
-  //
-  // $('.method').on('click', '.button', function() {
-  //   $(this).parent().find('.method-section').slideToggle();
-  // });
-  // $('.method').on('keydown', '.button', function() {
-  //   if (event.keyCode === 13) {
-  //     $(this).parent().find('.method-section').slideToggle();
-  //   };
-  // });
 });
