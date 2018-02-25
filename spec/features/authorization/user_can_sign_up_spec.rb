@@ -13,10 +13,10 @@ describe "User can visit root page" do
       fill_in "user_password", with: "123456"
       fill_in "user_password_confirmation", with: "123456"
 
-      click_on "Sign Up"
+      click_on "Sign up"
 
-      expect(current_path).to eq("/")
       expect(page).to have_content("Welcome! You have signed up successfully.")
+      expect(current_path).to eq("/")
       expect(page).to have_content("Logout")
       expect(page).to have_content("My Installations")
       expect(page).to have_content("Edit Account")

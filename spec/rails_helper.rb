@@ -2,6 +2,9 @@
 require 'spec_helper'
 require 'database_cleaner'
 require 'webmock/rspec'
+require 'coveralls'
+Coveralls.wear!('rails')
+
 
 WebMock.disable_net_connect!(allow_localhost: true)
 
@@ -32,7 +35,7 @@ Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 ActiveRecord::Migration.maintain_test_schema!
 
 
-DatabaseCleaner.strategy = :transaction
+DatabaseCleaner.strategy = :truncation
 
 
 CHROME_DRIVER = if ENV['HEADLESS'] then :selenium_chrome_headless else :selenium_chrome end
