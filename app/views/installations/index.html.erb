@@ -9,7 +9,7 @@
       <th>Location</th>
       <% @installations.each do |installation| %>
       <tr>
-        <td><%= installation.id %></td>
+        <td><%= link_to installation.id, installation_path(installation) %></td>
         <td><%= installation.solar_system.capacity %></td>
         <td><%= installation.zipcode %></td>
       </tr>
