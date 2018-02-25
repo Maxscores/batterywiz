@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://developer.nrel.gov/api/utility_rates/v3.json?address=80525
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Api-Key:
+      - "<NREL_API_KEY>"
+      User-Agent:
+      - Faraday v0.14.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Sun, 25 Feb 2018 09:14:05 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '336'
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '929'
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '1728000'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"ab40801cdd6603201e8be483ac0cb645"
+      X-Request-Id:
+      - 6d89aecd-c3cf-4b47-8640-46893d8c74ee
+      X-Runtime:
+      - '0.030902'
+      Age:
+      - '0'
+      Via:
+      - http/1.1 api-umbrella (ApacheTrafficServer [cMsSf ])
+      X-Cache:
+      - MISS
+      Strict-Transport-Security:
+      - max-age=31536000; preload
+    body:
+      encoding: UTF-8
+      string: '{"inputs":{"address":"80525"},"errors":[],"warnings":[],"version":"3.1.0","metadata":{"sources":["Ventyx
+        Research (2012)"]},"outputs":{"company_id":"6604","utility_name":"Fort Collins
+        Utilities","utility_info":[{"company_id":"6604","utility_name":"Fort Collins
+        Utilities"}],"commercial":0.0737,"industrial":0.0562,"residential":0.0926}}'
+    http_version: 
+  recorded_at: Sun, 25 Feb 2018 09:14:05 GMT
+recorded_with: VCR 4.0.0
