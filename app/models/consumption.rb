@@ -3,10 +3,6 @@ class Consumption < ApplicationRecord
 
   validates_presence_of :jan, :feb, :mar, :apr, :may, :jun, :jul, :aug, :sep, :oct, :nov, :dec
 
-  def by_month
-    [jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec]
-  end
-
   def avg_daily_consumption
     [
       jan.to_i/31,
