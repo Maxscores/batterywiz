@@ -21,7 +21,6 @@ gem 'jquery-rails'
 # gem 'capistrano-rails', group: :development
 gem 'figaro'
 gem 'geocoder'
-gem 'omniauth-google-oauth2'
 gem 'devise'
 
 group :development, :test do

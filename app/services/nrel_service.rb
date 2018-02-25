@@ -30,4 +30,11 @@ class NrelService
     parseJSON(response)
   end
 
+  def self.get_monthly_solar_output(zipcode)
+    response = connection.get("/api/solar/solar_resource/v1.json") do |request|
+      request.params = {address: zipcode}
+    end
+    parseJSON(response)
+  end
+
 end

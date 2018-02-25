@@ -25,4 +25,6 @@ class Production < ApplicationRecord
                         :dc_sep,
                         :dc_nov,
                         :dc_dec
+
+
 end
