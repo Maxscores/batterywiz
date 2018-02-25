@@ -56,8 +56,9 @@ VCR.configure do |config|
   config.hook_into :webmock
   config.filter_sensitive_data("<NREL_API_KEY>") {ENV["NREL_API_KEY"]}
   config.filter_sensitive_data("<OPEN_EI_KEY>") {ENV["OPEN_EI_KEY"]}
-  config.allow_http_connections_when_no_cassette = true
 end
+
+
 
 RSpec.configure do |config|
   config.before(:each) do
