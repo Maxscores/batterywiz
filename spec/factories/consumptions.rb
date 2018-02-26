@@ -1,17 +1,17 @@
 FactoryBot.define do
   factory :consumption do
-    installation nil
-    jan "MyString"
-    feb "MyString"
-    mar "MyString"
-    apr "MyString"
-    may "MyString"
-    jun "MyString"
-    jul "MyString"
-    aug "MyString"
-    sep "MyString"
-    oct "MyString"
-    nov "MyString"
-    dec "MyString"
+    installation
+    jan "100"
+    feb "100"
+    mar "100"
+    apr "100"
+    may "100"
+    jun "100"
+    jul "100"
+    aug "100"
+    sep "100"
+    oct "100"
+    nov "100"
+    dec "100"
   end
 end
