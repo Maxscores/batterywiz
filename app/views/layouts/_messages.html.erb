@@ -1,0 +1,7 @@
+<% if flash.count > 0  %>
+    <div class="alert alert-primary alert-dismissable" role="alert">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, raw(msg), class: name %>
+      <% end %>
+    </div>
+<% end  %>
