@@ -1,5 +1,6 @@
 class Consumption < ApplicationRecord
   belongs_to :installation
+  has_one :solar_system, through: :installation
 
   validates_presence_of :jan, :feb, :mar, :apr, :may, :jun, :jul, :aug, :sep, :oct, :nov, :dec
 
