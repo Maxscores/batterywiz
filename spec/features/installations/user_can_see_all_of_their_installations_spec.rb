@@ -25,8 +25,8 @@ describe "A logged in user with multiple installations" do
       expect(page).to have_content(i_2.solar_system.capacity)
     end
 
-    it "can click on an installation and see the pace " do
-      VCR.use_cassette("installations/user_sees_one_installation") do      
+    it "can click on an installation and see the installation details" do
+      VCR.use_cassette("installations/user_sees_one_installation") do
         user = create(:user)
         i_1, i_2 = create_list(:installation, 2, user: user)
         create(:solar_system, installation: i_1 )
