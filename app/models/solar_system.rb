@@ -10,15 +10,16 @@ class SolarSystem < ApplicationRecord
   def update_production
     installation.production.destroy if installation.production
     system_details = attributes.merge!('zipcode' => installation.zipcode).symbolize_keys
+    estimated_performance = NrelService.get_estimated_performance(system_details)
     production = ProductionBuilder.build do |production|
-      projection = NrelService.get_estimated_performance(system_details)
       production.set_installation(installation)
-      production.set_station(projection[:station_info][:location])
-      production.set_station_city(projection[:station_info][:city])
-      production.set_station_state(projection[:station_info][:state])
-      production.set_ac_output(projection[:outputs][:ac_monthly])
-      production.set_dc_output(projection[:outputs][:dc_monthly])
+      production.set_station(estimated_performance[:station_info][:location])
+      production.set_station_city(estimated_performance[:station_info][:city])
+      production.set_station_state(estimated_performance[:station_info][:state])
+      production.set_ac_output(estimated_performance[:outputs][:ac_monthly])
+      production.set_dc_output(estimated_performance[:outputs][:dc_monthly])
     end
+    
     production.save!
     production
   end
