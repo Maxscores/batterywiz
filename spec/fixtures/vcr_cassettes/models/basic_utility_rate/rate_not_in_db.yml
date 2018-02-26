@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Sun, 25 Feb 2018 09:14:05 GMT
+      - Mon, 26 Feb 2018 20:14:21 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -33,7 +33,7 @@ http_interactions:
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Remaining:
-      - '929'
+      - '969'
       Access-Control-Allow-Methods:
       - GET, POST, OPTIONS
       Access-Control-Allow-Origin:
@@ -45,9 +45,9 @@ http_interactions:
       Etag:
       - W/"ab40801cdd6603201e8be483ac0cb645"
       X-Request-Id:
-      - 6d89aecd-c3cf-4b47-8640-46893d8c74ee
+      - 61482b09-02a4-4c1e-81f2-8250b0909b7e
       X-Runtime:
-      - '0.030902'
+      - '0.055630'
       Age:
       - '0'
       Via:
@@ -63,5 +63,5 @@ http_interactions:
         Utilities","utility_info":[{"company_id":"6604","utility_name":"Fort Collins
         Utilities"}],"commercial":0.0737,"industrial":0.0562,"residential":0.0926}}'
     http_version: 
-  recorded_at: Sun, 25 Feb 2018 09:14:05 GMT
+  recorded_at: Mon, 26 Feb 2018 20:14:21 GMT
 recorded_with: VCR 4.0.0

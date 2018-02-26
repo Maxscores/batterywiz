@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Thu, 22 Feb 2018 17:30:50 GMT
+      - Mon, 26 Feb 2018 20:14:04 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -36,7 +36,7 @@ http_interactions:
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Remaining:
-      - '946'
+      - '986'
       Access-Control-Allow-Methods:
       - GET, POST, OPTIONS
       Access-Control-Allow-Origin:
@@ -48,11 +48,11 @@ http_interactions:
       Etag:
       - W/"84891b8fd2e908815618748ddd25c053"
       X-Request-Id:
-      - 4a0c6039-83f6-4725-8ad7-14104bb56fb1
+      - 82a83892-5e66-41c4-9f07-96d6228169ff
       X-Runtime:
-      - '0.117047'
+      - '0.140178'
       Age:
-      - '1'
+      - '0'
       Via:
       - http/1.1 api-umbrella (ApacheTrafficServer [cMsSf ])
       X-Cache:
@@ -65,7 +65,7 @@ http_interactions:
         64 bit GNU/C++ Jul  7 2015 14:24:09"},"station_info":{"lat":40.130001068115234,"lon":-105.23999786376953,"elev":1689.0,"tz":-7.0,"location":"724699","city":"\"BROOMFIELD/JEFFCO
         [BOULDER - SURFRAD]\"","state":"CO","solar_resource_file":"724699.csv","distance":9534},"outputs":{"ac_monthly":[519.9957885742188,511.663818359375,632.4813842773438,663.4769287109375,673.97216796875,625.5966186523438,624.6430053710938,639.447265625,636.2317504882812,606.7138671875,509.4306945800781,509.4686584472656],"poa_monthly":[135.77903747558594,136.01702880859375,172.07330322265625,181.0430450439453,185.826904296875,177.51197814941406,179.44775390625,182.2056121826172,179.2454376220703,167.3966064453125,135.13946533203125,131.20938110351562],"solrad_monthly":[4.379969120025635,4.85775089263916,5.550751686096191,6.034768104553223,5.994416236877441,5.9170660972595215,5.788637161254883,5.877600193023682,5.974847793579102,5.399890422821045,4.504648685455322,4.232560634613037],"dc_monthly":[545.4118041992188,541.400390625,675.321044921875,700.01611328125,705.4527587890625,654.3947143554688,653.0399169921875,668.308837890625,665.6765747070312,635.3403930664062,534.1744995117188,531.8952026367188],"ac_annual":7153.12158203125,"solrad_annual":5.376075744628906,"capacity_factor":20.414161682128906}}'
     http_version: 
-  recorded_at: Thu, 22 Feb 2018 17:30:50 GMT
+  recorded_at: Mon, 26 Feb 2018 20:14:04 GMT
 - request:
     method: get
     uri: https://developer.nrel.gov/api/utility_rates/v3.json?address=80301
@@ -89,7 +89,7 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Thu, 22 Feb 2018 17:30:50 GMT
+      - Mon, 26 Feb 2018 20:14:05 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -99,7 +99,7 @@ http_interactions:
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Remaining:
-      - '945'
+      - '985'
       Access-Control-Allow-Methods:
       - GET, POST, OPTIONS
       Access-Control-Allow-Origin:
@@ -111,9 +111,9 @@ http_interactions:
       Etag:
       - W/"a6c939c0567042307ba42702f81ecff0"
       X-Request-Id:
-      - eeb4bf97-3614-455a-b704-e557d176ce04
+      - 3a41f0c6-d8c5-499a-a1f2-c8f06065300d
       X-Runtime:
-      - '0.041534'
+      - '0.051679'
       Age:
       - '0'
       Via:
@@ -129,5 +129,5 @@ http_interactions:
         Service Co of Colorado","utility_info":[{"company_id":"15466","utility_name":"Public
         Service Co of Colorado"}],"commercial":0.0916,"industrial":0.0604,"residential":0.1105}}'
     http_version: 
-  recorded_at: Thu, 22 Feb 2018 17:30:50 GMT
+  recorded_at: Mon, 26 Feb 2018 20:14:05 GMT
 recorded_with: VCR 4.0.0
