@@ -10,8 +10,7 @@ class InstallationPresenter
   end
 
   def production
-    system_to_estimate = solar_system.attributes.merge!('zipcode' => installation.zipcode)
-    @production ||= @installation.find_or_get_production_data(system_to_estimate.symbolize_keys)
+    @production ||= @installation.find_or_get_production_data
   end
 
   def utility_rate

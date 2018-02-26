@@ -5,7 +5,8 @@ class Installation < ApplicationRecord
   has_one :consumption
   has_one :production
 
-  def find_or_get_production_data(system_details)
+  def find_or_get_production_data
+    system_details = solar_system.attributes.merge!('zipcode' => zipcode)
     if production
       production
     else
