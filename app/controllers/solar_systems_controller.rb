@@ -21,7 +21,10 @@ class SolarSystemsController < ApplicationController
   end
 
   def update
-    if SolarSystem.find(params[:id]).update(system_params)
+    solar_system = SolarSystem.find(params[:id])
+    if solar_system.update(system_params)
+      solar_system.installation.projection.destroy
+      solar_system.installation.find_or_get_production_data
       flash[:success] = "The Solar System was Successfully Updated"
       redirect_to installations_path
     else
