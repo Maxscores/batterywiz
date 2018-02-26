@@ -23,7 +23,7 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Mon, 26 Feb 2018 20:24:20 GMT
+      - Mon, 26 Feb 2018 20:24:23 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -36,7 +36,7 @@ http_interactions:
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Remaining:
-      - '960'
+      - '955'
       Access-Control-Allow-Methods:
       - GET, POST, OPTIONS
       Access-Control-Allow-Origin:
@@ -48,9 +48,9 @@ http_interactions:
       Etag:
       - W/"4ba195e01fa1bad9454a7b0c7b2a8880"
       X-Request-Id:
-      - 882b8a26-930c-4261-bb7c-5d2686c505e6
+      - 403e3f90-84da-4b9c-a5d6-40a52b73a8ab
       X-Runtime:
-      - '0.230568'
+      - '0.150924'
       Age:
       - '0'
       Via:
@@ -65,7 +65,7 @@ http_interactions:
         64 bit GNU/C++ Jul  7 2015 14:24:09"},"station_info":{"lat":18.25,"lon":-67.1500015258789,"elev":9.0,"tz":-4.0,"location":"785145","city":"\"EUGENIO
         MARIA DE HO\"","state":"PR","solar_resource_file":"785145.csv","distance":310014},"outputs":{"ac_monthly":[657.0142211914062,547.6658935546875,609.6620483398438,549.91162109375,477.51519775390625,445.74700927734375,493.3958435058594,557.209716796875,560.0343017578125,616.9432373046875,562.2159423828125,656.5623779296875],"poa_monthly":[185.58692932128906,154.8383331298828,172.46356201171875,155.65211486816406,135.7369842529297,127.53102111816406,140.7182159423828,158.40866088867188,159.04737854003906,175.5657501220703,158.94253540039062,185.9608612060547],"solrad_monthly":[5.986675262451172,5.529940605163574,5.563340663909912,5.188403606414795,4.378612518310547,4.251034259796143,4.539297103881836,5.109956741333008,5.301579475402832,5.6634111404418945,5.298084735870361,5.998737335205078],"dc_monthly":[684.9864501953125,571.7612915039062,636.4951171875,574.3093872070312,499.38726806640625,466.2917785644531,515.7362670898438,581.8897094726562,584.8143310546875,643.591064453125,586.8206787109375,684.1446533203125],"ac_annual":6733.87744140625,"solrad_annual":5.234088897705078,"capacity_factor":19.217687606811523}}'
     http_version: 
-  recorded_at: Mon, 26 Feb 2018 20:24:20 GMT
+  recorded_at: Mon, 26 Feb 2018 20:24:23 GMT
 - request:
     method: get
     uri: https://developer.nrel.gov/api/pvwatts/v5.json?address=11111&array_type=1&azimuth=180&dataset=tmy3&losses=0&module_type=1&radius=0&system_capacity=4.0&tilt=40
@@ -89,7 +89,7 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Mon, 26 Feb 2018 20:24:21 GMT
+      - Mon, 26 Feb 2018 20:24:24 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -102,7 +102,7 @@ http_interactions:
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Remaining:
-      - '959'
+      - '954'
       Access-Control-Allow-Methods:
       - GET, POST, OPTIONS
       Access-Control-Allow-Origin:
@@ -114,11 +114,11 @@ http_interactions:
       Etag:
       - W/"4ba195e01fa1bad9454a7b0c7b2a8880"
       X-Request-Id:
-      - 6f072534-5444-4ae1-98e0-efbb174d76e9
+      - 18a06eaa-1578-486d-9d0a-47cd6e986206
       X-Runtime:
-      - '0.134234'
+      - '0.123663'
       Age:
-      - '0'
+      - '1'
       Via:
       - http/1.1 api-umbrella (ApacheTrafficServer [cMsSf ])
       X-Cache:
@@ -131,5 +131,5 @@ http_interactions:
         64 bit GNU/C++ Jul  7 2015 14:24:09"},"station_info":{"lat":18.25,"lon":-67.1500015258789,"elev":9.0,"tz":-4.0,"location":"785145","city":"\"EUGENIO
         MARIA DE HO\"","state":"PR","solar_resource_file":"785145.csv","distance":310014},"outputs":{"ac_monthly":[657.0142211914062,547.6658935546875,609.6620483398438,549.91162109375,477.51519775390625,445.74700927734375,493.3958435058594,557.209716796875,560.0343017578125,616.9432373046875,562.2159423828125,656.5623779296875],"poa_monthly":[185.58692932128906,154.8383331298828,172.46356201171875,155.65211486816406,135.7369842529297,127.53102111816406,140.7182159423828,158.40866088867188,159.04737854003906,175.5657501220703,158.94253540039062,185.9608612060547],"solrad_monthly":[5.986675262451172,5.529940605163574,5.563340663909912,5.188403606414795,4.378612518310547,4.251034259796143,4.539297103881836,5.109956741333008,5.301579475402832,5.6634111404418945,5.298084735870361,5.998737335205078],"dc_monthly":[684.9864501953125,571.7612915039062,636.4951171875,574.3093872070312,499.38726806640625,466.2917785644531,515.7362670898438,581.8897094726562,584.8143310546875,643.591064453125,586.8206787109375,684.1446533203125],"ac_annual":6733.87744140625,"solrad_annual":5.234088897705078,"capacity_factor":19.217687606811523}}'
     http_version: 
-  recorded_at: Mon, 26 Feb 2018 20:24:21 GMT
+  recorded_at: Mon, 26 Feb 2018 20:24:24 GMT
 recorded_with: VCR 4.0.0

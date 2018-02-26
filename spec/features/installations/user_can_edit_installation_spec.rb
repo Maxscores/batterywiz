@@ -65,7 +65,7 @@ describe "As a logged in user with an installation" do
     end
 
     it "I can update the consumption for an installation" do
-      VCR.use_cassette("edit_installation/user_can_edit_solar_system") do
+      VCR.use_cassette("edit_installation/user_can_edit_consumption") do
         user = create(:user)
         i_1, i_2 = create_list(:installation, 2, user: user, zipcode: 11111)
         create(:solar_system, installation: i_1 )
