@@ -14,6 +14,20 @@ class ConsumptionsController < ApplicationController
     end
   end
 
+  def edit
+    @consumption = Consumption.find(params[:id])
+  end
+
+  def update
+    if Consumption.find(params[:id]).update(consumption_params)
+      flash[:success] = "The Consumption was Successfully Updated"
+      redirect_to installations_path
+    else
+      flash[:message] = "The Consumption was unable to be updated"
+      redirect_to edit_consumption_path(params[:id])
+    end
+  end
+
 
   private
     def consumption_params

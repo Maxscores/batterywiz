@@ -29,6 +29,9 @@
     <td><%= f.number_field "dec", min: 0, :required => true %></td>
   </tr>
 </table>
-
-<%= f.submit "Next Step" %>
+  <% if action_name == "new" %>
+  <%= f.submit "Next Step" %>
+  <% else %>
+  <%= f.submit "Update" %>
+  <% end %>
 <% end %>
