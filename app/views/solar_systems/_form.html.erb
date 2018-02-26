@@ -1,0 +1,24 @@
+<div class="wizard-form col col-2 sans-serif">
+  <%= form_for @solar_system do |f| %>
+
+  <%= f.label "capacity (kW)" %><br>
+  <%= f.number_field "capacity", min: 0.05, value: @size, step: 0.01  %><br>
+
+  <%= f.label "module_type" %><br>
+  <%= f.select "module_type", options_for_select(SolarSystem.module_types.map {|k, _| [k, k]}) %><br>
+
+  <%= f.label "losses (%)" %><br>
+  <%= f.number_field "losses", value: "14", in: -5..99 %><br>
+
+  <%= f.label "array_type" %><br>
+  <%= f.select "array_type", options_for_select(SolarSystem.array_types.map {|k, _| [k, k]}) %><br>
+
+  <%= f.label "tilt" %><br>
+  <%= f.number_field "tilt", value: "30", in: 0..90 %><br>
+
+  <%= f.label "azimuth" %><br>
+  <%= f.number_field "azimuth", value: "180", in: 0..360 %><br>
+
+  <%= f.submit "Calculate", class: "brown-btn" %>
+  <% end %>
+</div>
