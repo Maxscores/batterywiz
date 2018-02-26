@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :solar_system do
     installation
-    capacity "4"
+    capacity 4
     module_type 1
     losses 10
     array_type 1
