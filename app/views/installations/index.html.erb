@@ -11,7 +11,7 @@
       <th></th>
       <th></th>
       <% @installations.each do |installation| %>
-      <tr>
+      <tr id="installation-<%= installation.id %>">
         <td><%= link_to installation.id, installation_path(installation) %></td>
         <td><%= installation.solar_system.capacity %></td>
         <td><%= installation.zipcode %></td>
