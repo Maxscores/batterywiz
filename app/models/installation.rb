@@ -11,7 +11,7 @@ class Installation < ApplicationRecord
       production
     else
       production = ProductionBuilder.build do |production|
-        projection = NrelService.get_estimated_performance(system_details)
+        projection = NrelService.get_estimated_performance(system_details.symbolize_keys)
         production.set_installation(self)
         production.set_station(projection[:station_info][:location])
         production.set_station_city(projection[:station_info][:city])
