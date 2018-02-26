@@ -2,6 +2,11 @@
   <%= form_for @installation, class: "mx-auto sans-serif" do |f| %>
     <%= f.label "zipcode" %>
     <%= f.text_field :zipcode, maxlength: 5 %>
-    <%= f.submit"Next Step"%>
+    
+    <% if action_name == "new" %>
+      <%= f.submit "Next Step" %>
+    <% else %>
+      <%= f.submit "Update" %>
+    <% end %>
   <% end %>
 </div>
