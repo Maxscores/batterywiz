@@ -13,13 +13,11 @@ class ProductionDecorator < SimpleDelegator
     hourly_production_by_day[day_of_year].reduce([]) do |formatted, energy|
       if formatted.empty?
         formatted << [start_hour, energy/1000]
-        start_hour += 1.hour
-        formatted
       else
         formatted << [start_hour, formatted[-1][1] + energy/1000]
-        start_hour += 1.hour
-        formatted
       end
+      start_hour += 1.hour
+      formatted
     end
   end
 

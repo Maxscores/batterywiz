@@ -10,17 +10,14 @@ class ConsumptionDecorator < SimpleDelegator
 
   def graph_formatter(daily_total)
     start_hour = Time.new("00:00:00")
-
     (default_consumption_profile).reduce([]) do |formatted, energy|
       if formatted.empty?
         formatted << [start_hour, energy * daily_total]
-        start_hour += 1.hour
-        formatted
       else
         formatted << [start_hour, formatted[-1][1] + energy * daily_total]
-        start_hour += 1.hour
-        formatted
       end
+      start_hour += 1.hour
+      formatted
     end
   end
 

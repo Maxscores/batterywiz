@@ -1,8 +1,12 @@
 class BatteryDecorator < SimpleDelegator
   def graphable_daily_net_energy
     start_day = Time.new("01-01")
-    daily_net_energy.map do |energy|
-      formatted = [start_day, energy]
+    daily_net_energy.reduce([]) do |formatted, energy|
+      if formatted.empty?
+        formatted << [start_day, energy]
+      else
+        formatted << [start_day, formatted[-1][1] + energy]
+      end
       start_day += 1.day
       formatted
     end
@@ -13,13 +17,11 @@ class BatteryDecorator < SimpleDelegator
     hourly_net_energy[day_of_year].reduce([]) do |formatted, energy|
       if formatted.empty?
         formatted << [start_hour, battery_level_at_start_of_day(78) + energy]
-        start_hour += 1.hour
-        formatted
       else
         formatted << [start_hour, formatted[-1][1] + energy]
+      end
         start_hour += 1.hour
         formatted
-      end
     end
   end
 
