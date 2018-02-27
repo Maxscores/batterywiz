@@ -18,7 +18,7 @@ class Consumption < ApplicationRecord
       oct.to_f,
       nov.to_f,
       dec.to_f
-    ].map.with_index {|num, index| num / Time.days_in_month[index+1]}
+    ].map.with_index {|num, index| num / Time.days_in_month(index+1)}
   end
 
   def monthly_consumption
