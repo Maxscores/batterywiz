@@ -22,6 +22,7 @@ gem 'faraday'
 gem 'figaro'
 gem 'geocoder'
 gem 'devise'
+gem "chartkick"
 
 group :development, :test do
   gem 'pry'
