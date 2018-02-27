@@ -102,11 +102,6 @@
     </div>
     <div class="row">
       <div class="col col-12">
-        <p class="center h1"><%= line_chart [
-          {name: "Energy in Battery", data: @presenter.battery.graphable_daily_net_energy},
-          {name: "Energy Produced", data: @presenter.production.graphable_daily_production},
-          {name: "Energy Consumed", data: @presenter.consumption.graphable_daily_consumption}
-          ], xtitle: "Day", ytitle: "Energy (kWh)", title: "Yearly Energy Production", height: "400px" %></p>
         <div class="row">
           <div class="col col-5">
             <%= line_chart [
