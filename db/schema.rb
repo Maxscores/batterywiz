@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180226222216) do
+ActiveRecord::Schema.define(version: 20180227003550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,14 @@ ActiveRecord::Schema.define(version: 20180226222216) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["zipcode"], name: "index_basic_utility_rates_on_zipcode"
+  end
+
+  create_table "batteries", force: :cascade do |t|
+    t.decimal "capacity"
+    t.bigint "installation_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["installation_id"], name: "index_batteries_on_installation_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -117,6 +125,8 @@ ActiveRecord::Schema.define(version: 20180226222216) do
     t.decimal "dc_dec"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "hourly_ac", array: true
+    t.decimal "hourly_dc", array: true
     t.index ["installation_id"], name: "index_productions_on_installation_id"
   end
 
@@ -154,6 +164,7 @@ ActiveRecord::Schema.define(version: 20180226222216) do
   end
 
   add_foreign_key "appliances", "categories"
+  add_foreign_key "batteries", "installations"
   add_foreign_key "consumptions", "installations"
   add_foreign_key "productions", "installations"
   add_foreign_key "solar_systems", "installations"
