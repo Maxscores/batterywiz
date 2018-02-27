@@ -6,18 +6,35 @@ class Consumption < ApplicationRecord
 
   def avg_daily_consumption
     [
-      jan.to_i/31,
-      feb.to_i/28,
-      mar.to_i/31,
-      apr.to_i/30,
-      may.to_i/31,
-      jun.to_i/30,
-      jul.to_i/31,
-      aug.to_i/31,
-      sep.to_i/30,
-      oct.to_i/31,
-      nov.to_i/30,
-      dec.to_i/31
+      jan.to_f/31,
+      feb.to_f/28,
+      mar.to_f/31,
+      apr.to_f/30,
+      may.to_f/31,
+      jun.to_f/30,
+      jul.to_f/31,
+      aug.to_f/31,
+      sep.to_f/30,
+      oct.to_f/31,
+      nov.to_f/30,
+      dec.to_f/31
     ]
+  end
+
+  def monthly_consumption
+    {
+      1 => jan.to_f,
+      2 => feb.to_f,
+      3 => mar.to_f,
+      4 => apr.to_f,
+      5 => may.to_f,
+      6 => jun.to_f,
+      7 => jul.to_f,
+      8 => aug.to_f,
+      9 => sep.to_f,
+      10 => oct.to_f,
+      11 => nov.to_f,
+      12 => dec.to_f
+    }
   end
 end
