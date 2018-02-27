@@ -299,6 +299,7 @@ DEPENDENCIES
   database_cleaner
   devise
   factory_bot_rails
+  faraday
   figaro
   geocoder
   jbuilder (~> 2.5)
