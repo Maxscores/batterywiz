@@ -4,10 +4,10 @@ describe "As a logged in user with an installation" do
       VCR.use_cassette("edit_installation/user_can_edit_location") do
         user = create(:user)
         i_1, i_2 = create_list(:installation, 2, user: user, zipcode: 11111)
-        create(:solar_system, installation: i_1 )
-        create(:solar_system, installation: i_2 )
         create(:consumption, installation: i_1 )
         create(:consumption, installation: i_2 )
+        create(:solar_system, installation: i_1 )
+        create(:solar_system, installation: i_2 )
 
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
         allow_any_instance_of(ApplicationController).to receive(:authenticate_user!).and_return(true)
@@ -36,10 +36,10 @@ describe "As a logged in user with an installation" do
       VCR.use_cassette("edit_installation/user_can_edit_solar_system") do
         user = create(:user)
         i_1, i_2 = create_list(:installation, 2, user: user, zipcode: 11111)
-        create(:solar_system, installation: i_1 )
-        create(:solar_system, installation: i_2 )
         create(:consumption, installation: i_1 )
         create(:consumption, installation: i_2 )
+        create(:solar_system, installation: i_1 )
+        create(:solar_system, installation: i_2 )
 
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
         allow_any_instance_of(ApplicationController).to receive(:authenticate_user!).and_return(true)
@@ -68,10 +68,10 @@ describe "As a logged in user with an installation" do
       VCR.use_cassette("edit_installation/user_can_edit_consumption") do
         user = create(:user)
         i_1, i_2 = create_list(:installation, 2, user: user, zipcode: 11111)
-        create(:solar_system, installation: i_1 )
-        create(:solar_system, installation: i_2 )
         create(:consumption, installation: i_1 )
         create(:consumption, installation: i_2 )
+        create(:solar_system, installation: i_1 )
+        create(:solar_system, installation: i_2 )
 
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
         allow_any_instance_of(ApplicationController).to receive(:authenticate_user!).and_return(true)

@@ -3,10 +3,10 @@ describe "A logged in user with multiple installations" do
     it "and see their installations" do
       user = create(:user)
       i_1, i_2 = create_list(:installation, 2, user: user)
-      create(:solar_system, installation: i_1 )
-      create(:solar_system, installation: i_2 )
       create(:consumption, installation: i_1 )
       create(:consumption, installation: i_2 )
+      create(:solar_system, installation: i_1 )
+      create(:solar_system, installation: i_2 )
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
       allow_any_instance_of(ApplicationController).to receive(:authenticate_user!).and_return(true)
@@ -29,10 +29,10 @@ describe "A logged in user with multiple installations" do
       VCR.use_cassette("installations/user_sees_one_installation") do
         user = create(:user)
         i_1, i_2 = create_list(:installation, 2, user: user)
-        create(:solar_system, installation: i_1 )
-        create(:solar_system, installation: i_2 )
         create(:consumption, installation: i_1 )
         create(:consumption, installation: i_2 )
+        create(:solar_system, installation: i_1 )
+        create(:solar_system, installation: i_2 )
 
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
         allow_any_instance_of(ApplicationController).to receive(:authenticate_user!).and_return(true)
