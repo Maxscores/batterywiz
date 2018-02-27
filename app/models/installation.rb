@@ -16,8 +16,8 @@ class Installation < ApplicationRecord
     end.max.round(1)
   end
 
-  def estimate_battery_size
+  def estimate_hourly_net_energy
     estimated_consumption = estimate_consumption(consumption.avg_daily_consumption)
-    calculate_capacity(estimated_consumption, production.hourly_dc)
+    calculate_hourly_net_energy(estimated_consumption, production.hourly_dc)
   end
 end
