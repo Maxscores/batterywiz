@@ -4,7 +4,7 @@ module BatteryCalculationModule
       day_hourly_consumption.zip(day_hourly_production).map do |(hour_consumption, hour_production)|
         (hour_production/1000) - hour_consumption
       end.sum
-    end.max * 24
+    end.max
   end
 
   def default_consumption_profile
