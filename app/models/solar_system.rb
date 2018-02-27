@@ -1,4 +1,6 @@
 class SolarSystem < ApplicationRecord
+  include BatteryCalculationModule
+
   belongs_to :installation
   before_save :build_production, :build_battery
 
@@ -25,7 +27,9 @@ class SolarSystem < ApplicationRecord
 
   def build_battery
     installation.battery.destroy if installation.battery
-    Battery.create(capacity: installation.estimate_battery_size.round(1), installation: installation)
+    hourly_net = installation.estimate_hourly_net_energy
+    daily_net = calculate_daily_net(hourly_net)
+    Battery.create(daily_net_energy: daily_net, hourly_net_energy: hourly_net, capacity: daily_net.max, installation: installation)
   end
 
   def system_details
