@@ -13,6 +13,62 @@
   </div>
   <div class="col col-8">
     <div class="row">
+      <div class="col col-12">
+        <p class="h3 center">Installation Summary</p>
+        <div class="row">
+          <div class="col col-5">
+            <p class="h4 center">Carbon Offset</p>
+            <p class="h5 center"><%= @presenter.production.carbon_offset.round(2) %> Tons</p>
+          </div>
+          <div class="col col-2">
+            <p></p>
+          </div>
+          <div class="col col-5">
+            <p class="h4 center">Electricity Value</p>
+            <p class="h5 center"><%=  number_to_currency(@presenter.production.total_production * @presenter.utility_rate.residential) %></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-5">
+            <%= line_chart [
+              {name: "Energy in Battery", data: @presenter.battery.net_on_summer_solstice},
+              {name: "Energy Produced", data: @presenter.production.production_on_summer_solstice},
+              {name: "Energy Consumed", data: @presenter.consumption.consumption_on_summer_solstice}
+              ], xtitle: "Hour", ytitle: "Energy (kWh)", title: "Summer Solstice", height: "400px" %>
+          </div>
+          <div class="col col-2">
+            <p></p>
+          </div>
+          <div class="col col-5">
+            <%= line_chart [
+              {name: "Energy in Battery", data: @presenter.battery.net_on_winter_solstice},
+              {name: "Energy Produced", data: @presenter.production.production_on_winter_solstice},
+              {name: "Energy Consumed", data: @presenter.consumption.consumption_on_winter_solstice}
+              ], xtitle: "Hour", ytitle: "Energy (kWh)", title: "Winter Solstice", height: "400px" %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-5">
+            <%= line_chart [
+              {name: "Energy in Battery", data: @presenter.battery.net_on_spring_equinox},
+              {name: "Energy Produced", data: @presenter.production.production_on_spring_equinox},
+              {name: "Energy Consumed", data: @presenter.consumption.consumption_on_spring_equinox}
+              ], xtitle: "Hour", ytitle: "Energy (kWh)", title: "Spring Equinox", height: "400px" %>
+          </div>
+          <div class="col col-2">
+            <p></p>
+          </div>
+          <div class="col col-5">
+            <%= line_chart [
+              {name: "Energy in Battery", data: @presenter.battery.net_on_fall_equinox},
+              {name: "Energy Produced", data: @presenter.production.production_on_fall_equinox},
+              {name: "Energy Consumed", data: @presenter.consumption.consumption_on_fall_equinox}
+              ], xtitle: "Hour", ytitle: "Energy (kWh)", title: "Fall Equinox", height: "400px" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
       <div class="col col-6">
         <p class="h4">Solar System Summary</p>
         <p class="h6 sans-serif">
@@ -38,7 +94,7 @@
     </div>
     <div class="row">
       <div class="col col-12">
-        <table class="data-table">
+        <table class="data-table center">
           <th>Month</th>
           <td>Jan</td>
           <td>Feb</td>
@@ -98,48 +154,6 @@
             <td><%= @presenter.production.dc_dec %></td>
           </tr>
         </table>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col col-12">
-        <div class="row">
-          <div class="col col-5">
-            <%= line_chart [
-              {name: "Energy in Battery", data: @presenter.battery.net_on_summer_solstice},
-              {name: "Energy Produced", data: @presenter.production.production_on_summer_solstice},
-              {name: "Energy Consumed", data: @presenter.consumption.consumption_on_summer_solstice}
-              ], xtitle: "Hour", ytitle: "Energy (kWh)", title: "Summer Solstice", height: "400px" %>
-          </div>
-          <div class="col col-2">
-            <p></p>
-          </div>
-          <div class="col col-5">
-            <%= line_chart [
-              {name: "Energy in Battery", data: @presenter.battery.net_on_winter_solstice},
-              {name: "Energy Produced", data: @presenter.production.production_on_winter_solstice},
-              {name: "Energy Consumed", data: @presenter.consumption.consumption_on_winter_solstice}
-              ], xtitle: "Hour", ytitle: "Energy (kWh)", title: "Winter Solstice", height: "400px" %>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col col-5">
-            <%= line_chart [
-              {name: "Energy in Battery", data: @presenter.battery.net_on_spring_equinox},
-              {name: "Energy Produced", data: @presenter.production.production_on_spring_equinox},
-              {name: "Energy Consumed", data: @presenter.consumption.consumption_on_spring_equinox}
-              ], xtitle: "Hour", ytitle: "Energy (kWh)", title: "Spring Equinox", height: "400px" %>
-          </div>
-          <div class="col col-2">
-            <p></p>
-          </div>
-          <div class="col col-5">
-            <%= line_chart [
-              {name: "Energy in Battery", data: @presenter.battery.net_on_fall_equinox},
-              {name: "Energy Produced", data: @presenter.production.production_on_fall_equinox},
-              {name: "Energy Consumed", data: @presenter.consumption.consumption_on_fall_equinox}
-              ], xtitle: "Hour", ytitle: "Energy (kWh)", title: "Fall Equinox", height: "400px" %>
-          </div>
-        </div>
       </div>
     </div>
   </div>
