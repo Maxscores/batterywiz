@@ -27,7 +27,15 @@ class ProductionBuilder
     @production.station_state = state
   end
 
-  def set_ac_output(full_output)
+  def set_ac_hourly(ac)
+    @production.hourly_ac = ac
+  end
+
+  def set_dc_hourly(dc)
+    @production.hourly_dc = dc
+  end
+
+  def set_ac_monthly(full_output)
     @production.ac_jan = full_output[0].round(2)
     @production.ac_feb = full_output[1].round(2)
     @production.ac_mar = full_output[2].round(2)
@@ -42,7 +50,7 @@ class ProductionBuilder
     @production.ac_dec = full_output[11].round(2)
   end
 
-  def set_dc_output(full_output)
+  def set_dc_monthly(full_output)
     @production.dc_jan = full_output[0].round(2)
     @production.dc_feb = full_output[1].round(2)
     @production.dc_mar = full_output[2].round(2)

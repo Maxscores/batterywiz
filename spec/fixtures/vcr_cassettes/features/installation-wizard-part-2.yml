@@ -23,17 +23,20 @@ http_interactions:
       Server:
       - openresty
       Date:
-      - Mon, 26 Feb 2018 20:14:06 GMT
+      - Tue, 27 Feb 2018 00:58:05 GMT
       Content-Type:
       - application/json; charset=utf-8
-      Content-Length:
-      - '644'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Accept-Encoding
       X-Ratelimit-Limit:
       - '1000'
       X-Ratelimit-Remaining:
-      - '984'
+      - '825'
       Access-Control-Allow-Methods:
       - GET, POST, OPTIONS
       Access-Control-Allow-Origin:
@@ -45,11 +48,11 @@ http_interactions:
       Etag:
       - W/"b76a8a6fc75389bd3197a628b562c0f6"
       X-Request-Id:
-      - be3cbe10-beaf-49d3-9000-43aca66ecd5b
+      - 3e4780ab-8872-48f7-8d0a-c740b807b7dc
       X-Runtime:
-      - '0.005583'
+      - '0.007706'
       Age:
-      - '1'
+      - '0'
       Via:
       - http/1.1 api-umbrella (ApacheTrafficServer [cMsSf ])
       X-Cache:
@@ -57,9 +60,9 @@ http_interactions:
       Strict-Transport-Security:
       - max-age=31536000; preload
     body:
-      encoding: UTF-8
+      encoding: ASCII-8BIT
       string: '{"version":"1.0.0","warnings":[],"errors":[],"metadata":{"sources":["Perez-SUNY/NREL,
         2012"]},"inputs":{"address":"80525"},"outputs":{"avg_dni":{"annual":5.36,"monthly":{"jan":4.26,"feb":4.71,"mar":5.32,"apr":5.7,"may":5.72,"jun":6.51,"jul":6.38,"aug":5.73,"sep":6.16,"oct":5.17,"nov":4.56,"dec":4.1}},"avg_ghi":{"annual":4.4,"monthly":{"jan":2.24,"feb":3.12,"mar":4.34,"apr":5.38,"may":6.1,"jun":6.62,"jul":6.39,"aug":5.6,"sep":4.91,"oct":3.55,"nov":2.52,"dec":2.01}},"avg_lat_tilt":{"annual":5.29,"monthly":{"jan":4.25,"feb":4.88,"mar":5.57,"apr":5.76,"may":5.74,"jun":5.86,"jul":5.81,"aug":5.7,"sep":5.97,"oct":5.25,"nov":4.58,"dec":4.06}}}}'
     http_version: 
-  recorded_at: Mon, 26 Feb 2018 20:14:06 GMT
+  recorded_at: Tue, 27 Feb 2018 00:58:05 GMT
 recorded_with: VCR 4.0.0

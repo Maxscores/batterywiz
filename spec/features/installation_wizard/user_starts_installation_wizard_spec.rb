@@ -45,7 +45,7 @@ describe "As a user that clicks on installation calculator from the home page" d
 
         click_on "Next Step"
 
-        expect(find_field('solar_system_capacity').value).to eq '8.7'
+        expect(find_field('solar_system_capacity').value).to eq '8.8'
       end
     end
 
@@ -75,7 +75,7 @@ describe "As a user that clicks on installation calculator from the home page" d
 
         click_on "Next Step"
 
-        expect(find_field('solar_system_capacity').value).to eq '8.7'
+        expect(find_field('solar_system_capacity').value).to eq '8.8'
         expect(find_field('solar_system_losses').value).to eq("14")
         expect(find_field('solar_system_tilt').value).to eq("30")
         expect(find_field('solar_system_azimuth').value).to eq("180")

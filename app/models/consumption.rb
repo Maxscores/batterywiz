@@ -6,18 +6,35 @@ class Consumption < ApplicationRecord
 
   def avg_daily_consumption
     [
-      jan.to_i/31,
-      feb.to_i/28,
-      mar.to_i/31,
-      apr.to_i/30,
-      may.to_i/31,
-      jun.to_i/30,
-      jul.to_i/31,
-      aug.to_i/31,
-      sep.to_i/30,
-      oct.to_i/31,
-      nov.to_i/30,
-      dec.to_i/31
-    ]
+      jan.to_f,
+      feb.to_f,
+      mar.to_f,
+      apr.to_f,
+      may.to_f,
+      jun.to_f,
+      jul.to_f,
+      aug.to_f,
+      sep.to_f,
+      oct.to_f,
+      nov.to_f,
+      dec.to_f
+    ].map.with_index {|num, index| num / Time.days_in_month(index+1)}
+  end
+
+  def monthly_consumption
+    {
+      1 => jan.to_f,
+      2 => feb.to_f,
+      3 => mar.to_f,
+      4 => apr.to_f,
+      5 => may.to_f,
+      6 => jun.to_f,
+      7 => jul.to_f,
+      8 => aug.to_f,
+      9 => sep.to_f,
+      10 => oct.to_f,
+      11 => nov.to_f,
+      12 => dec.to_f
+    }
   end
 end

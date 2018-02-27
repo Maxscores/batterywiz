@@ -13,8 +13,8 @@ class NrelService
                         azimuth: params[:azimuth],
                         radius: 0,
                         dataset: 'tmy3',
-                        address: params[:zipcode]}
-
+                        address: params[:zipcode],
+                        timeframe: 'hourly'}
     end
     parseJSON(response)
   end
