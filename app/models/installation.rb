@@ -13,7 +13,7 @@ class Installation < ApplicationRecord
     grouped = consumption.avg_daily_consumption.zip(average_daily_solar_production)
     grouped.map do |(consumption, production)|
       (1.20 * consumption / production)
-    end.max.round(1)
+    end.max.round(2)
   end
 
   def estimate_hourly_net_energy
