@@ -8,6 +8,15 @@ class ConsumptionDecorator < SimpleDelegator
   #   end
   # end
 
+  def graph_monthly_consumption
+    start_month = Time.new("01-01")
+    (1..12).map do |month|
+      formatted = [start_month, monthly_consumption[month].to_i]
+      start_month += 1.month
+      formatted
+    end
+  end
+
   def graph_formatter(daily_total)
     start_hour = Time.new("00:00:00")
     (default_consumption_profile).reduce([]) do |formatted, energy|

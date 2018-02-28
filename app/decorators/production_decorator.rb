@@ -8,6 +8,15 @@ class ProductionDecorator < SimpleDelegator
   #   end
   # end
 
+  def graph_monthly_production
+    start_month = Time.new("01-01-01")
+    (1..12).map do |month|
+      formatted = [start_month, production_by_month[month-1]]
+      start_month += 1.month
+      formatted
+    end
+  end
+
   def graph_formatter(day_of_year)
     start_hour = Time.new("00:00:00")
     hourly_production_by_day[day_of_year].reduce([]) do |formatted, energy|

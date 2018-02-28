@@ -5,7 +5,6 @@
     <p></p>
   </div>
   <div class="col col-8">
-    <p class="h3 center">Installation Summary</p>
     <div class="row">
       <div class="col col-4">
         <span class="h4">Solar System Summary</span>
@@ -41,32 +40,32 @@
         <div class="row">
           <div class="col col-6">
             <%= line_chart [
-              {name: "Battery Charge", data: @presenter.battery.net_on_summer_solstice},
               {name: "Total Produced", data: @presenter.production.production_on_summer_solstice},
-              {name: "Total Consumed", data: @presenter.consumption.consumption_on_summer_solstice}
+              {name: "Total Consumed", data: @presenter.consumption.consumption_on_summer_solstice},
+              {name: "Battery Charge", data: @presenter.battery.net_on_summer_solstice}
               ], xtitle: "Hour", ytitle: "Energy (kWh)", title: "Summer Solstice", height: "400px" %>
           </div>
           <div class="col col-6">
             <%= line_chart [
-              {name: "Battery Charge", data: @presenter.battery.net_on_winter_solstice},
               {name: "Total Produced", data: @presenter.production.production_on_winter_solstice},
-              {name: "Total Consumed", data: @presenter.consumption.consumption_on_winter_solstice}
+              {name: "Total Consumed", data: @presenter.consumption.consumption_on_winter_solstice},
+              {name: "Battery Charge", data: @presenter.battery.net_on_winter_solstice}
               ], xtitle: "Hour", ytitle: "Energy (kWh)", title: "Winter Solstice", height: "400px" %>
           </div>
         </div>
         <div class="row">
           <div class="col col-6">
             <%= line_chart [
-              {name: "Battery Charge", data: @presenter.battery.net_on_spring_equinox},
               {name: "Total Produced", data: @presenter.production.production_on_spring_equinox},
-              {name: "Total Consumed", data: @presenter.consumption.consumption_on_spring_equinox}
+              {name: "Total Consumed", data: @presenter.consumption.consumption_on_spring_equinox},
+              {name: "Battery Charge", data: @presenter.battery.net_on_spring_equinox}
               ], xtitle: "Hour", ytitle: "Energy (kWh)", title: "Spring Equinox", height: "400px" %>
           </div>
           <div class="col col-6">
             <%= line_chart [
-              {name: "Battery Charge", data: @presenter.battery.net_on_fall_equinox},
               {name: "Total Produced", data: @presenter.production.production_on_fall_equinox},
-              {name: "Total Consumed", data: @presenter.consumption.consumption_on_fall_equinox}
+              {name: "Total Consumed", data: @presenter.consumption.consumption_on_fall_equinox},
+              {name: "Battery Charge", data: @presenter.battery.net_on_fall_equinox}
               ], xtitle: "Hour", ytitle: "Energy (kWh)", title: "Fall Equinox", height: "400px" %>
           </div>
         </div>
@@ -75,66 +74,10 @@
 
     <div class="row">
       <div class="col col-12">
-        <table class="data-table center">
-          <th>Month</th>
-          <td>Jan</td>
-          <td>Feb</td>
-          <td>March</td>
-          <td>April</td>
-          <td>May</td>
-          <td>June</td>
-          <td>July</td>
-          <td>Aug</td>
-          <td>Sept</td>
-          <td>Oct</td>
-          <td>Nov</td>
-          <td>Dec</td>
-          <tr id="consumption">
-            <th>Consumption (kWh)</th>
-            <td><%= @presenter.consumption.jan %></td>
-            <td><%= @presenter.consumption.feb %></td>
-            <td><%= @presenter.consumption.mar %></td>
-            <td><%= @presenter.consumption.apr %></td>
-            <td><%= @presenter.consumption.may %></td>
-            <td><%= @presenter.consumption.jun %></td>
-            <td><%= @presenter.consumption.jul %></td>
-            <td><%= @presenter.consumption.aug %></td>
-            <td><%= @presenter.consumption.sep %></td>
-            <td><%= @presenter.consumption.oct %></td>
-            <td><%= @presenter.consumption.nov %></td>
-            <td><%= @presenter.consumption.dec %></td>
-          </tr>
-          <tr id="ac-production">
-            <th>AC Solar Production (kWh)</th>
-            <td><%= @presenter.production.ac_jan %></td>
-            <td><%= @presenter.production.ac_feb %></td>
-            <td><%= @presenter.production.ac_mar %></td>
-            <td><%= @presenter.production.ac_apr %></td>
-            <td><%= @presenter.production.ac_may %></td>
-            <td><%= @presenter.production.ac_jun %></td>
-            <td><%= @presenter.production.ac_jul %></td>
-            <td><%= @presenter.production.ac_aug %></td>
-            <td><%= @presenter.production.ac_sep %></td>
-            <td><%= @presenter.production.ac_oct %></td>
-            <td><%= @presenter.production.ac_nov %></td>
-            <td><%= @presenter.production.ac_dec %></td>
-          </tr>
-          <tr id="dc-production">
-            <th>DC Solar Production (kWh)</th>
-            <td><%= @presenter.production.dc_jan %></td>
-            <td><%= @presenter.production.dc_feb %></td>
-            <td><%= @presenter.production.dc_mar %></td>
-            <td><%= @presenter.production.dc_apr %></td>
-            <td><%= @presenter.production.dc_may %></td>
-            <td><%= @presenter.production.dc_jun %></td>
-            <td><%= @presenter.production.dc_jul %></td>
-            <td><%= @presenter.production.dc_aug %></td>
-            <td><%= @presenter.production.dc_sep %></td>
-            <td><%= @presenter.production.dc_oct %></td>
-            <td><%= @presenter.production.dc_nov %></td>
-            <td><%= @presenter.production.dc_dec %></td>
-          </tr>
-        </table>
+        <%= line_chart [
+          {name: "Monthly Produced", data: @presenter.production.graph_monthly_production},
+          {name: "Monthly Consumed", data: @presenter.consumption.graph_monthly_consumption}
+          ], xtitle: "Hour", ytitle: "Energy (kWh)", title: "Monthly Energy", height: "400px" %>
       </div>
     </div>
   </div>
