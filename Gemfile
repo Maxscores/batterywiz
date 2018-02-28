@@ -23,6 +23,8 @@ gem 'figaro'
 gem 'geocoder'
 gem 'devise'
 gem "chartkick"
+gem 'newrelic_rpm'
+
 
 group :development, :test do
   gem 'pry'
