@@ -1,12 +1,12 @@
 class ConsumptionDecorator < SimpleDelegator
-  def graphable_daily_consumption
-    start_day = Time.new("01-01")
-    daily_consumption.map do |energy|
-      formatted = [start_day, energy]
-      start_day += 1.day
-      formatted
-    end
-  end
+  # def graphable_daily_consumption
+  #   start_day = Time.new("01-01")
+  #   daily_consumption.map do |energy|
+  #     formatted = [start_day, energy]
+  #     start_day += 1.day
+  #     formatted
+  #   end
+  # end
 
   def graph_formatter(daily_total)
     start_hour = Time.new("00:00:00")

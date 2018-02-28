@@ -1,12 +1,12 @@
 class ProductionDecorator < SimpleDelegator
-  def graphable_daily_production
-    start_day = Time.new("01-01")
-    daily_production.map do |energy|
-      formatted = [start_day, energy/1000]
-      start_day += 1.day
-      formatted
-    end
-  end
+  # def graphable_daily_production
+  #   start_day = Time.new("01-01")
+  #   daily_production.map do |energy|
+  #     formatted = [start_day, energy/1000]
+  #     start_day += 1.day
+  #     formatted
+  #   end
+  # end
 
   def graph_formatter(day_of_year)
     start_hour = Time.new("00:00:00")
