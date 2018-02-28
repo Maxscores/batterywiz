@@ -1,8 +1,18 @@
 class Consumption < ApplicationRecord
+  include ConsumptionProfileModule
+
   belongs_to :installation
   has_one :solar_system, through: :installation
 
   validates_presence_of :jan, :feb, :mar, :apr, :may, :jun, :jul, :aug, :sep, :oct, :nov, :dec
+
+  def daily_consumption
+    (1..12).map do |month|
+      (1..Time.days_in_month(month)).map do
+        avg_daily_consumption[month-1]
+      end
+    end.flatten
+  end
 
   def avg_daily_consumption
     [

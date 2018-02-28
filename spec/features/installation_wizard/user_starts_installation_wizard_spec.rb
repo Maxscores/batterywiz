@@ -20,7 +20,7 @@ describe "As a user that clicks on installation calculator from the home page" d
     end
 
     it "they can fill in step one and months of step 2" do
-      VCR.use_cassette("features/installation-wizard-part-2") do
+      VCR.use_cassette("installation_wizard/installation-wizard-part-2") do
         visit '/'
 
         click_on "Solar Installation Calculator"
@@ -45,12 +45,12 @@ describe "As a user that clicks on installation calculator from the home page" d
 
         click_on "Next Step"
 
-        expect(find_field('solar_system_capacity').value).to eq '8.8'
+        expect(find_field('solar_system_capacity').value).to eq '8.77'
       end
     end
 
     it "they can fill in complete form and are redirected to summary page" do
-      VCR.use_cassette("features/installation_wizard/pvwatts") do
+      VCR.use_cassette("installation_wizard/pvwatts") do
         visit '/'
 
         click_on "Solar Installation Calculator"
@@ -75,7 +75,7 @@ describe "As a user that clicks on installation calculator from the home page" d
 
         click_on "Next Step"
 
-        expect(find_field('solar_system_capacity').value).to eq '8.8'
+        expect(find_field('solar_system_capacity').value).to eq '8.77'
         expect(find_field('solar_system_losses').value).to eq("14")
         expect(find_field('solar_system_tilt').value).to eq("30")
         expect(find_field('solar_system_azimuth').value).to eq("180")

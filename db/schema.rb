@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180227003550) do
+ActiveRecord::Schema.define(version: 20180227191627) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 20180227003550) do
     t.bigint "installation_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "daily_net_energy", array: true
+    t.decimal "hourly_net_energy", array: true
     t.index ["installation_id"], name: "index_batteries_on_installation_id"
   end
 
