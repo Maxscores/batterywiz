@@ -2,8 +2,8 @@ FactoryBot.define do
   factory :production do
     installation
     station "Station ID"
-    city "Fort Collins"
-    state "CO"
+    station_city "Fort Collins"
+    station_state "CO"
     ac [1]*365*24
     dc [1]*365*24
     ac_jan 100
