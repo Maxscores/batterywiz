@@ -6,6 +6,10 @@ class Consumption < ApplicationRecord
 
   validates_presence_of :jan, :feb, :mar, :apr, :may, :jun, :jul, :aug, :sep, :oct, :nov, :dec
 
+  def estimated_hourly_consumption
+    estimate_consumption(avg_daily_consumption)
+  end
+
   def daily_consumption
     (1..12).map do |month|
       (1..Time.days_in_month(month)).map do
