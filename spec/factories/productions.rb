@@ -5,7 +5,7 @@ FactoryBot.define do
     station_city "Fort Collins"
     station_state "CO"
     hourly_ac [1]*365*24
-    hourly_wdc [1]*365*24
+    hourly_dc [1]*365*24
     ac_jan 100
     ac_feb 100
     ac_mar 100
