@@ -4,8 +4,8 @@ FactoryBot.define do
     station "Station ID"
     station_city "Fort Collins"
     station_state "CO"
-    ac [1]*365*24
-    dc [1]*365*24
+    hourly_ac [1]*365*24
+    hourly_dc [1]*365*24
     ac_jan 100
     ac_feb 100
     ac_mar 100
