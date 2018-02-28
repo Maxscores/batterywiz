@@ -13,4 +13,15 @@ module BatteryCalculationModule
       day.sum.round(1)
     end
   end
+
+  def calculate_daily_non_producing_consumption(hourly_net_energy)
+    hourly_net_energy.map do |day|
+      day.reduce(0) do |non_producing_consumption, net|
+        if net < 0
+          non_producing_consumption -= net
+        end
+        non_producing_consumption
+      end
+    end
+  end
 end

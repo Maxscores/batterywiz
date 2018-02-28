@@ -51,4 +51,15 @@ class Consumption < ApplicationRecord
       12 => dec.to_f
     }
   end
+
+  def calculate_daily_peak_consumption
+    estimated_hourly_consumption.map do |day|
+      day.each_with_index.reduce(0) do |peak_usage, (usage, hour)|
+        if hour >= 15 && hour <= 22
+          peak_usage += usage
+        end
+        peak_usage
+      end
+    end
+  end
 end

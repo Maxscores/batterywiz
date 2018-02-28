@@ -29,7 +29,8 @@ class SolarSystem < ApplicationRecord
     installation.battery.destroy if installation.battery
     hourly_net = installation.estimate_hourly_net_energy
     daily_net = calculate_daily_net(hourly_net)
-    Battery.create(daily_net_energy: daily_net, hourly_net_energy: hourly_net, capacity: daily_net.max, installation: installation)
+    daily_peak_max = calculate_daily_non_producing_consumption(hourly_net).min
+    Battery.create(daily_net_energy: daily_net, hourly_net_energy: hourly_net, capacity: daily_peak_max, installation: installation)
   end
 
   def system_details
