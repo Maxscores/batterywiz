@@ -1,4 +1,4 @@
-# SolBat
+# BatteryWiz
 
 [![Coverage Status](https://coveralls.io/repos/github/Maxscores/solar_calc/badge.svg?branch=master)](https://coveralls.io/github/Maxscores/solar_calc?branch=master)
 [![Build Status](https://travis-ci.org/Maxscores/solar_calc.svg?branch=master)](https://travis-ci.org/Maxscores/solar_calc)
