@@ -14,14 +14,17 @@ RSpec.describe Installation, type: :model do
 
     describe '#estimate_hourly_net_energy' do
       it "estimates hour by hour net energy" do
-        installation = create(:installation, production: create(:production), consumption: create(:consumption), zipcode: 80525)
+        production = create(:production)
+        consumption = create(:consumption)
+        installation = create(:installation, production: production, consumption: consumption, zipcode: 80525)
 
         result = installation.estimate_hourly_net_energy
 
-        first_result = (production.dc.first/1000 - estimate_consumption(consumption.avg_daily_consumption)).round(1)
+        first_result = (production.hourly_dc.first/1000 - consumption.avg_daily_consumption.first * 3.9 / 60.7).round(1)
 
-        expect(result.count).to eq(365*24)
-        expect(result.first).to eq(first_result)
+        expect(result.count).to eq(365)
+        expect(result.flatten.count).to eq(365*24)
+        expect(result[0][0]).to eq(first_result)
       end
     end
   end
