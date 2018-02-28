@@ -54,9 +54,11 @@ describe "As a user I can view an installation" do
 
       visit installation_path(installation)
 
-      expect(page).to have_css("#consumption")
-      expect(page).to have_css("#ac-production")
-      expect(page).to have_css("#dc-production")
+      expect(page).to have_css('#monthly-energy')
+      expect(page).to have_css('#spring-equinox')
+      expect(page).to have_css('#summer-solstice')
+      expect(page).to have_css('#fall-equinox')
+      expect(page).to have_css('#winter-solstice')
     end
   end
 end

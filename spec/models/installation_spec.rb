@@ -20,7 +20,7 @@ RSpec.describe Installation, type: :model do
 
         result = installation.estimate_hourly_net_energy
 
-        first_result = (production.hourly_dc.first/1000 - consumption.avg_daily_consumption.first * 3.9 / 60.7).round(1)
+        first_result = (production.hourly_dc.first/1000 - consumption.avg_daily_consumption_by_month.first * 3.9 / 60.7).round(1)
 
         expect(result.count).to eq(365)
         expect(result.flatten.count).to eq(365*24)
