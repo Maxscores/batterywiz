@@ -22,18 +22,18 @@ class ConsumptionDecorator < SimpleDelegator
   end
 
   def consumption_on_spring_equinox
-    graph_formatter(avg_daily_consumption[2])
+    graph_formatter(avg_daily_consumption_by_month[2])
   end
 
   def consumption_on_summer_solstice
-    graph_formatter(avg_daily_consumption[5])
+    graph_formatter(avg_daily_consumption_by_month[5])
   end
 
   def consumption_on_fall_equinox
-    graph_formatter(avg_daily_consumption[8])
+    graph_formatter(avg_daily_consumption_by_month[8])
   end
 
   def consumption_on_winter_solstice
-    graph_formatter(avg_daily_consumption[10])
+    graph_formatter(avg_daily_consumption_by_month[10])
   end
 end

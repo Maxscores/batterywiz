@@ -4,7 +4,7 @@ module ConsumptionEstimationModule
       (1..Time.days_in_month(month)).map do
         #add winter/summer month selection
         default_consumption_profile.map do |hour_consumption|
-          avg_daily_consumption[month-1] * hour_consumption
+          (avg_daily_consumption[month-1] * hour_consumption).round(2)
         end
       end
     end.flatten(1)
