@@ -20,7 +20,7 @@ describe "As a user that clicks on installation calculator from the home page" d
     end
 
     it "they can fill in step one and months of step 2" do
-      VCR.use_cassette("features/installation-wizard-part-2") do
+      VCR.use_cassette("installation_wizard/installation-wizard-part-2") do
         visit '/'
 
         click_on "Solar Installation Calculator"
@@ -50,7 +50,7 @@ describe "As a user that clicks on installation calculator from the home page" d
     end
 
     it "they can fill in complete form and are redirected to summary page" do
-      VCR.use_cassette("features/installation_wizard/pvwatts") do
+      VCR.use_cassette("installation_wizard/pvwatts") do
         visit '/'
 
         click_on "Solar Installation Calculator"
