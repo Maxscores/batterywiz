@@ -1,5 +1,5 @@
 class Consumption < ApplicationRecord
-  include ConsumptionProfileModule
+  include ConsumptionEstimationModule
 
   belongs_to :installation
   has_one :solar_system, through: :installation
