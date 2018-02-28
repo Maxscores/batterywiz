@@ -1,0 +1,37 @@
+<% if params["controller"] == "installations" && params["action"] == "show"%>
+<div class="top-nav table">
+  <ul>
+    <li id="nav-location">Location <%= image_tag "256_location.png" %></li>
+    <li id="nav-consumption">Consumption <%= image_tag "256_ecology-lightbulb.png" %></li>
+    <li id="nav-system">Solar System <%= image_tag "256_solar-panel.png" %></li>
+    <li class="active" id="nav-summary">System Summary <%= image_tag "256_piggy-bank.png" %></li>
+  </ul>
+</div>
+<% elsif params["controller"] == "consumptions" %>
+<div class="top-nav table">
+  <ul>
+    <li id="nav-location">Location <%= image_tag "256_location.png" %></li>
+    <li class="active" id="nav-consumption">Consumption <%= image_tag "256_ecology-lightbulb.png" %></li>
+    <li id="nav-system">Solar System <%= image_tag "256_solar-panel.png" %></li>
+    <li id="nav-summary">System Summary <%= image_tag "256_piggy-bank.png" %></li>
+  </ul>
+</div>
+<% elsif params["controller"] == "solar_systems" %>
+<div class="top-nav table">
+  <ul>
+    <li id="nav-location">Location <%= image_tag "256_location.png" %></li>
+    <li id="nav-consumption">Consumption <%= image_tag "256_ecology-lightbulb.png" %></li>
+    <li class="active" id="nav-system">Solar System <%= image_tag "256_solar-panel.png" %></li>
+    <li id="nav-summary">System Summary <%= image_tag "256_piggy-bank.png" %></li>
+  </ul>
+</div>
+<% elsif params["controller"] == "installations" %>
+<div class="top-nav table">
+  <ul>
+    <li class="active" id="nav-location">Location <%= image_tag "256_location.png" %></li>
+    <li id="nav-consumption">Consumption <%= image_tag "256_ecology-lightbulb.png" %></li>
+    <li id="nav-system">Solar System <%= image_tag "256_solar-panel.png" %></li>
+    <li id="nav-summary">System Summary <%= image_tag "256_piggy-bank.png" %></li>
+  </ul>
+</div>
+<% end %>

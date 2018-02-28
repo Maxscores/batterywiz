@@ -5,4 +5,5 @@ class Battery < ApplicationRecord
   def battery_level_at_start_of_day(day)
     daily_net_energy[0..(day-1)].sum / 100
   end
+
 end

@@ -8,6 +8,15 @@ class ConsumptionDecorator < SimpleDelegator
   #   end
   # end
 
+  def graph_monthly_consumption
+    start_month = Time.new("01-01")
+    (1..12).map do |month|
+      formatted = [start_month, monthly_consumption[month].to_i]
+      start_month += 1.month
+      formatted
+    end
+  end
+
   def graph_formatter(daily_total)
     start_hour = Time.new("00:00:00")
     (default_consumption_profile).reduce([]) do |formatted, energy|
@@ -22,18 +31,18 @@ class ConsumptionDecorator < SimpleDelegator
   end
 
   def consumption_on_spring_equinox
-    graph_formatter(avg_daily_consumption[2])
+    graph_formatter(avg_daily_consumption_by_month[2])
   end
 
   def consumption_on_summer_solstice
-    graph_formatter(avg_daily_consumption[5])
+    graph_formatter(avg_daily_consumption_by_month[5])
   end
 
   def consumption_on_fall_equinox
-    graph_formatter(avg_daily_consumption[8])
+    graph_formatter(avg_daily_consumption_by_month[8])
   end
 
   def consumption_on_winter_solstice
-    graph_formatter(avg_daily_consumption[10])
+    graph_formatter(avg_daily_consumption_by_month[10])
   end
 end

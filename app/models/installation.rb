@@ -10,14 +10,13 @@ class Installation < ApplicationRecord
 
   def calculate_array_size
     average_daily_solar_production = MonthlySolarOutput.find_or_get_by_zipcode(zipcode).avg_daily_production
-    grouped = consumption.avg_daily_consumption.zip(average_daily_solar_production)
+    grouped = consumption.avg_daily_consumption_by_month.zip(average_daily_solar_production)
     grouped.map do |(consumption, production)|
-      (1.20 * consumption / production)
+      (1.15 * consumption / production)
     end.max.round(2)
   end
 
   def estimate_hourly_net_energy
-    estimated_consumption = estimate_consumption(consumption.avg_daily_consumption)
-    calculate_hourly_net_energy(estimated_consumption, production.hourly_dc)
+    calculate_hourly_net(consumption.estimated_hourly_consumption, production.hourly_production_by_day)
   end
 end

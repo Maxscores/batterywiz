@@ -19,7 +19,7 @@
     <%= f.number_field "azimuth", value: "180", in: 0..360 %><br>
 
     <% if action_name == "new" %>
-      <%= f.submit "Calculate", class: "brown-btn" %>
+      <%= f.submit "Calculate", class: "brown-btn calculate" %>
     <% else %>
       <%= f.submit "Update" %>
     <% end %>

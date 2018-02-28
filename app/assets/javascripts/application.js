@@ -18,6 +18,9 @@
 
 
 $(document).ready(function() {
+  $('input.calculate').on('click', function() {
+    $(".spinner").show();
+  });
   $('.section').on('click', '.button', function() {
     $(this).parent().find('.section-text').slideToggle();
   });

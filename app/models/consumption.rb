@@ -1,20 +1,24 @@
 class Consumption < ApplicationRecord
-  include ConsumptionProfileModule
+  include ConsumptionEstimationModule
 
   belongs_to :installation
   has_one :solar_system, through: :installation
 
   validates_presence_of :jan, :feb, :mar, :apr, :may, :jun, :jul, :aug, :sep, :oct, :nov, :dec
 
+  def estimated_hourly_consumption
+    estimate_consumption(avg_daily_consumption_by_month)
+  end
+
   def daily_consumption
     (1..12).map do |month|
       (1..Time.days_in_month(month)).map do
-        avg_daily_consumption[month-1]
+        avg_daily_consumption_by_month[month-1]
       end
     end.flatten
   end
 
-  def avg_daily_consumption
+  def avg_daily_consumption_by_month
     [
       jan.to_f,
       feb.to_f,

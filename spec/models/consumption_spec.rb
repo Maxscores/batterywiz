@@ -36,9 +36,9 @@ RSpec.describe Consumption, type: :model do
       end
     end
 
-    describe '#avg_daily_consumption' do
+    describe '#avg_daily_consumption_by_month' do
       it "returns array with values for each month of year" do
-        result = consumption.avg_daily_consumption
+        result = consumption.avg_daily_consumption_by_month
 
         expect(result.count).to eq(12)
         expect(result).to be_a Array
@@ -52,7 +52,18 @@ RSpec.describe Consumption, type: :model do
 
         expect(result.count).to eq(365)
         expect(result).to be_a Array
-        expect(result.first.round(2)).to eq(3.23)
+        expect(result[0].round(2)).to eq(3.23)
+      end
+    end
+
+    describe '#estimated_hourly_consumption' do
+      it "returns array of hour by hour consumption for entire year" do
+        result = consumption.estimated_hourly_consumption
+
+        expect(result.flatten.count).to eq(365*24)
+        expect(result).to be_a Array
+        expect(result[0]).to be_a Array
+        expect(result[0][0].round(2)).to eq(0.21)
       end
     end
   end
