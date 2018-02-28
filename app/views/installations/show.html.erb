@@ -1,46 +1,39 @@
-<div class="top-nav table">
-  <ul>
-    <li>Location <%= image_tag "256_location.png" %> </li>
-    <li>Consumption <%= image_tag "256_ecology-lightbulb.png" %></li>
-    <li>Solar System <%= image_tag "256_solar-panel.png" %></li>
-    <li class="active">System Summary <%= image_tag "256_piggy-bank.png" %></li>
-  </ul>
-</div>
+<%= render "layouts/wizard_nav" %>w
 
 <div class="row">
   <div class="col col-2">
     <p></p>
   </div>
   <div class="col col-8">
+    <p class="h3 center">Installation Summary</p>
     <div class="row">
-      <p class="h3 center">Installation Summary</p>
       <div class="col col-4">
-        <p class="h4">Solar System Summary</p>
+        <span class="h4">Solar System Summary</span>
         <p class="h6 sans-serif">
-          Solar System Capacity: <%= @presenter.solar_system.capacity %> kW<br>
-          Battery Capacity: <%= @presenter.battery.capacity %> kWh<br>
-          Azimuth Angle: <%= @presenter.solar_system.azimuth %><br>
-          Panel Tilt: <%= @presenter.solar_system.tilt %><br>
-          Array Type: <%= @presenter.solar_system.array_type %><br>
-          Module Type: <%= @presenter.solar_system.module_type %><br>
-          Losses: <%= @presenter.solar_system.losses %>
+          Solar System Capacity: <span class="h5 italic"><%= @presenter.solar_system.capacity %> kW</span><br>
+          Battery Capacity: <span class="h5 italic"><%= @presenter.battery.capacity %> kWh</span><br>
+          Azimuth Angle: <span class="h5 italic"><%= @presenter.solar_system.azimuth %></span><br>
+          Panel Tilt: <span class="h5 italic"><%= @presenter.solar_system.tilt %></span><br>
+          Array Type: <span class="h5 italic"><%= @presenter.solar_system.array_type %></span><br>
+          Module Type: <span class="h5 italic"><%= @presenter.solar_system.module_type %></span><br>
+          Losses: <span class="h5 italic"><%= @presenter.solar_system.losses %></span>
         </p>
       </div>
       <div class="col col-5">
-        <p class="h4">Location Summary</p>
+        <span class="h4">Location Summary</span>
         <p class="h6 sans-serif">
-          Installation Zipcode: <%= @presenter.installation.zipcode %> <br>
-          Weather Station: <%= @presenter.production.station %> <br>
-          Station City: <%= @presenter.production.station_city %> <br>
-          Station State: <%= @presenter.production.station_state %> <br>
-          Average Utility Rate: <%= number_to_currency @presenter.utility_rate.residential %>
+          Installation Zipcode: <span class="h5 italic"><%= @presenter.installation.zipcode %> </span><br>
+          Weather Station: <span class="h5 italic"><%= @presenter.production.station %> </span><br>
+          Station City: <span class="h5 italic"><%= @presenter.production.station_city %> </span><br>
+          Station State: <span class="h5 italic"><%= @presenter.production.station_state %> </span><br>
+          Average Utility Rate: <span class="h5 italic"><%= number_to_currency @presenter.utility_rate.residential %></span>
         </p>
       </div>
       <div class="col col-3">
-        <p class="h4">Carbon Offset</p>
-        <p class="h6"><%= @presenter.production.carbon_offset.round(2) %> Tons</p>
-        <p class="h4">Electricity Value</p>
-        <p class="h6"><%=  number_to_currency(@presenter.production.total_production * @presenter.utility_rate.residential) %></p>
+        <span class="h4">Carbon Offset</span>
+        <p class="h5 italic"><%= @presenter.production.carbon_offset.round(2) %> Tons</p>
+        <span class="h4">Electricity Value</span>
+        <p class="h5 italic"><%=  number_to_currency(@presenter.production.total_production * @presenter.utility_rate.residential) %></p>
       </div>
     </div>
     <div class="row">

@@ -1,11 +1,5 @@
-<div class="top-nav table">
-  <ul>
-    <li class="active" id="nav-location">Location <%= image_tag "256_location.png" %></li>
-    <li id="nav-consumption">Consumption <%= image_tag "256_ecology-lightbulb.png" %></li>
-    <li id="nav-system">Solar System <%= image_tag "256_solar-panel.png" %></li>
-    <li id="nav-summary">System Summary <%= image_tag "256_piggy-bank.png" %></li>
-  </ul>
-</div>
+<%= render "layouts/wizard_nav" %>
+
 <div class="battery-wizard">
 
   <div class="row">
@@ -15,7 +9,7 @@
     <div class="col col-3 mx2 documentation">
       <p class="h3">Update Your Zipcode</p>
     </div>
-    
+
     <%= render "installations/form" %>
     <div class="col col-3">
       <p></p>
