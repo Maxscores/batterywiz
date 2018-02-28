@@ -17,6 +17,6 @@ class Installation < ApplicationRecord
   end
 
   def estimate_hourly_net_energy
-    calculate_hourly_net(consumption.estimated_hourly_consumption, production.hourly_dc)
+    calculate_hourly_net(consumption.estimated_hourly_consumption, production.hourly_production_by_day)
   end
 end

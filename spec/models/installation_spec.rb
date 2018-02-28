@@ -8,7 +8,7 @@ RSpec.describe Installation, type: :model do
         installation = create(:installation, consumption: create(:consumption), zipcode: 80525)
 
         result = installation.calculate_array_size
-        expect(result).to eq(0.77)
+        expect(result).to eq(0.74)
       end
     end
 
