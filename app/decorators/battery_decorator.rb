@@ -20,8 +20,9 @@ class BatteryDecorator < SimpleDelegator
       else
         formatted << [start_hour, formatted[-1][1] + energy]
       end
-        start_hour += 1.hour
-        formatted
+      # formatted << [start_hour, energy]
+      start_hour += 1.hour
+      formatted
     end
   end
 

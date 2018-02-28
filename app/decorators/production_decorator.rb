@@ -16,6 +16,7 @@ class ProductionDecorator < SimpleDelegator
       else
         formatted << [start_hour, formatted[-1][1] + energy/1000]
       end
+      # formatted << [start_hour, energy/1000]
       start_hour += 1.hour
       formatted
     end
