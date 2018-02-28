@@ -26,7 +26,7 @@ class ProductionDecorator < SimpleDelegator
   end
 
   def production_on_summer_solstice
-    graph_formatter(172)
+    graph_formatter(171)
   end
 
   def production_on_fall_equinox
