@@ -1,6 +1,6 @@
 <div class="wizard-form col col-2 sans-serif">
   <%= form_for @solar_system do |f| %>
-    <%= f.label "capacity (kW)" %><br>
+    <%= f.label "DC capacity (kW)" %><br>
     <%= f.number_field "capacity", min: 0.05, value: @size, step: 0.01  %><br>
 
     <%= f.label "module_type" %><br>

@@ -22,11 +22,11 @@ $(document).ready(function() {
     $(".spinner").show();
   });
   $('.section').on('click', '.button', function() {
-    $(this).parent().find('.section-text').slideToggle();
+    $(this).parent().find('.section-text').toggle();
   });
   $('.section').on('keydown', '.button', function(event) {
     if (event.keyCode === 13) {
-      $(this).parent().find('.section-text').slideToggle();
+      $(this).parent().find('.section-text').toggle();
     };
   });
 });

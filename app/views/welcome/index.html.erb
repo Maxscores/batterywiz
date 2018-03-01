@@ -2,10 +2,17 @@
   <%= image_tag "sun_pan_hero.jpg" %>
 </div>
 <% if current_user %>
-<%= link_to "Solar Installation Calculator", new_installation_path %>
+<%= link_to "Solar Installation and Battery Calculator", new_installation_path %>
 <% else %>
-<%= link_to "Solar Installation Calculator", new_installation_path, data: {confirm: "You won't be able to save the installation unless you're signed in. Continue?"} %>
+<%= link_to "Solar Installation and Battery Calculator", new_installation_path, data: {confirm: "You won't be able to save the installation unless you're signed in. Continue?"} %>
 <% end %>
-<p>To be the first to enter the cosmos, to engage, single-handed, in an unprecedented duel with nature—could one dream of anything more?</p>
-<p>That's one small step for [a] man, one giant leap for humankind.</p>
-<p>We want to explore. We’re curious people. Look back over history, people have put their lives at stake to go out and explore … We believe in what we’re doing. Now it’s time to go.</p>
+<p>
+  There are plenty of solar array calculators out there, BatteryWiz is different.
+  BatteryWiz will determine the required solar array capacity to power your
+  household, plus it simulates your hour by hour consumption and determines the
+  minimum battery capacity to power the household through the night.
+</p>
+<p>
+  Battery storage is the future of solar. As solar energy production increases the
+  demand for energy storage will continue to rise.
+</p>

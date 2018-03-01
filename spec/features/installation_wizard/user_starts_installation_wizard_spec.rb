@@ -7,7 +7,7 @@ describe "As a user that clicks on installation calculator from the home page" d
     it "and can fill in zipcode and click next step" do
       visit '/'
 
-      click_on "Solar Installation Calculator"
+      click_on "Solar Installation and Battery Calculator"
 
       expect(current_path).to eq("/installations/new")
 
@@ -23,7 +23,7 @@ describe "As a user that clicks on installation calculator from the home page" d
       VCR.use_cassette("installation_wizard/installation-wizard-part-2") do
         visit '/'
 
-        click_on "Solar Installation Calculator"
+        click_on "Solar Installation and Battery Calculator"
 
         expect(current_path).to eq("/installations/new")
 
@@ -53,7 +53,7 @@ describe "As a user that clicks on installation calculator from the home page" d
       VCR.use_cassette("installation_wizard/pvwatts") do
         visit '/'
 
-        click_on "Solar Installation Calculator"
+        click_on "Solar Installation and Battery Calculator"
 
         expect(current_path).to eq("/installations/new")
 
