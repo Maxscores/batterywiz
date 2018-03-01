@@ -20,7 +20,7 @@ class MonthlySolarOutput < ApplicationRecord
     end
   end
 
-  def avg_daily_production
+  def avg_daily_production_by_month
     [jan, feb, mar, apr, may, jun, jul, aug, sep, oct, nov, dec]
   end
 end
