@@ -9,11 +9,16 @@ class Installation < ApplicationRecord
   has_one :battery
 
   def calculate_array_size
-    average_daily_solar_production = MonthlySolarOutput.find_or_get_by_zipcode(zipcode).avg_daily_production
-    grouped = consumption.avg_daily_consumption_by_month.zip(average_daily_solar_production)
-    grouped.map do |(consumption, production)|
-      (1.15 * consumption / production)
-    end.max.round(2)
+    monthly_solar_output = MonthlySolarOutput.find_or_get_by_zipcode(zipcode)
+    if monthly_solar_output.nil?
+      nil
+    else
+      average_daily_solar_production = monthly_solar_output.avg_daily_production_by_month
+      grouped = consumption.avg_daily_consumption_by_month.zip(average_daily_solar_production)
+      grouped.map do |(consumption, production)|
+        (1.15 * consumption / production)
+      end.max.round(2)
+    end
   end
 
   def estimate_hourly_net_energy

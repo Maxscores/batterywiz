@@ -2,7 +2,7 @@ class InstallationsController < ApplicationController
   before_action :authenticate_user!, only: [:index]
 
   def index
-    @installations = current_user.installations
+    @installations = current_user.installations.joins(:battery)
   end
 
   def show
