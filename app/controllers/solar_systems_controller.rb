@@ -4,7 +4,7 @@ class SolarSystemsController < ApplicationController
     @size = Installation.find(session[:installation_id]).calculate_array_size
     if @size.nil?
       flash[:message] = "There is no solar data for this location, please try another location"
-      redirect_to root_path
+      redirect_to new_installation_path
     end
     @solar_system = SolarSystem.new
   end
