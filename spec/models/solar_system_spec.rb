@@ -6,11 +6,11 @@ RSpec.describe SolarSystem, type: :model do
       it "creates an entry in the db for the NREL PVWatts performance before it is saved" do
         VCR.use_cassette("models/solar_system_build_production") do
           installation = create(:installation, zipcode: 80525)
-          consumption = create(:consumption, installation: installation)
+          create(:consumption, installation: installation)
 
           expect(installation.production).to be_nil
 
-          solar_system = create(:solar_system, installation: installation)
+          create(:solar_system, installation: installation)
 
           expect(installation.production).to be_a Production
         end
@@ -19,14 +19,14 @@ RSpec.describe SolarSystem, type: :model do
       it "if production data is already cached for installation, delete and rebuild" do
         VCR.use_cassette("models/solar_system_build_production") do
           installation = create(:installation, zipcode: 80525)
-          consumption = create(:consumption, installation: installation)
+          create(:consumption, installation: installation)
           production = create(:production, installation: installation)
 
           original_production_id = production.id
 
           expect(installation.production).to be_a Production
 
-          solar_system = create(:solar_system, installation: installation)
+          create(:solar_system, installation: installation)
 
           expect(installation.production.id).to_not eq(original_production_id)
         end
