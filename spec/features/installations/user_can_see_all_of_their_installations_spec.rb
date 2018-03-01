@@ -54,5 +54,27 @@ describe "A logged in user with multiple installations" do
         expect(page).to have_content("Losses: ")
       end
     end
+
+    it "does not get an error if it has unfinished installations" do
+      user = create(:user)
+      i_1, i_2 = create_list(:installation, 2, user: user)
+      create(:consumption, installation: i_1 )
+      create(:consumption, installation: i_2 )
+      create(:solar_system, installation: i_1 )
+
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+      allow_any_instance_of(ApplicationController).to receive(:authenticate_user!).and_return(true)
+
+      visit root_path
+
+      click_on "My Installations"
+
+      expect(current_path).to eq("/installations")
+      expect(page).to have_link(i_1.id)
+      expect(page).to have_content(i_1.zipcode)
+      expect(page).to have_content(i_1.solar_system.capacity)
+
+      expect(page).to_not have_content(i_2.id)
+    end
   end
 end
