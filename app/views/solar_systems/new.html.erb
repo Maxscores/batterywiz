@@ -13,43 +13,74 @@
 
     <div class="col col-6 mx2 documentation">
       <div class="section">
-        <span class="button h4">Capacity <i class="arrow down relative right"></i></span>
-        <p class="section-text h6">Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next 10.</p>
+        <span class="button h4">DC Capacity <i class="arrow down relative right"></i></span>
+        <p class="section-text h6">
+          DC System Capacity is the approximate hourly output of a solar array.
+          The bigger the capacity the more energy is produced. The default number
+          has been calculated from your consumption history.
+        </p>
       </div>
 
       <div class="section">
         <span class="button h4">Types of Solar Modules <i class="arrow down relative right"></i></span>
-        <p class="section-text h6">There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
+          <table class="data-table section-text" >
+            <caption class="h6">There are three main types of solar modules. They have different traits:</caption>
+
+            <th>Type</th>
+            <th>Approximate Efficiency</th>
+            <th>Module Cover</th>
+            <tr>
+              <td>Standard (crystalline Silicon)</td>
+              <td>15%</td>
+              <td>Glass</td>
+            </tr>
+            <tr>
+              <td>Premium (crystalline Silicon)</td>
+              <td>19%</td>
+              <td>Anti-reflective</td>
+            </tr>
+            <tr>
+              <td>Thin film	</td>
+              <td>10%	</td>
+              <td>Glass</td>
+            </tr>
+          </table>
       </div>
 
       <div class="section">
         <span class="button h4">System Losses <i class="arrow down relative right"></i></span>
-        <p class="section-text h6">We want to explore. We’re curious people. Look back over history, people have put their lives at stake to go out and explore … We believe in what we’re doing. Now it’s time to go.</p>
+        <p class="section-text h6">
+          These are the electrical losses in the system. If you're needing to edit
+          these then I'd recommend estimating production with <a href="http://pvwatts.nrel.gov/">PV Watts</a>.
+        </p>
       </div>
 
       <div class="section">
         <span class="button h4">Types of Solar Arrays <i class="arrow down relative right"></i></span>
-        <p class="section-text h6">Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next 10.</p>
+        <p class="section-text h6">
+          The array type describes whether the PV modules in the array are fixed,
+          or whether they move to track the movement of the sun across the sky
+          with one or two axes of rotation. The default value is a fixed, or no
+          tracking. Use the following diagrams to choose the appropriate option
+          for your system:
+          <%= image_tag "tracking.png", width: "100%" %>
+        </p>
       </div>
 
       <div class="section">
         <span class="button h4">Pannel Tilt <i class="arrow down relative right"></i></span>
-        <p class="section-text h6">Buy why, some say, the moon? Why choose this as our goal? And they may as well ask why climb the highest mountain?</p>
+        <p class="section-text h6">
+          The angle tilt from horizontal. Default from NREL is 30.
+          <br><%= image_tag "array_tilt.jpg" %>
+        </p>
       </div>
 
       <div class="section">
         <span class="button h4">Azimuth Angle <i class="arrow down relative right"></i></span>
-        <p class="section-text h6">There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and literally, it is a task to occupy the generations. And no matter how much progress one makes, there is always the thrill of just beginning.</p>
-      </div>
-
-      <div class="section">
-        <span class="button h4">Latitude <i class="arrow down relative right"></i></span>
-        <p class="section-text h6">Astronomy compels the soul to look upward, and leads us from this world to another.</p>
-      </div>
-
-      <div class="section">
-        <span class="button h4">Longitude <i class="arrow down relative right"></i></span>
-        <p class="section-text h6">Spaceflights cannot be stopped. This is not the work of any one man or even a group of men. It is a historical process which mankind is carrying out in accordance with the natural laws of human development.</p>
+        <p class="section-text h6">
+          Direction solar panels are facing:
+          <br><%= image_tag "azimuth.jpg" %>
+        </p>
       </div>
     </div>
     <div class="col col-2">

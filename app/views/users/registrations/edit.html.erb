@@ -1,3 +1,6 @@
+<div class="col col-12 center">
+
+
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(@user, url: edit_user_registration_path(@user), html: { method: :put }) do |f| %>
@@ -5,45 +8,47 @@
 
   <div class="field">
     <%= f.label :first_name %><br />
-    <%= f.email_field :first_name, autofocus: true, autocomplete: "first_name" %>
-  </div>
+    <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
+  </div><br>
 
   <div class="field">
     <%= f.label :last_name %><br />
-    <%= f.email_field :last_name, autocomplete: "last_name" %>
-  </div>
+    <%= f.text_field :last_name, autocomplete: "last_name" %>
+  </div><br>
 
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+  </div><br>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.label :password %> <br><span class="h6"><i>(leave blank if you don't want to change it)</i></span><br />
     <%= f.password_field :password, autocomplete: "off" %>
     <% if @minimum_password_length %>
       <br />
       <em><%= @minimum_password_length %> characters minimum</em>
     <% end %>
-  </div>
+  </div><br>
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+  </div><br>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+    <%= f.label :current_password %> <br> <span class="h6"> <i>(we need your current password to confirm your changes)</i></span><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
+  </div><br>
 
   <div class="actions">
     <%= f.submit "Update" %>
-  </div>
+  </div><br>
 <% end %>
 
 <%= link_to "Back", :back %>
+
+</div>

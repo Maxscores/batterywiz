@@ -3,6 +3,7 @@
     margin-top: 0;
     font-family: $header-font-family2;
     display: none;
+    word-wrap: normal;
   }
   .button {
     background: linear-gradient(-71deg, white 5%, rgba($eco-blue, 0.3), rgba($eco-blue, 0.5));

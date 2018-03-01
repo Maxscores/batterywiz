@@ -1,39 +1,42 @@
+<div class="col col-12 center">
+
 <h2>Sign up</h2>
 
-<%= form_for(@user, url: user_registration_path) do |f| %>
+<%= form_for(@user, url: user_registration_path, class: "blue-gradient") do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
     <%= f.label :first_name %><br />
     <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
-  </div>
+  </div><br>
 
   <div class="field">
     <%= f.label :last_name %><br />
     <%= f.text_field :last_name, autocomplete: "last_name" %>
-  </div>
+  </div><br>
 
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autocomplete: "email" %>
-  </div>
+  </div><br>
 
   <div class="field">
     <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% if @minimum_password_length %><br>
+    <em class="h6">(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+  </div><br>
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+  </div><br>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", class: "brown-btn" %>
   </div>
 <% end %>
 
 <%= render "users/shared/links" %>
+</div>
