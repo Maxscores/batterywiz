@@ -15,23 +15,23 @@
   <td>Dec</td>
   <tr>
     <th>Electricity Used (kWh)</th>
-    <td><%= f.number_field "jan", min: 0, :required => true %></td>
-    <td><%= f.number_field "feb", min: 0, :required => true %></td>
-    <td><%= f.number_field "mar", min: 0, :required => true %></td>
-    <td><%= f.number_field "apr", min: 0, :required => true %></td>
-    <td><%= f.number_field "may", min: 0, :required => true %></td>
-    <td><%= f.number_field "jun", min: 0, :required => true %></td>
-    <td><%= f.number_field "jul", min: 0, :required => true %></td>
-    <td><%= f.number_field "aug", min: 0, :required => true %></td>
-    <td><%= f.number_field "sep", min: 0, :required => true %></td>
-    <td><%= f.number_field "oct", min: 0, :required => true %></td>
-    <td><%= f.number_field "nov", min: 0, :required => true %></td>
-    <td><%= f.number_field "dec", min: 0, :required => true %></td>
+    <td><%= f.number_field "jan", value: 600, min: 0, :required => true %></td>
+    <td><%= f.number_field "feb", value: 600, min: 0, :required => true %></td>
+    <td><%= f.number_field "mar", value: 600, min: 0, :required => true %></td>
+    <td><%= f.number_field "apr", value: 300, min: 0, :required => true %></td>
+    <td><%= f.number_field "may", value: 300, min: 0, :required => true %></td>
+    <td><%= f.number_field "jun", value: 300, min: 0, :required => true %></td>
+    <td><%= f.number_field "jul", value: 750, min: 0, :required => true %></td>
+    <td><%= f.number_field "aug", value: 750, min: 0, :required => true %></td>
+    <td><%= f.number_field "sep", value: 750, min: 0, :required => true %></td>
+    <td><%= f.number_field "oct", value: 300, min: 0, :required => true %></td>
+    <td><%= f.number_field "nov", value: 300, min: 0, :required => true %></td>
+    <td><%= f.number_field "dec", value: 300, min: 0, :required => true %></td>
   </tr>
 </table>
   <% if action_name == "new" %>
-  <%= f.submit "Next Step" %>
+  <%= f.submit "Next Step", class: "brown-btn calculate" %>
   <% else %>
-  <%= f.submit "Update" %>
+  <%= f.submit "Update", class: "brown-btn calculate" %>
   <% end %>
 <% end %>
