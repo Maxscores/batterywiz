@@ -4,19 +4,23 @@ class MonthlySolarOutput < ApplicationRecord
       solar_output
     else
       data = NrelService.get_monthly_solar_output(zipcode)
-      MonthlySolarOutput.create(zipcode: zipcode,
-        jan: data[:outputs][:avg_dni][:monthly][:jan],
-        feb: data[:outputs][:avg_dni][:monthly][:feb],
-        mar: data[:outputs][:avg_dni][:monthly][:mar],
-        apr: data[:outputs][:avg_dni][:monthly][:apr],
-        may: data[:outputs][:avg_dni][:monthly][:may],
-        jun: data[:outputs][:avg_dni][:monthly][:jun],
-        jul: data[:outputs][:avg_dni][:monthly][:jul],
-        aug: data[:outputs][:avg_dni][:monthly][:aug],
-        sep: data[:outputs][:avg_dni][:monthly][:sep],
-        oct: data[:outputs][:avg_dni][:monthly][:oct],
-        nov: data[:outputs][:avg_dni][:monthly][:nov],
-        dec: data[:outputs][:avg_dni][:monthly][:dec])
+      if data[:outputs][:avg_dni] != "no data"
+        MonthlySolarOutput.create(zipcode: zipcode,
+          jan: data[:outputs][:avg_dni][:monthly][:jan],
+          feb: data[:outputs][:avg_dni][:monthly][:feb],
+          mar: data[:outputs][:avg_dni][:monthly][:mar],
+          apr: data[:outputs][:avg_dni][:monthly][:apr],
+          may: data[:outputs][:avg_dni][:monthly][:may],
+          jun: data[:outputs][:avg_dni][:monthly][:jun],
+          jul: data[:outputs][:avg_dni][:monthly][:jul],
+          aug: data[:outputs][:avg_dni][:monthly][:aug],
+          sep: data[:outputs][:avg_dni][:monthly][:sep],
+          oct: data[:outputs][:avg_dni][:monthly][:oct],
+          nov: data[:outputs][:avg_dni][:monthly][:nov],
+          dec: data[:outputs][:avg_dni][:monthly][:dec])
+      else
+        nil
+      end
     end
   end
 
