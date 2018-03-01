@@ -12,26 +12,41 @@
         <span class="button h4" tabindex="0">Why should you consider a battery? <i class="arrow down relative right"></i></span>
         <div class="section-text">
           <p class="h3">Offset Peak Electricity Demand</p>
-          <%= image_tag "duck_curve.png", size: "300x300" %>
           <p class="h6">
             Some regions of the United States, where a substantial amount of solar
             energy is produced, experience a rapid increase in demand for power
-            when the sun set. This phenomenon is known as the Duck Curve. The
-            Duck Curve shows that while we have reduced the number of conventional
-            power plants needed throughout the day, we haven't been able to reduce
-            the total capacity of coal power plants recovered
+            when the sun sets. This phenomenon is known as the Duck Curve.<br>
+
+            <%= image_tag "duck_curve.png", size: "300x300", class: "center" %><br>
+
+            The Duck Curve shows that while the number of conventional power plants
+            needed throughout the day has been reduced, the total capacity of conventional
+            power plants has remained constant. By backing up your solar array
+            with a battery you reduce peak demand on the electrical grid.
           </p>
         </div>
       </div>
 
       <div class="section">
-        <span class="button h4" tabindex="0">What We Calculate <i class="arrow down relative right"></i></span>
-        <p class="section-text h6">Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next 10.</p>
+        <span class="button h4" tabindex="0">What Is Calculated? <i class="arrow down relative right"></i></span>
+        <p class="section-text h6">
+          The battery calculator will use your location and historical electricity
+          consumption to determine the solar array capacity required to produce
+          enough energy to cover your total consumption needs, even during the
+          worst months for solar production. Additionally, it will determine the
+          minimum battery capacity required to meet your consumption needs through
+          the night.
+        </p>
       </div>
 
       <div class="section">
         <span class="button h4" tabindex="0">Data Sources <i class="arrow down relative right"></i></span>
-        <p class="section-text h6">Science has not yet mastered prophecy. We predict too much for the next year and yet far too little for the next 10.</p>
+        <p class="section-text h6">
+          This calculator is powered by <a href="http://pvwatts.nrel.gov/">NREL's PVWatts Calculator</a>.
+          NREL also provides solar radiation data, and utility rate data.
+          The daily consumption profile was modelled using an aggregation of data 
+          from various charts found through google.
+        </p>
       </div>
     </div>
     <div class="col col-2">
