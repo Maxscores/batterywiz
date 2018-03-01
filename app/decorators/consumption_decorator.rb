@@ -7,6 +7,14 @@ class ConsumptionDecorator < SimpleDelegator
   #     formatted
   #   end
   # end
+  def daily_peak_consumption
+    start_day = Time.new("01-01")
+    calculate_daily_peak_consumption.map do |peak_consumption|
+      formatted = [start_day, peak_consumption]
+      start_day += 1.day
+      formatted
+    end
+  end
 
   def graph_monthly_consumption
     start_month = Time.new("01-01")

@@ -16,9 +16,21 @@ class BatteryDecorator < SimpleDelegator
     start_hour = Time.new("00:00:00")
     hourly_net_energy[day_of_year].reduce([]) do |formatted, energy|
       if formatted.empty?
-        formatted << [start_hour, battery_level_at_start_of_day(78) + energy]
+        formatted << [start_hour, 25]
       else
-        formatted << [start_hour, formatted[-1][1] + energy]
+        if energy < 0 && formatted[-1][1] > 0
+          formatted << [start_hour, formatted[-1][1] + 100 * energy / capacity]
+        elsif formatted[-1][1] >= 100
+          formatted << [start_hour, 100]
+        elsif energy > 0 || !formatted[-1][1].zero?
+          if (formatted[-1][1] + 100 * energy / capacity) >= 100
+            formatted << [start_hour, 100]
+          else
+            formatted << [start_hour, formatted[-1][1] + 100 * energy / capacity]
+          end
+        else
+          formatted << [start_hour, formatted[-1][1]]
+        end
       end
       # formatted << [start_hour, energy]
       start_hour += 1.hour
