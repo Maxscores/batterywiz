@@ -1,0 +1,65 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://developer.nrel.gov/api/solar/solar_resource/v1.json?address=80525
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      X-Api-Key:
+      - "<NREL_API_KEY>"
+      User-Agent:
+      - Faraday v0.14.0
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - openresty
+      Date:
+      - Thu, 01 Mar 2018 14:40:30 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '644'
+      Connection:
+      - keep-alive
+      X-Ratelimit-Limit:
+      - '1000'
+      X-Ratelimit-Remaining:
+      - '981'
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Max-Age:
+      - '1728000'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Etag:
+      - W/"b76a8a6fc75389bd3197a628b562c0f6"
+      X-Request-Id:
+      - 93209f4a-34ee-4c5e-9e80-a9e7f74c1160
+      X-Runtime:
+      - '0.009489'
+      Age:
+      - '0'
+      Via:
+      - http/1.1 api-umbrella (ApacheTrafficServer [cMsSf ])
+      X-Cache:
+      - MISS
+      Strict-Transport-Security:
+      - max-age=31536000; preload
+    body:
+      encoding: UTF-8
+      string: '{"version":"1.0.0","warnings":[],"errors":[],"metadata":{"sources":["Perez-SUNY/NREL,
+        2012"]},"inputs":{"address":"80525"},"outputs":{"avg_dni":{"annual":5.36,"monthly":{"jan":4.26,"feb":4.71,"mar":5.32,"apr":5.7,"may":5.72,"jun":6.51,"jul":6.38,"aug":5.73,"sep":6.16,"oct":5.17,"nov":4.56,"dec":4.1}},"avg_ghi":{"annual":4.4,"monthly":{"jan":2.24,"feb":3.12,"mar":4.34,"apr":5.38,"may":6.1,"jun":6.62,"jul":6.39,"aug":5.6,"sep":4.91,"oct":3.55,"nov":2.52,"dec":2.01}},"avg_lat_tilt":{"annual":5.29,"monthly":{"jan":4.25,"feb":4.88,"mar":5.57,"apr":5.76,"may":5.74,"jun":5.86,"jul":5.81,"aug":5.7,"sep":5.97,"oct":5.25,"nov":4.58,"dec":4.06}}}}'
+    http_version: 
+  recorded_at: Thu, 01 Mar 2018 14:40:30 GMT
+recorded_with: VCR 4.0.0
