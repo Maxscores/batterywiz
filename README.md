@@ -1,28 +1,60 @@
-# BatteryWiz
+# [Battery Wiz](https://batterywiz.herokuapp.com)
 
 [![Coverage Status](https://coveralls.io/repos/github/Maxscores/solar_calc/badge.svg?branch=master)](https://coveralls.io/github/Maxscores/solar_calc?branch=master)
-[![Build Status](https://travis-ci.org/Maxscores/solar_calc.svg?branch=master)](https://travis-ci.org/Maxscores/solar_calc)
+[![Build Status](https://travis-ci.org/Maxscores/batterywiz.svg?branch=master)](https://travis-ci.org/Maxscores/batterywiz)
 [![Maintainability](https://api.codeclimate.com/v1/badges/3788262618972b66641f/maintainability)](https://codeclimate.com/github/Maxscores/solar_calc/maintainability)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Battery Wiz](https://batterywiz.herokuapp.com) is an application that can be used to estimate solar array specifications based on your monthly consumption and location. In addition to calculating the required solar capacity for the project, [Battery Wiz](https://batterywiz.herokuapp.com) calculates the capacity of a battery required to power consumption throughout the night.
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-* System dependencies
+### Prerequisites
 
-* Configuration
+You need to have PostgreSQL, Rails, and Bundler installed on your machine
 
-* Database creation
+[How to install PostgreSQL](https://www.codementor.io/engineerapart/getting-started-with-postgresql-on-mac-osx-are8jcopb)
 
-* Database initialization
+Install Rails & Bundler:
+```
+$ gem install rails
+$ gem install bundler
+```
 
-* How to run the test suite
+### Installing
 
-* Services (job queues, cache servers, search engines, etc.)
+Install Required Gems
+```
+$ bundle install
+```
 
-* Deployment instructions
+Setup Database
+```
+$ rake db:{create,migrate}
+```
 
-* ...
+Boot Server and Visit [localhost:3000](https://localhost:3000)
+```
+$ rails server
+```
+
+## Running the tests
+
+Testing was written using RSpec. To run the tests:
+```
+$ rspec
+```
+
+## Authors
+
+* **Max Stackhouse** - *Initial work* - [Maxscores](https://github.com/Maxscores)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* Thanks to NREL for the great APIs
+* Thanks to Ben Marum for solar expertise
