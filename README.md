@@ -46,6 +46,9 @@ Testing was written using RSpec. To run the tests:
 $ rspec
 ```
 
+### Schema
+![Schema](https://raw.githubusercontent.com/maxscores/batterywiz/master/db/schema.png)
+
 ## Authors
 
 * **Max Stackhouse** - *Initial work* - [Maxscores](https://github.com/Maxscores)
